@@ -1,0 +1,31 @@
+CADASTRO DE ALUNOS
+	- PRÉMISSA POR DIGITAL
+	- 80 alunos por aula
+	- controle de presença
+	- controle pagamento
+	- Recibos para aluno	
+	- Cadastro de Modalidade
+	- Controle de Aluno Experimental
+
+Controle Financeiro
+	- Formas de pagamento - Cheque, cartão e dinheiro. 
+
+Controle de Estoque
+	- Cadastro de produtos
+	- Entrada e Saída
+
+Controle de Funcionário
+	- Cadastro de Funcionários
+	- Controle de Pagamentos
+	- Controle de Frequência por biometria
+	- Forma de Contratação
+	- Pagamentos de terceiro (URGÊNCIA)
+
+RELATÓRIOS
+
+Expectativa de investimento: Anual 600
+		             Mensal 60
+			     Implementação
+
+joyce_marina_@hotmail.com
+fatimarmachado@msn.com.br
