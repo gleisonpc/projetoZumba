@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gerjfdModelStoreContainer" CdmEntityContainer="gerjfdEntities">
+    <EntitySetMapping Name="gerjfd_aluno">
+      <EntityTypeMapping TypeName="gerjfdModel.gerjfd_aluno">
+        <MappingFragment StoreEntitySet="gerjfd_aluno">
+          <ScalarProperty Name="aluno_id" ColumnName="aluno_id" />
+          <ScalarProperty Name="aluno_nome" ColumnName="aluno_nome" />
+          <ScalarProperty Name="aluno_endereco" ColumnName="aluno_endereco" />
+          <ScalarProperty Name="aluno_numero" ColumnName="aluno_numero" />
+          <ScalarProperty Name="aluno_bairro" ColumnName="aluno_bairro" />
+          <ScalarProperty Name="aluno_cidade" ColumnName="aluno_cidade" />
+          <ScalarProperty Name="aluno_rg" ColumnName="aluno_rg" />
+          <ScalarProperty Name="aluno_cpf" ColumnName="aluno_cpf" />
+          <ScalarProperty Name="aluno_telResidencial" ColumnName="aluno_telResidencial" />
+          <ScalarProperty Name="aluno_telComercial" ColumnName="aluno_telComercial" />
+          <ScalarProperty Name="aluno_celular" ColumnName="aluno_celular" />
+          <ScalarProperty Name="aluno_dataNacimento" ColumnName="aluno_dataNacimento" />
+          <ScalarProperty Name="aluno_email" ColumnName="aluno_email" />
+          <ScalarProperty Name="aluno_nomeMae" ColumnName="aluno_nomeMae" />
+          <ScalarProperty Name="aluno_telMae" ColumnName="aluno_telMae" />
+          <ScalarProperty Name="aluno_nomePai" ColumnName="aluno_nomePai" />
+          <ScalarProperty Name="aluno_telPai" ColumnName="aluno_telPai" />
+          <ScalarProperty Name="aluno_peso" ColumnName="aluno_peso" />
+          <ScalarProperty Name="aluno_altura" ColumnName="aluno_altura" />
+          <ScalarProperty Name="aluno_pressaoArterial" ColumnName="aluno_pressaoArterial" />
+          <ScalarProperty Name="aluno_praticouModalidade" ColumnName="aluno_praticouModalidade" />
+          <ScalarProperty Name="aluno_modalidadePraticada" ColumnName="aluno_modalidadePraticada" />
+          <ScalarProperty Name="aluno_problemaSaude" ColumnName="aluno_problemaSaude" />
+          <ScalarProperty Name="aluno_cirurgia" ColumnName="aluno_cirurgia" />
+          <ScalarProperty Name="aluno_fumante" ColumnName="aluno_fumante" />
+          <ScalarProperty Name="aluno_alergiaMedicamento" ColumnName="aluno_alergiaMedicamento" />
+          <ScalarProperty Name="aluno_doencaCardiovascular" ColumnName="aluno_doencaCardiovascular" />
+          <ScalarProperty Name="aluno_parentesco" ColumnName="aluno_parentesco" />
+          <ScalarProperty Name="aluno_dataInicio" ColumnName="aluno_dataInicio" />
+          <ScalarProperty Name="aluno_modalidade" ColumnName="aluno_modalidade" />
+          <ScalarProperty Name="aluno_diaVencimento" ColumnName="aluno_diaVencimento" />
+          <ScalarProperty Name="aluno_valor" ColumnName="aluno_valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
