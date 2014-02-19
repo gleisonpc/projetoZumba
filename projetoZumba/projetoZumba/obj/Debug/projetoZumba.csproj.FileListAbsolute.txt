@@ -17,3 +17,5 @@ C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\bin\Deb
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\bin\Debug\EntityFramework.xml
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\NovoAluno.baml
+C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\NovoAluno.g.cs

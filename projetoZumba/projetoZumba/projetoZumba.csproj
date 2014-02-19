@@ -66,12 +66,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NovoAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Alunos.xaml.cs">
       <DependentUpon>Alunos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NovoAluno.xaml.cs">
+      <DependentUpon>NovoAluno.xaml</DependentUpon>
     </Compile>
     <Compile Include="AlunosModel.cs" />
     <Compile Include="App.xaml.cs">

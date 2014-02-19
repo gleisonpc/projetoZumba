@@ -11,7 +11,8 @@ namespace projetoZumba
         internal void mostrarAlunos(System.Windows.Controls.DataGrid DataGridAlunos)
         {
             gerjfdEntities context = new gerjfdEntities();
-            DataGridAlunos.ItemsSource = context.gerjfd_aluno.ToList();
+            var data = (from p in context.gerjfd_aluno select new { p.aluno_id, p.aluno_nome });
+            DataGridAlunos.ItemsSource = data.ToList();
         }
     }
 }

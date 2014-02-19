@@ -28,6 +28,17 @@ namespace projetoZumba
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            this.updateAlunos();
+        }
+
+        private void AlunosNovo_Click(object sender, RoutedEventArgs e)
+        {
+            NovoAluno alunosDetalhado = new NovoAluno(this);
+            alunosDetalhado.Show();
+        }
+
+        public void updateAlunos()
+        {
             alunosModel.mostrarAlunos(DataGridAlunos);
         }
     }
