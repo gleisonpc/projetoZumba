@@ -67,12 +67,26 @@ namespace projetoZumba
                 aluno_fumante = Fumante.Text,
                 aluno_alergiaMedicamento = AlergiaMedicamento.Text,
                 aluno_doencaCardiovascular = DoencasCardiovasculares.Text,
-                aluno_parentesco = Parentesco.Text
+                aluno_parentesco = Parentesco.Text,
+                aluno_digital1 = Digital1.Text,
+                aluno_digital2 = Digital2.Text,
             };
             context.gerjfd_aluno.Add(data);
             context.SaveChanges();
             alunos.updateAlunos();
             this.Close();
+        }
+
+        private void CadastrarDigital1_Click(object sender, RoutedEventArgs e)
+        {
+            leitorDig leitor = new leitorDig(Digital1);
+            leitor.Show();
+        }
+
+        private void CadastrarDigital2_Click(object sender, RoutedEventArgs e)
+        {
+            leitorDig leitor = new leitorDig(Digital2);
+            leitor.Show();
         }
     }
 }

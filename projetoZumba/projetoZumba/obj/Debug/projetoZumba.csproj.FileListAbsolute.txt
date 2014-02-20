@@ -2,8 +2,6 @@ C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\bin\Deb
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\bin\Debug\projetoZumba.exe
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\bin\Debug\projetoZumba.pdb
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\projetoZumba.csprojResolveAssemblyReference.cache
-C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\MainWindow.baml
-C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\MainWindow.g.cs
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\App.g.cs
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\projetoZumba_MarkupCompile.cache
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\projetoZumba.g.resources
@@ -11,14 +9,10 @@ C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Deb
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\projetoZumba.csproj.GenerateResource.Cache
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\projetoZumba.exe
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\projetoZumba.pdb
-C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Alunos.baml
-C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Alunos.g.cs
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\bin\Debug\EntityFramework.dll
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\bin\Debug\EntityFramework.xml
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\NovoAluno.baml
-C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\NovoAluno.g.cs
 C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\bin\Debug\projetoZumba.exe.config
 C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\projetoZumba.exe
 C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\projetoZumba.pdb
@@ -42,3 +36,11 @@ C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\D
 C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\projetoZumba.g.resources
 C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\projetoZumba.Properties.Resources.resources
 C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\projetoZumba.csproj.GenerateResource.Cache
+C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\Alunos.baml
+C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\leitorDig.baml
+C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\NovoAluno.baml
+C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\MainWindow.baml
+C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\Alunos.g.cs
+C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\leitorDig.g.cs
+C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\NovoAluno.g.cs
+C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\MainWindow.g.cs

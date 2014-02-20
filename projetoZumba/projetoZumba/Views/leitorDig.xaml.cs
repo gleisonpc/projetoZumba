@@ -19,9 +19,13 @@ namespace projetoZumba
     /// </summary>
     public partial class leitorDig : Window
     {
-        public leitorDig()
+        private Button CadastrarDigital1;
+        private TextBox Digital1;
+
+        public leitorDig(TextBox DigitalLabel)
         {
             InitializeComponent();
         }
+
     }
 }

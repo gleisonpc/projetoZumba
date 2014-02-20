@@ -4,6 +4,8 @@
     <EntitySetMapping Name="gerjfd_aluno">
       <EntityTypeMapping TypeName="gerjfdModel.gerjfd_aluno">
         <MappingFragment StoreEntitySet="gerjfd_aluno">
+          <ScalarProperty Name="aluno_digital2" ColumnName="aluno_digital2" />
+          <ScalarProperty Name="aluno_digital1" ColumnName="aluno_digital1" />
           <ScalarProperty Name="aluno_id" ColumnName="aluno_id" />
           <ScalarProperty Name="aluno_nome" ColumnName="aluno_nome" />
           <ScalarProperty Name="aluno_endereco" ColumnName="aluno_endereco" />

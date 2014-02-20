@@ -46,5 +46,7 @@ namespace projetoZumba
         public string aluno_modalidade { get; set; }
         public string aluno_diaVencimento { get; set; }
         public Nullable<double> aluno_valor { get; set; }
+        public string aluno_digital1 { get; set; }
+        public string aluno_digital2 { get; set; }
     }
 }

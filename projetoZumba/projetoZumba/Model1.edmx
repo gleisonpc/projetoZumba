@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="gerjfdModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="gerjfdModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="gerjfd_aluno">
           <Key>
             <PropertyRef Name="aluno_id" />
@@ -41,12 +41,13 @@
           <Property Name="aluno_modalidade" Type="nchar" MaxLength="10" />
           <Property Name="aluno_diaVencimento" Type="nchar" MaxLength="10" />
           <Property Name="aluno_valor" Type="float" />
+          <Property Name="aluno_digital1" Type="nvarchar(max)" />
+          <Property Name="aluno_digital2" Type="nvarchar(max)" />
         </EntityType>
         <EntityContainer Name="gerjfdModelStoreContainer">
           <EntitySet Name="gerjfd_aluno" EntityType="Self.gerjfd_aluno" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="gerjfdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -86,6 +87,8 @@
           <Property Name="aluno_modalidade" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="aluno_diaVencimento" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="aluno_valor" Type="Double" />
+          <Property Name="aluno_digital1" Type="String" />
+          <Property Name="aluno_digital2" Type="String" />
         </EntityType>
         <EntityContainer Name="gerjfdEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="gerjfd_aluno" EntityType="Self.gerjfd_aluno" />
@@ -99,6 +102,8 @@
           <EntitySetMapping Name="gerjfd_aluno">
             <EntityTypeMapping TypeName="gerjfdModel.gerjfd_aluno">
               <MappingFragment StoreEntitySet="gerjfd_aluno">
+                <ScalarProperty Name="aluno_digital2" ColumnName="aluno_digital2" />
+                <ScalarProperty Name="aluno_digital1" ColumnName="aluno_digital1" />
                 <ScalarProperty Name="aluno_id" ColumnName="aluno_id" />
                 <ScalarProperty Name="aluno_nome" ColumnName="aluno_nome" />
                 <ScalarProperty Name="aluno_endereco" ColumnName="aluno_endereco" />

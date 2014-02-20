@@ -36,6 +36,8 @@
     <Property Name="aluno_modalidade" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="aluno_diaVencimento" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="aluno_valor" Type="Double" />
+    <Property Name="aluno_digital1" Type="String" />
+    <Property Name="aluno_digital2" Type="String" />
   </EntityType>
   <EntityContainer Name="gerjfdEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="gerjfd_aluno" EntityType="Self.gerjfd_aluno" />
