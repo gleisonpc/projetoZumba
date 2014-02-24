@@ -31,5 +31,13 @@ namespace projetoZumba
             Alunos alunos = new Alunos();
             alunos.Show();
         }
+
+        private void teste_Click(object sender, RoutedEventArgs e)
+        {
+            Alunos vai = new Alunos();
+
+            NovoAluno teste = new NovoAluno(vai);
+            teste.Show();
+        }
     }
 }

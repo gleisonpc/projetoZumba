@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows;
 
 namespace projetoZumba.Lib
 {
@@ -14,16 +15,22 @@ namespace projetoZumba.Lib
         private DPFP.Verification.Verification Verificator;
         DPFP.Template v = new DPFP.Template();
                 
-        List <byte[]> digData = new List<byte[]>();
+        public List <byte[]> digData = new List<byte[]>();
 
         int j = 0;
 
         public bool status = true;
         public bool verif = false;
+        private System.Windows.Controls.Label infoLabel;
+        private leitorEvt evt;
 
-        public leitorLib(){
-        
+        public leitorLib(System.Windows.Controls.Label info, leitorEvt evt)
+        {
+            // TODO: Complete member initialization
+            infoLabel = info;
+            this.evt = evt;
         }
+
 
         public void Init()
         {
@@ -33,14 +40,14 @@ namespace projetoZumba.Lib
 
                 if (null != Capturer)
                 {
-                    Capturer.EventHandler = this;					// Subscribe for capturing events.
+                    Capturer.EventHandler = evt;					// Subscribe for capturing events.
                 }
                 else
-                    Console.Write("Can't initiate capture operation!");
+                    infoLabel.Content = "NÃO PODE INICIAR A CAPTURA";
             }
             catch
             {
-                Console.Write("Can't initiate capture operation!");
+                infoLabel.Content =  "NÃO PODE INICIAR A CAPTURA";
             }
         }
 
@@ -50,12 +57,12 @@ namespace projetoZumba.Lib
             {
                 try
                 {
-                    Console.WriteLine("USANDO LEITOR DE DIGITAL!!!");
+                    infoLabel.Content = "USANDO LEITOR DE DIGITAL!!!";
                     Capturer.StartCapture();
                 }
                 catch
                 {
-                    Console.WriteLine("NÃO PODE INICIALIZAR A CAPTURA!!!");
+                    infoLabel.Content = "NÃO PODE INICIALIZAR A CAPTURA!!!";
                 }
             }
         }
@@ -70,13 +77,15 @@ namespace projetoZumba.Lib
                 }
                 catch
                 {
-                    Console.WriteLine("Can't terminate capture!");
+                    infoLabel.Content = "NAO PODE TERMINAR A CAPTURA";
                 }
             }
         }
 
         public void Process(DPFP.Sample Sample)
         {
+            
+            string str;
             DPFP.FeatureSet features = ExtractFeatures(Sample, DPFP.Processing.DataPurpose.Enrollment);
 
 			// Check quality of the sample and add to enroller if it's good
@@ -86,7 +95,7 @@ namespace projetoZumba.Lib
             }
             catch {
 
-                Console.WriteLine("DIGITAL SEM QUALIDADE!!!");
+                infoLabel.Content = "DIGITAL SEM QUALIDADE!!!";
             
             }
  
@@ -100,14 +109,20 @@ namespace projetoZumba.Lib
 
                     digData.Add(t);
 
+                    System.Text.ASCIIEncoding serial = new System.Text.ASCIIEncoding();
+
+                    str = serial.GetString(t);
+
+                    infoLabel.Content = str;
+
                     Enroller.Clear();
                     Stop();
                     status = false;
+                    
 
                 break;
             }
            
-            Console.WriteLine(Enroller.FeaturesNeeded);
         }
 
         public void Verify(DPFP.Sample Sample)
@@ -177,43 +192,45 @@ namespace projetoZumba.Lib
             return null;
         }
 
+        
+
         public void OnComplete(object Capture, string ReaderSerialNumber, DPFP.Sample Sample)
         {
-            Console.WriteLine("ACABEI DE LER UMA DIGITAL");
-            if (verif)
-            {
-                Verify(Sample);
-            }else
+            infoLabel.Content = "ACABEI DE LER UMA DIGITAL";
+            //if (verif)
+            //{
+            //    Verify(Sample);
+            //}else
             Process(Sample);
             
         }
 
         public void OnFingerGone(object Capture, string ReaderSerialNumber)
         {
-            Console.WriteLine("JÁ LI A DIGITAL");
+            infoLabel.Content = "JÁ LI A DIGITAL";
         }
 
         public void OnFingerTouch(object Capture, string ReaderSerialNumber)
         {
-            Console.WriteLine("ESTOU LENDO UMA DIGITAL");
+            infoLabel.Content = "ESTOU LENDO UMA DIGITAL";
         }
 
         public void OnReaderConnect(object Capture, string ReaderSerialNumber)
         {
-            Console.WriteLine("O LEITOR ESTÁ CONECTADO");
+            MessageBox.Show("O LEITOR ESTÁ CONECTADO");
         }
 
         public void OnReaderDisconnect(object Capture, string ReaderSerialNumber)
         {
-            Console.WriteLine("O LEITOR ESTÁ DESCONECTADO!");
+            MessageBox.Show("O LEITOR ESTÁ DESCONECTADO!");
         }
 
         public void OnSampleQuality(object Capture, string ReaderSerialNumber, DPFP.Capture.CaptureFeedback CaptureFeedback)
         {
             if (CaptureFeedback == DPFP.Capture.CaptureFeedback.Good)
-                Console.WriteLine("A DIGITAL É MUITO BOA");
+                MessageBox.Show("A DIGITAL É MUITO BOA");
             else
-                Console.WriteLine("PASSA DE NOVO QUE DEU MERDA!!!!");
+                MessageBox.Show("PASSA DE NOVO QUE DEU MERDA!!!!");
         }
     }
 }

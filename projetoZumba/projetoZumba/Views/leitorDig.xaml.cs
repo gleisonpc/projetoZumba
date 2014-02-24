@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using projetoZumba.Lib;
+using System.Threading;
 
 namespace projetoZumba
 {
@@ -19,13 +21,22 @@ namespace projetoZumba
     /// </summary>
     public partial class leitorDig : Window
     {
-        private Button CadastrarDigital1;
-        private TextBox Digital1;
+        public bool status;
+        private leitorLib leitor;
+        private leitorEvt evt;
 
-        public leitorDig(TextBox DigitalLabel)
+        private TextBox Digital1;
+        
+        public leitorDig()
         {
             InitializeComponent();
-        }
+
+            evt = new leitorEvt(infoLabel);
+            leitor = new leitorLib(infoLabel, evt);
+
+            leitor.Init();
+            leitor.Start();
+        } 
 
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using projetoZumba.Lib;
 
 namespace projetoZumba
 {
@@ -19,7 +20,10 @@ namespace projetoZumba
     /// </summary>
     public partial class NovoAluno : Window
     {
+        private leitorDig leitura;
         private Alunos alunos;
+
+        public delegate void teste();
 
         public NovoAluno(Alunos pAlunos)
         {
@@ -79,14 +83,16 @@ namespace projetoZumba
 
         private void CadastrarDigital1_Click(object sender, RoutedEventArgs e)
         {
-            leitorDig leitor = new leitorDig(Digital1);
-            leitor.Show();
-        }
+
+            leitorDig leitura = new leitorDig();
+            leitura.Show();
+         
+        }       
 
         private void CadastrarDigital2_Click(object sender, RoutedEventArgs e)
         {
-            leitorDig leitor = new leitorDig(Digital2);
-            leitor.Show();
+            //leitorDig leitor = new leitorDig(Digital2);
+            //leitor.Show();
         }
     }
 }
