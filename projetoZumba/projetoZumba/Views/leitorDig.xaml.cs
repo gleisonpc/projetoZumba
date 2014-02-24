@@ -23,20 +23,24 @@ namespace projetoZumba
     {
         public bool status;
         private leitorLib leitor;
-        private leitorEvt evt;
 
         private TextBox Digital1;
-        
-        public leitorDig()
+
+        public leitorDig(TextBox Digital1)
         {
             InitializeComponent();
 
-            evt = new leitorEvt(infoLabel);
-            leitor = new leitorLib(infoLabel, evt);
+           // evt = new leitorEvt(infoLabel);
+            leitor = new leitorLib(infoLabel, Digital1);
+
+            this.Digital1 = Digital1;
 
             leitor.Init();
             leitor.Start();
-        } 
+            
+        }
+
+      
 
     }
 }

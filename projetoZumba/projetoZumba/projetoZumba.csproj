@@ -99,7 +99,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Lib\leitorEvt.cs" />
     <Compile Include="Lib\leitorLib.cs" />
     <Compile Include="Views\Alunos.xaml.cs">
       <DependentUpon>Alunos.xaml</DependentUpon>

@@ -22,13 +22,15 @@ namespace projetoZumba.Lib
         public bool status = true;
         public bool verif = false;
         private System.Windows.Controls.Label infoLabel;
-        private leitorEvt evt;
+        private System.Windows.Controls.TextBox Digital;
 
-        public leitorLib(System.Windows.Controls.Label info, leitorEvt evt)
+        public delegate void teste();
+
+        public leitorLib(System.Windows.Controls.Label infoLabel, System.Windows.Controls.TextBox Digital)
         {
             // TODO: Complete member initialization
-            infoLabel = info;
-            this.evt = evt;
+            this.infoLabel = infoLabel;
+            this.Digital = Digital;
         }
 
 
@@ -40,14 +42,14 @@ namespace projetoZumba.Lib
 
                 if (null != Capturer)
                 {
-                    Capturer.EventHandler = evt;					// Subscribe for capturing events.
+                    Capturer.EventHandler = this;					// Subscribe for capturing events.
                 }
                 else
-                    infoLabel.Content = "NÃO PODE INICIAR A CAPTURA";
+                    SetStatus("NÃO PODE INICIAR A CAPTURA");
             }
             catch
             {
-                infoLabel.Content =  "NÃO PODE INICIAR A CAPTURA";
+                SetStatus("NÃO PODE INICIAR A CAPTURA");
             }
         }
 
@@ -62,7 +64,7 @@ namespace projetoZumba.Lib
                 }
                 catch
                 {
-                    infoLabel.Content = "NÃO PODE INICIALIZAR A CAPTURA!!!";
+                    SetStatus("NÃO PODE INICIALIZAR A CAPTURA!!!");
                 }
             }
         }
@@ -77,7 +79,7 @@ namespace projetoZumba.Lib
                 }
                 catch
                 {
-                    infoLabel.Content = "NAO PODE TERMINAR A CAPTURA";
+                    SetStatus("NAO PODE TERMINAR A CAPTURA");
                 }
             }
         }
@@ -113,7 +115,8 @@ namespace projetoZumba.Lib
 
                     str = serial.GetString(t);
 
-                    infoLabel.Content = str;
+                    SetStatus(str);
+                    SetDigital(str);
 
                     Enroller.Clear();
                     Stop();
@@ -153,9 +156,9 @@ namespace projetoZumba.Lib
                         Console.WriteLine(result.Verified);
 
                         if (result.Verified)
-                            Console.WriteLine("DEU CERTO A VERIFICAÇÃO.");
+                            SetStatus("DEU CERTO A VERIFICAÇÃO.");
                         else
-                            Console.WriteLine("DEU RUIM!");
+                            SetStatus("DEU RUIM!");
                     }
                     catch (Exception err) { Console.WriteLine(err); }
 
@@ -192,11 +195,25 @@ namespace projetoZumba.Lib
             return null;
         }
 
-        
+        protected void SetStatus(string status)
+        {
+            infoLabel.Dispatcher.Invoke(new Action(delegate()
+            {
+                infoLabel.Content = status;
+            }));
+        }
+
+        protected void SetDigital(string digital)
+        {
+            Digital.Dispatcher.Invoke(new Action(delegate()
+            {
+                Digital.Text = digital;
+            }));
+        }
 
         public void OnComplete(object Capture, string ReaderSerialNumber, DPFP.Sample Sample)
         {
-            infoLabel.Content = "ACABEI DE LER UMA DIGITAL";
+            SetStatus("ACABEI DE LER UMA DIGITAL");
             //if (verif)
             //{
             //    Verify(Sample);
@@ -207,30 +224,31 @@ namespace projetoZumba.Lib
 
         public void OnFingerGone(object Capture, string ReaderSerialNumber)
         {
-            infoLabel.Content = "JÁ LI A DIGITAL";
+            SetStatus("JÁ LI A DIGITAL");
         }
 
         public void OnFingerTouch(object Capture, string ReaderSerialNumber)
         {
-            infoLabel.Content = "ESTOU LENDO UMA DIGITAL";
+            SetStatus("ESTOU LENDO UMA DIGITAL");
+           
         }
 
         public void OnReaderConnect(object Capture, string ReaderSerialNumber)
         {
-            MessageBox.Show("O LEITOR ESTÁ CONECTADO");
+            SetStatus("O LEITOR ESTÁ CONECTADO");
         }
 
         public void OnReaderDisconnect(object Capture, string ReaderSerialNumber)
         {
-            MessageBox.Show("O LEITOR ESTÁ DESCONECTADO!");
+            SetStatus("O LEITOR ESTÁ DESCONECTADO!");
         }
 
         public void OnSampleQuality(object Capture, string ReaderSerialNumber, DPFP.Capture.CaptureFeedback CaptureFeedback)
         {
             if (CaptureFeedback == DPFP.Capture.CaptureFeedback.Good)
-                MessageBox.Show("A DIGITAL É MUITO BOA");
+                SetStatus("A DIGITAL É MUITO BOA");
             else
-                MessageBox.Show("PASSA DE NOVO QUE DEU MERDA!!!!");
+                SetStatus("PASSA DE NOVO QUE DEU MERDA!!!!");
         }
     }
 }

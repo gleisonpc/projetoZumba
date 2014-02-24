@@ -1,12 +1,12 @@
 ﻿<Window x:Class="projetoZumba.leitorDig"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Leitura de Digital" Height="164.866" Width="196.036" ResizeMode="NoResize">
+        Title="Leitura de Digital" Height="164.866" Width="290.536" ResizeMode="NoResize">
     <Grid>
         <Button Content="Cancelar" HorizontalAlignment="Left" Margin="53,111,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.106,-0.787"/>
         <TextBlock HorizontalAlignment="Left" Margin="46,73,0,0" TextWrapping="Wrap" Text="Digital:" VerticalAlignment="Top" RenderTransformOrigin="0.5,2.426"/>
         <Label x:Name="serialDig" Content="Label" HorizontalAlignment="Left" Margin="88,68,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.59,3.15" Width="82"/>
-        <Label x:Name="infoLabel" Content="Label" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.908,-0.212" Height="53" Width="152"/>
+        <Label x:Name="infoLabel" Content="Label" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.908,-0.212" Height="53" Width="250"/>
 
     </Grid>
 </Window>

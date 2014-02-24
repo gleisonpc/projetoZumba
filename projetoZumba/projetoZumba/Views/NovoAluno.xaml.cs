@@ -20,10 +20,7 @@ namespace projetoZumba
     /// </summary>
     public partial class NovoAluno : Window
     {
-        private leitorDig leitura;
         private Alunos alunos;
-
-        public delegate void teste();
 
         public NovoAluno(Alunos pAlunos)
         {
@@ -84,15 +81,15 @@ namespace projetoZumba
         private void CadastrarDigital1_Click(object sender, RoutedEventArgs e)
         {
 
-            leitorDig leitura = new leitorDig();
-            leitura.Show();
+            leitorDig leitura1 = new leitorDig(Digital1);
+            leitura1.Show();
          
         }       
 
         private void CadastrarDigital2_Click(object sender, RoutedEventArgs e)
         {
-            //leitorDig leitor = new leitorDig(Digital2);
-            //leitor.Show();
+            leitorDig leitura2 = new leitorDig(Digital2);
+            leitura2.Show();
         }
     }
 }
