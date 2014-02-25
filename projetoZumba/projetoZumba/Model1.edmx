@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="gerjfdModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="gerfd_modalidade">
+          <Key>
+            <PropertyRef Name="modalidade_id" />
+          </Key>
+          <Property Name="modalidade_id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="modalidade_nome" Type="nvarchar" MaxLength="50" />
+          <Property Name="modalidade_vlrp" Type="real" />
+          <Property Name="modalidade_vlra" Type="real" />
+        </EntityType>
         <EntityType Name="gerjfd_aluno">
           <Key>
             <PropertyRef Name="aluno_id" />
@@ -45,6 +54,7 @@
           <Property Name="aluno_digital2" Type="nvarchar(max)" />
         </EntityType>
         <EntityContainer Name="gerjfdModelStoreContainer">
+          <EntitySet Name="gerfd_modalidade" EntityType="Self.gerfd_modalidade" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="gerjfd_aluno" EntityType="Self.gerjfd_aluno" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -87,12 +97,22 @@
           <Property Name="aluno_modalidade" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="aluno_diaVencimento" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="aluno_valor" Type="Double" />
-          <Property Name="aluno_digital1" Type="String" />
-          <Property Name="aluno_digital2" Type="String" />
+          <Property Name="aluno_digital1" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="aluno_digital2" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
         </EntityType>
         <EntityContainer Name="gerjfdEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="gerjfd_aluno" EntityType="Self.gerjfd_aluno" />
+          <EntitySet Name="gerfd_modalidade" EntityType="gerjfdModel.gerfd_modalidade" />
         </EntityContainer>
+        <EntityType Name="gerfd_modalidade">
+          <Key>
+            <PropertyRef Name="modalidade_id" />
+          </Key>
+          <Property Name="modalidade_id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="modalidade_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="modalidade_vlrp" Type="Single" />
+          <Property Name="modalidade_vlra" Type="Single" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -136,6 +156,16 @@
                 <ScalarProperty Name="aluno_modalidade" ColumnName="aluno_modalidade" />
                 <ScalarProperty Name="aluno_diaVencimento" ColumnName="aluno_diaVencimento" />
                 <ScalarProperty Name="aluno_valor" ColumnName="aluno_valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gerfd_modalidade">
+            <EntityTypeMapping TypeName="gerjfdModel.gerfd_modalidade">
+              <MappingFragment StoreEntitySet="gerfd_modalidade">
+                <ScalarProperty Name="modalidade_vlra" ColumnName="modalidade_vlra" />
+                <ScalarProperty Name="modalidade_vlrp" ColumnName="modalidade_vlrp" />
+                <ScalarProperty Name="modalidade_nome" ColumnName="modalidade_nome" />
+                <ScalarProperty Name="modalidade_id" ColumnName="modalidade_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
