@@ -22,15 +22,19 @@ namespace projetoZumba.Lib
         public bool status = true;
         public bool verif = false;
         private System.Windows.Controls.Label infoLabel;
+        private System.Windows.Controls.Label dig;
+        private System.Windows.Controls.Label numDig;
         private System.Windows.Controls.TextBox Digital;
 
         public delegate void teste();
 
-        public leitorLib(System.Windows.Controls.Label infoLabel, System.Windows.Controls.TextBox Digital)
+        public leitorLib(leitorDig leitura, System.Windows.Controls.TextBox Digital)
         {
             // TODO: Complete member initialization
-            this.infoLabel = infoLabel;
+            this.dig = leitura.serialDig;
+            this.infoLabel = leitura.infoLabel;
             this.Digital = Digital;
+            this.numDig = leitura.numLeit;
         }
 
 
@@ -59,7 +63,7 @@ namespace projetoZumba.Lib
             {
                 try
                 {
-                    infoLabel.Content = "USANDO LEITOR DE DIGITAL!!!";
+                    SetStatus("USANDO LEITOR DE DIGITAL!!!");
                     Capturer.StartCapture();
                 }
                 catch
@@ -69,7 +73,7 @@ namespace projetoZumba.Lib
             }
         }
 
-        protected void Stop()
+        public void Stop()
         {
             if (null != Capturer)
             {
@@ -87,7 +91,7 @@ namespace projetoZumba.Lib
         public void Process(DPFP.Sample Sample)
         {
             
-            string str;
+            string str = "";
             DPFP.FeatureSet features = ExtractFeatures(Sample, DPFP.Processing.DataPurpose.Enrollment);
 
 			// Check quality of the sample and add to enroller if it's good
@@ -97,10 +101,12 @@ namespace projetoZumba.Lib
             }
             catch {
 
-                infoLabel.Content = "DIGITAL SEM QUALIDADE!!!";
+                SetStatus("DIGITAL SEM QUALIDADE!!!");
             
             }
- 
+
+            SetDigital(str);
+
             switch (Enroller.TemplateStatus)
             {
                 case DPFP.Processing.Enrollment.Status.Ready:
@@ -115,14 +121,17 @@ namespace projetoZumba.Lib
 
                     str = serial.GetString(t);
 
-                    SetStatus(str);
                     SetDigital(str);
+
+                    infoLabel.Dispatcher.Invoke(new Action(delegate()
+                    {
+                        infoLabel.Content = "LEITURA DE DIGITAL FINALIZADA";
+                    }));
 
                     Enroller.Clear();
                     Stop();
                     status = false;
-                    
-
+                 
                 break;
             }
            
@@ -208,6 +217,8 @@ namespace projetoZumba.Lib
             Digital.Dispatcher.Invoke(new Action(delegate()
             {
                 Digital.Text = digital;
+                dig.Content = digital.GetHashCode().ToString();
+                numDig.Content = Enroller.FeaturesNeeded.ToString();
             }));
         }
 

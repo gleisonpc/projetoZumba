@@ -31,7 +31,7 @@ namespace projetoZumba
             InitializeComponent();
 
            // evt = new leitorEvt(infoLabel);
-            leitor = new leitorLib(infoLabel, Digital1);
+            leitor = new leitorLib(this, Digital1);
 
             this.Digital1 = Digital1;
 
@@ -40,7 +40,29 @@ namespace projetoZumba
             
         }
 
-      
+        private void numLeit_LayoutUpdated(object sender, EventArgs e)
+        {
+            
+            if(numLeit.Content.ToString() == "0"){
+
+                okbutton.IsEnabled = true;
+
+            }
+            
+        }
+
+        private void okbutton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            leitor.Stop();
+            this.Close();
+        }
+
+                  
 
     }
 }
