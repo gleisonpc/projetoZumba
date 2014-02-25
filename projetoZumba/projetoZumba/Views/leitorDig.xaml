@@ -5,8 +5,8 @@
     <Grid>
         <Button x:Name="okbutton" Content="OK" HorizontalAlignment="Left" Margin="18,126,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.106,-0.787" IsEnabled="False" Click="okbutton_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,76,0,0" TextWrapping="Wrap" Text="Digital:" VerticalAlignment="Top" RenderTransformOrigin="0.5,2.426"/>
-        <Label x:Name="serialDig" Content="Label" HorizontalAlignment="Left" Margin="53,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.407,0.5" Width="82"/>
-        <Label x:Name="infoLabel" Content="Label" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.908,-0.212" Height="53" Width="250"/>
+        <Label x:Name="serialDig" Content="" HorizontalAlignment="Left" Margin="53,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.407,0.5" Width="82"/>
+        <Label x:Name="infoLabel" Content="" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.908,-0.212" Height="53" Width="250"/>
         <TextBlock HorizontalAlignment="Left" Margin="147,76,0,0" TextWrapping="Wrap" Text="Leitura" VerticalAlignment="Top"/>
         <Label x:Name="numLeit" Content="" HorizontalAlignment="Left" Margin="188,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.59,3.15" Width="82" LayoutUpdated="numLeit_LayoutUpdated"/>
         <Button Content="Cancelar" HorizontalAlignment="Left" Margin="109,126,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.106,-0.787" Click="Button_Click"/>
