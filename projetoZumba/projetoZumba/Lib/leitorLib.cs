@@ -11,6 +11,7 @@ namespace projetoZumba.Lib
 {
     class leitorLib : DPFP.Capture.EventHandler
     {
+        //VARIAVEIS PARA MONTAR TEMPLATE DE CAPTURA
         DPFP.Capture.Capture Capturer;
         DPFP.Processing.Enrollment Enroller = new DPFP.Processing.Enrollment();
         private DPFP.Verification.Verification Verificator;
