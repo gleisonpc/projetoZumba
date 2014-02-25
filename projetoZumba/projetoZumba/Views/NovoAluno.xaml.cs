@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using projetoZumba.Lib;
 
+//Comentario
+
 namespace projetoZumba
 {
     /// <summary>
