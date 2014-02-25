@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8ace4227d1a444b89fba126c001493d6" Name="Diagram1" ZoomLevel="74">
+      <Diagram DiagramId="8ace4227d1a444b89fba126c001493d6" Name="Diagram1" ZoomLevel="55">
         <EntityTypeShape EntityType="gerjfdModel.gerjfd_aluno" Width="4.75" PointX="0.5" PointY="0.5" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
