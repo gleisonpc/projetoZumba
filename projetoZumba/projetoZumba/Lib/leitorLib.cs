@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows;
 
+//CLASSE RESPONSABEL POR CONTROLAR A LEITURA DE DIGITAL
 namespace projetoZumba.Lib
 {
     class leitorLib : DPFP.Capture.EventHandler
