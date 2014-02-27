@@ -30,7 +30,6 @@ namespace projetoZumba
         {
             InitializeComponent();
 
-           // evt = new leitorEvt(infoLabel);
             leitor = new leitorLib(this, Digital1);
 
             this.Digital1 = Digital1;

@@ -117,12 +117,14 @@ namespace projetoZumba.Lib
 
                     Enroller.Template.Serialize(ref t);
 
-                    digData.Add(t);
-
                     System.Text.ASCIIEncoding serial = new System.Text.ASCIIEncoding();
 
-                    str = serial.GetString(t);
 
+                    char[] chars = new char[t.Length / sizeof(char)];
+                    System.Buffer.BlockCopy(t, 0, chars, 0, t.Length);
+                    
+                    str = new string(chars);
+                   
                     SetDigital(str);
 
                     infoLabel.Dispatcher.Invoke(new Action(delegate()

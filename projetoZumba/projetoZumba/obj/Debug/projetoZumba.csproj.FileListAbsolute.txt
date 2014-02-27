@@ -44,3 +44,5 @@ C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Deb
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\leitorDig.g.cs
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\NovoAluno.g.cs
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\MainWindow.g.cs
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\findAluno.baml
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\findAluno.g.cs

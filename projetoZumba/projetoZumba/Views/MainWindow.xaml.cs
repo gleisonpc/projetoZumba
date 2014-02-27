@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using projetoZumba.Lib;
+using projetoZumba.Views;
 
 namespace projetoZumba
 {
@@ -34,10 +36,11 @@ namespace projetoZumba
 
         private void teste_Click(object sender, RoutedEventArgs e)
         {
-            Alunos vai = new Alunos();
+            findAluno ver = new findAluno();
 
-            NovoAluno teste = new NovoAluno(vai);
-            teste.Show();
+            ver.Show();
+            
+            
         }
     }
 }

@@ -4,6 +4,7 @@
         Title="MainWindow" Height="300" Width="193">
     <Grid>
         <Button Content="Alunos" Margin="0,0,0,239" Click="Button_Click"/>
-        <Button x:Name="teste" Content="Testes Leitor" Margin="0,31,0,208" Click="teste_Click"/>
+        <Button x:Name="teste" Content="Verificação" Margin="0,73,0,166" Click="teste_Click"/>
+        <Button Content="Modalidade" Margin="0,35,0,204" Click="teste_Click"/>
     </Grid>
 </Window>
