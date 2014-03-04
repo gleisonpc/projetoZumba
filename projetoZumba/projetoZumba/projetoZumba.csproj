@@ -111,6 +111,7 @@
     </Compile>
     <Compile Include="Lib\leitorLib.cs" />
     <Compile Include="Lib\leitorVer.cs" />
+    <Compile Include="Moldel\ModalidadeModel.cs" />
     <Compile Include="Views\Alunos.xaml.cs">
       <DependentUpon>Alunos.xaml</DependentUpon>
     </Compile>
