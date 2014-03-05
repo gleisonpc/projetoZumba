@@ -90,6 +90,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\EditarAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\findAluno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,6 +126,9 @@
     <Compile Include="Moldel\ModalidadesModel.cs" />
     <Compile Include="Views\Alunos.xaml.cs">
       <DependentUpon>Alunos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditarAluno.xaml.cs">
+      <DependentUpon>EditarAluno.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\findAluno.xaml.cs">
       <DependentUpon>findAluno.xaml</DependentUpon>

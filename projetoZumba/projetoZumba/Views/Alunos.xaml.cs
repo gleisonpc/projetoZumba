@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using projetoZumba.Views;
 
 namespace projetoZumba
 {
@@ -40,6 +41,25 @@ namespace projetoZumba
         public void updateAlunos()
         {
             alunosModel.mostrarAlunos(DataGridAlunos);
+        }
+
+        private void DataGridAlunos_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            dynamic aluno =  DataGridAlunos.SelectedItem;
+            if (aluno != null)
+            {
+                int id = aluno.aluno_id;
+                gerjfdEntities context = new gerjfdEntities();
+
+                foreach (gerjfd_aluno alunoBanco in context.gerjfd_aluno)
+                {
+                    if (alunoBanco.aluno_id == id)
+                    {
+                        EditarAluno editarAluno = new EditarAluno(alunoBanco, this);
+                        editarAluno.Show();
+                    }
+                }
+            }            
         }
     }
 }

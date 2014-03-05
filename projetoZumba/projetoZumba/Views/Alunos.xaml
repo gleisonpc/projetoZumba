@@ -4,6 +4,6 @@
         Title="Alunos" Height="484" Width="699" Loaded="Window_Loaded" ResizeMode="NoResize">
     <Grid>
         <Button x:Name="AlunosNovo" Content="Novo Aluno" Margin="10,24,538,399" Click="AlunosNovo_Click"></Button>
-        <DataGrid x:Name="DataGridAlunos" ItemsSource="{Binding}" CanUserAddRows="False" CanUserDeleteRows="False" Margin="0,80,0,0"></DataGrid>
+        <DataGrid x:Name="DataGridAlunos" ItemsSource="{Binding}" CanUserAddRows="False" CanUserDeleteRows="False" Margin="0,80,0,0" MouseDoubleClick="DataGridAlunos_MouseDoubleClick"></DataGrid>
     </Grid>
 </Window>

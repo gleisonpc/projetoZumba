@@ -1,0 +1,144 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace projetoZumba.Views
+{
+    /// <summary>
+    /// Interaction logic for EditarAluno.xaml
+    /// </summary>
+    public partial class EditarAluno : Window
+    {
+        private gerjfd_aluno alunoBanco;
+        private Alunos alunos;
+
+        public EditarAluno(gerjfd_aluno alunoBanco,Alunos pAlunos)
+        {
+            InitializeComponent();
+            // TODO: Complete member initialization
+            this.alunoBanco = alunoBanco;
+            this.alunos = pAlunos;
+
+            DataDeInicio.Text = alunoBanco.aluno_dataInicio.ToString();
+            Modalidade.Text = alunoBanco.aluno_modalidade; 
+            DiaDeVencimento.Text = alunoBanco.aluno_diaVencimento;
+            Valor.Text = alunoBanco.aluno_valor.ToString();
+            Nome.Text = alunoBanco.aluno_nome;
+            Endereco.Text = alunoBanco.aluno_endereco;
+            Numero.Text = alunoBanco.aluno_numero;
+            Bairro.Text = alunoBanco.aluno_bairro;
+            Cidade.Text = alunoBanco.aluno_cidade;
+            Rg.Text = alunoBanco.aluno_rg;
+            Cpf.Text = alunoBanco.aluno_cpf;
+            TelResidencial.Text = alunoBanco.aluno_telResidencial;
+            TelComercial.Text = alunoBanco.aluno_telComercial;
+            Celular.Text = alunoBanco.aluno_celular;
+            DataDeNascimento.Text = alunoBanco.aluno_dataNacimento.ToString();
+            Email.Text = alunoBanco.aluno_email;
+            NomeDaMae.Text = alunoBanco.aluno_nomeMae;
+            TelefoneMae.Text = alunoBanco.aluno_telMae;
+            NomeDoPai.Text = alunoBanco.aluno_nomePai; 
+            TelefonePai.Text = alunoBanco.aluno_telPai;
+            Peso.Text = alunoBanco.aluno_peso;
+            Altura.Text = alunoBanco.aluno_altura;
+            PressaoArterial.Text = alunoBanco.aluno_pressaoArterial;
+            PraticouModalidade.Text = alunoBanco.aluno_praticouModalidade;
+            ModalidadePraticada.Text = alunoBanco.aluno_modalidadePraticada;
+            ProblemaDeSaude.Text = alunoBanco.aluno_problemaSaude;
+            CirurgiaRecente.Text = alunoBanco.aluno_cirurgia;
+            Fumante.Text = alunoBanco.aluno_fumante;
+            AlergiaMedicamento.Text = alunoBanco.aluno_alergiaMedicamento;
+            DoencasCardiovasculares.Text = alunoBanco.aluno_doencaCardiovascular;
+            Parentesco.Text = alunoBanco.aluno_parentesco;
+            Digital1.Text = alunoBanco.aluno_digital1;
+            Digital2.Text = alunoBanco.aluno_digital2; 
+        }
+
+        private void Confirmar_Click(object sender, RoutedEventArgs e)
+        {
+            gerjfdEntities context = new gerjfdEntities();
+            gerjfd_aluno data = new gerjfd_aluno()
+            {
+                aluno_id = alunoBanco.aluno_id,
+                aluno_dataInicio = Convert.ToDateTime(DataDeInicio.Text),
+                aluno_modalidade = Modalidade.Text,
+                aluno_diaVencimento = DiaDeVencimento.Text,
+                aluno_valor = Double.Parse(Valor.Text),
+                aluno_nome = Nome.Text,
+                aluno_endereco = Endereco.Text,
+                aluno_numero = Numero.Text,
+                aluno_bairro = Bairro.Text,
+                aluno_cidade = Cidade.Text,
+                aluno_rg = Rg.Text,
+                aluno_cpf = Cpf.Text,
+                aluno_telResidencial = TelResidencial.Text,
+                aluno_telComercial = TelComercial.Text,
+                aluno_celular = Celular.Text,
+                aluno_dataNacimento = Convert.ToDateTime(DataDeNascimento.Text),
+                aluno_email = Email.Text,
+                aluno_nomeMae = NomeDaMae.Text,
+                aluno_telMae = TelefoneMae.Text,
+                aluno_nomePai = NomeDoPai.Text,
+                aluno_telPai = TelefonePai.Text,
+                aluno_peso = Peso.Text,
+                aluno_altura = Altura.Text,
+                aluno_pressaoArterial = PressaoArterial.Text,
+                aluno_praticouModalidade = PraticouModalidade.Text,
+                aluno_modalidadePraticada = ModalidadePraticada.Text,
+                aluno_problemaSaude = ProblemaDeSaude.Text,
+                aluno_cirurgia = CirurgiaRecente.Text,
+                aluno_fumante = Fumante.Text,
+                aluno_alergiaMedicamento = AlergiaMedicamento.Text,
+                aluno_doencaCardiovascular = DoencasCardiovasculares.Text,
+                aluno_parentesco = Parentesco.Text,
+                aluno_digital1 = Digital1.Text,
+                aluno_digital2 = Digital2.Text,
+            };
+            var original = context.gerjfd_aluno.Find(data.aluno_id);
+            if (original != null)
+            {
+                context.Entry(original).CurrentValues.SetValues(data);
+            }
+            context.SaveChanges();
+            alunos.updateAlunos();
+            this.Close();
+        }
+
+        private void Cancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CadastrarDigital1_Click(object sender, RoutedEventArgs e)
+        {
+            leitorDig leitura1 = new leitorDig(Digital1);
+            leitura1.Show();
+        }
+
+        private void CadastrarDigital2_Click(object sender, RoutedEventArgs e)
+        {
+            leitorDig leitura2 = new leitorDig(Digital2);
+            leitura2.Show();
+        }
+
+        private void Excluir_Click(object sender, RoutedEventArgs e)
+        {
+            gerjfdEntities context = new gerjfdEntities();
+            var row = context.gerjfd_aluno.Find(alunoBanco.aluno_id);
+            context.gerjfd_aluno.Remove(row);
+            context.SaveChanges();
+            alunos.updateAlunos();
+            this.Close();
+        }
+    }
+}

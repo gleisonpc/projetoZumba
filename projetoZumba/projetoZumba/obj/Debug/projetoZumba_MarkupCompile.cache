@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\
+C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\
 projetoZumba
 none
 false
 DEBUG;TRACE
-C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\App.xaml
-71817605671
+C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\App.xaml
+8-730167114
 
-20936735677
-23836971101
-Views\Alunos.xaml;Views\findAluno.xaml;Views\leitorDig.xaml;Views\Modalidades.xaml;Views\NovaModalidade.xaml;Views\NovoAluno.xaml;Views\MainWindow.xaml;
+212095787623
+231090053174
+Views\Alunos.xaml;Views\EditarAluno.xaml;Views\findAluno.xaml;Views\leitorDig.xaml;Views\Modalidades.xaml;Views\NovaModalidade.xaml;Views\NovoAluno.xaml;Views\MainWindow.xaml;
 
 False
 
