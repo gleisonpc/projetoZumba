@@ -1,7 +1,7 @@
 ﻿projetoZumba
 
 
-exe
+winexe
 C#
 .cs
 C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\
@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\App.xaml
-5700599878
+71817605671
 
-171831947174
+20936735677
 23836971101
-Views\Alunos.xaml;Views\findAluno.xaml;Views\leitorDig.xaml;Views\NovoAluno.xaml;Views\MainWindow.xaml;
+Views\Alunos.xaml;Views\findAluno.xaml;Views\leitorDig.xaml;Views\Modalidades.xaml;Views\NovaModalidade.xaml;Views\NovoAluno.xaml;Views\MainWindow.xaml;
 
 False
 

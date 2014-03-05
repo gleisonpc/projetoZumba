@@ -1,0 +1,9 @@
+﻿<Window x:Class="projetoZumba.Views.Modalidades"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Modalidades" Height="484" Width="699" ResizeMode="NoResize">
+    <Grid>
+        <Button x:Name="ModalidadeNovo" Content="Nova Modalidade" Margin="10,24,538,399" Click="ModalidadeNovo_Click"></Button>
+        <DataGrid x:Name="DataGridModalidades" ItemsSource="{Binding}" CanUserAddRows="False" CanUserDeleteRows="False" Margin="0,80,0,0" Loaded="DataGridModalidades_Loaded"></DataGrid>
+    </Grid>
+</Window>

@@ -34,13 +34,19 @@ namespace projetoZumba
             alunos.Show();
         }
 
-        private void teste_Click(object sender, RoutedEventArgs e)
+        private void verificacao_Click(object sender, RoutedEventArgs e)
         {
             findAluno ver = new findAluno();
 
             ver.Show();
             
             
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Modalidades modalidades = new Modalidades();
+            modalidades.Show();
         }
     }
 }

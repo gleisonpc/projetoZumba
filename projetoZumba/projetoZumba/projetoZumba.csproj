@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{75DFBF13-3AEB-4D6B-910F-9A036FEEA733}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>projetoZumba</RootNamespace>
     <AssemblyName>projetoZumba</AssemblyName>
@@ -98,6 +98,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Modalidades.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NovaModalidade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\NovoAluno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -111,7 +119,7 @@
     </Compile>
     <Compile Include="Lib\leitorLib.cs" />
     <Compile Include="Lib\leitorVer.cs" />
-    <Compile Include="Moldel\ModalidadeModel.cs" />
+    <Compile Include="Moldel\ModalidadesModel.cs" />
     <Compile Include="Views\Alunos.xaml.cs">
       <DependentUpon>Alunos.xaml</DependentUpon>
     </Compile>
@@ -120,6 +128,12 @@
     </Compile>
     <Compile Include="Views\leitorDig.xaml.cs">
       <DependentUpon>leitorDig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Modalidades.xaml.cs">
+      <DependentUpon>Modalidades.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NovaModalidade.xaml.cs">
+      <DependentUpon>NovaModalidade.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\NovoAluno.xaml.cs">
       <DependentUpon>NovoAluno.xaml</DependentUpon>

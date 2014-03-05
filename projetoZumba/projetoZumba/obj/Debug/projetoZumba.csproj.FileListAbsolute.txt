@@ -46,3 +46,7 @@ C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Deb
 C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\MainWindow.g.cs
 C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\findAluno.baml
 C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\findAluno.g.cs
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\Modalidades.baml
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\Modalidades.g.cs
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\NovaModalidade.baml
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\NovaModalidade.g.cs
