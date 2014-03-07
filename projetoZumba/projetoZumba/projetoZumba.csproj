@@ -69,6 +69,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -80,37 +81,42 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\Alunos.xaml">
+    <Page Include="Views\Alunos\Alunos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\EditarAluno.xaml">
+    <Page Include="Views\Alunos\EditarAluno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\findAluno.xaml">
+    <Page Include="Views\Leitor\findAluno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\leitorDig.xaml">
+    <Page Include="Views\Leitor\leitorDig.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Modalidades.xaml">
+    <Page Include="Views\Modalidade\EditarModalidade.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NovaModalidade.xaml">
+    <Page Include="Views\Modalidade\Modalidades.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NovoAluno.xaml">
+    <Page Include="Views\Modalidade\NovaModalidade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Alunos\NovoAluno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,31 +124,34 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="gerfd_modalidade.cs">
+    <Compile Include="gerjfd_modalidade.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Lib\leitorLib.cs" />
     <Compile Include="Lib\leitorVer.cs" />
     <Compile Include="Moldel\ModalidadesModel.cs" />
-    <Compile Include="Views\Alunos.xaml.cs">
+    <Compile Include="Views\Alunos\Alunos.xaml.cs">
       <DependentUpon>Alunos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\EditarAluno.xaml.cs">
+    <Compile Include="Views\Alunos\EditarAluno.xaml.cs">
       <DependentUpon>EditarAluno.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\findAluno.xaml.cs">
+    <Compile Include="Views\Leitor\findAluno.xaml.cs">
       <DependentUpon>findAluno.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\leitorDig.xaml.cs">
+    <Compile Include="Views\Leitor\leitorDig.xaml.cs">
       <DependentUpon>leitorDig.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Modalidades.xaml.cs">
+    <Compile Include="Views\Modalidade\EditarModalidade.xaml.cs">
+      <DependentUpon>EditarModalidade.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Modalidade\Modalidades.xaml.cs">
       <DependentUpon>Modalidades.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NovaModalidade.xaml.cs">
+    <Compile Include="Views\Modalidade\NovaModalidade.xaml.cs">
       <DependentUpon>NovaModalidade.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NovoAluno.xaml.cs">
+    <Compile Include="Views\Alunos\NovoAluno.xaml.cs">
       <DependentUpon>NovoAluno.xaml</DependentUpon>
     </Compile>
     <Compile Include="Moldel\AlunosModel.cs" />

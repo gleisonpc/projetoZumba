@@ -12,9 +12,9 @@ namespace projetoZumba
     using System;
     using System.Collections.Generic;
     
-    public partial class gerfd_modalidade
+    public partial class gerjfd_modalidade
     {
-        public decimal modalidade_id { get; set; }
+        public int modalidade_id { get; set; }
         public string modalidade_nome { get; set; }
         public Nullable<float> modalidade_vlrp { get; set; }
         public Nullable<float> modalidade_vlra { get; set; }

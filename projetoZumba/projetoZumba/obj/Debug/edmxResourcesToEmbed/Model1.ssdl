@@ -1,14 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="gerjfdModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="gerfd_modalidade">
-    <Key>
-      <PropertyRef Name="modalidade_id" />
-    </Key>
-    <Property Name="modalidade_id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="modalidade_nome" Type="nvarchar" MaxLength="50" />
-    <Property Name="modalidade_vlrp" Type="real" />
-    <Property Name="modalidade_vlra" Type="real" />
-  </EntityType>
   <EntityType Name="gerjfd_aluno">
     <Key>
       <PropertyRef Name="aluno_id" />
@@ -48,8 +39,17 @@
     <Property Name="aluno_digital1" Type="nvarchar(max)" />
     <Property Name="aluno_digital2" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="gerjfd_modalidade">
+    <Key>
+      <PropertyRef Name="modalidade_id" />
+    </Key>
+    <Property Name="modalidade_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="modalidade_nome" Type="varchar" MaxLength="50" />
+    <Property Name="modalidade_vlrp" Type="float" />
+    <Property Name="modalidade_vlra" Type="float" />
+  </EntityType>
   <EntityContainer Name="gerjfdModelStoreContainer">
-    <EntitySet Name="gerfd_modalidade" EntityType="Self.gerfd_modalidade" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="gerjfd_aluno" EntityType="Self.gerjfd_aluno" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gerjfd_modalidade" EntityType="Self.gerjfd_modalidade" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

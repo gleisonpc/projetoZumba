@@ -43,5 +43,22 @@ namespace projetoZumba.Views
             modalidades.mostrarModalidades(DataGridModalidades);
         }
 
+        private void DataGridModalidades_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            dynamic modalidade = DataGridModalidades.SelectedItem;
+
+            int id = modalidade.modalidade_id;
+            gerjfdEntities context = new gerjfdEntities();
+
+            foreach (gerjfd_modalidade modalidadeBanco in context.gerjfd_modalidade)
+            {
+                if (modalidadeBanco.modalidade_id == id)
+                {
+                    EditarModalidade editarModalidade = new EditarModalidade(modalidadeBanco, this);
+                    editarModalidade.Show();
+                }
+            }
+        }
+
     }
 }

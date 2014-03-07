@@ -19,8 +19,6 @@ namespace projetoZumba.Lib
 
             public List<byte[]> digData = new List<byte[]>();
 
-            int j = 0;
-
             public bool status = true;
             public bool verif = false;
             private Views.findAluno find;

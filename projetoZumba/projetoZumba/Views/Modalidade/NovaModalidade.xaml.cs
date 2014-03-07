@@ -35,15 +35,14 @@ namespace projetoZumba.Views
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             gerjfdEntities context = new gerjfdEntities();
-            gerfd_modalidade data = new gerfd_modalidade()
+
+            gerjfd_modalidade data = new gerjfd_modalidade()
             {
                 modalidade_nome = nomeModalidade.Text,
                 modalidade_vlrp = float.Parse(vlrPrincipal.Text),
-                modalidade_vlra = float.Parse(vlrAdicional.Text),
-
-                
+                modalidade_vlra = float.Parse(vlrAdicional.Text),                
             };
-            context.gerfd_modalidade.Add(data);
+            context.gerjfd_modalidade.Add(data);
             context.SaveChanges();
             modalidades.updateModalidades();
             this.Close();

@@ -41,9 +41,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="gerfd_modalidade">
-      <EntityTypeMapping TypeName="gerjfdModel.gerfd_modalidade">
-        <MappingFragment StoreEntitySet="gerfd_modalidade">
+    <EntitySetMapping Name="gerjfd_modalidade">
+      <EntityTypeMapping TypeName="gerjfdModel.gerjfd_modalidade">
+        <MappingFragment StoreEntitySet="gerjfd_modalidade">
           <ScalarProperty Name="modalidade_vlra" ColumnName="modalidade_vlra" />
           <ScalarProperty Name="modalidade_vlrp" ColumnName="modalidade_vlrp" />
           <ScalarProperty Name="modalidade_nome" ColumnName="modalidade_nome" />

@@ -5,15 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="gerjfdModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="gerfd_modalidade">
-          <Key>
-            <PropertyRef Name="modalidade_id" />
-          </Key>
-          <Property Name="modalidade_id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="modalidade_nome" Type="nvarchar" MaxLength="50" />
-          <Property Name="modalidade_vlrp" Type="real" />
-          <Property Name="modalidade_vlra" Type="real" />
-        </EntityType>
         <EntityType Name="gerjfd_aluno">
           <Key>
             <PropertyRef Name="aluno_id" />
@@ -53,9 +44,18 @@
           <Property Name="aluno_digital1" Type="nvarchar(max)" />
           <Property Name="aluno_digital2" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="gerjfd_modalidade">
+          <Key>
+            <PropertyRef Name="modalidade_id" />
+          </Key>
+          <Property Name="modalidade_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="modalidade_nome" Type="varchar" MaxLength="50" />
+          <Property Name="modalidade_vlrp" Type="float" />
+          <Property Name="modalidade_vlra" Type="float" />
+        </EntityType>
         <EntityContainer Name="gerjfdModelStoreContainer">
-          <EntitySet Name="gerfd_modalidade" EntityType="Self.gerfd_modalidade" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="gerjfd_aluno" EntityType="Self.gerjfd_aluno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gerjfd_modalidade" EntityType="Self.gerjfd_modalidade" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -102,14 +102,14 @@
         </EntityType>
         <EntityContainer Name="gerjfdEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="gerjfd_aluno" EntityType="Self.gerjfd_aluno" />
-          <EntitySet Name="gerfd_modalidade" EntityType="gerjfdModel.gerfd_modalidade" />
+          <EntitySet Name="gerjfd_modalidade" EntityType="gerjfdModel.gerjfd_modalidade" />
         </EntityContainer>
-        <EntityType Name="gerfd_modalidade">
+        <EntityType Name="gerjfd_modalidade">
           <Key>
             <PropertyRef Name="modalidade_id" />
           </Key>
-          <Property Name="modalidade_id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="modalidade_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="modalidade_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="modalidade_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="modalidade_vlrp" Type="Single" />
           <Property Name="modalidade_vlra" Type="Single" />
         </EntityType>
@@ -159,9 +159,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="gerfd_modalidade">
-            <EntityTypeMapping TypeName="gerjfdModel.gerfd_modalidade">
-              <MappingFragment StoreEntitySet="gerfd_modalidade">
+          <EntitySetMapping Name="gerjfd_modalidade">
+            <EntityTypeMapping TypeName="gerjfdModel.gerjfd_modalidade">
+              <MappingFragment StoreEntitySet="gerjfd_modalidade">
                 <ScalarProperty Name="modalidade_vlra" ColumnName="modalidade_vlra" />
                 <ScalarProperty Name="modalidade_vlrp" ColumnName="modalidade_vlrp" />
                 <ScalarProperty Name="modalidade_nome" ColumnName="modalidade_nome" />

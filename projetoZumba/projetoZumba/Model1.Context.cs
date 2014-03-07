@@ -26,6 +26,6 @@ namespace projetoZumba
         }
     
         public virtual DbSet<gerjfd_aluno> gerjfd_aluno { get; set; }
-        public virtual DbSet<gerfd_modalidade> gerfd_modalidade { get; set; }
+        public virtual DbSet<gerjfd_modalidade> gerjfd_modalidade { get; set; }
     }
 }
