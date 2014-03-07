@@ -21,7 +21,8 @@
 
         </WindowsFormsHost>
 
-        <Button Content="Confirmar" HorizontalAlignment="Left" Margin="68,148,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.653,0.85" Click="Button_Click"/>
-        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="181,148,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.653,0.85" Click="Button_Click_1"/>
+        <Button Content="Confirmar" HorizontalAlignment="Left" Margin="14,148,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.653,0.85" Click="Button_Click"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="105,148,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.653,0.85" Click="Button_Click_1"/>
+        <Button Content="Excluir" HorizontalAlignment="Left" Margin="228,148,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.653,0.85" Background="#FFC91F1F" Click="Button_Click_2"/>
     </Grid>
 </Window>
