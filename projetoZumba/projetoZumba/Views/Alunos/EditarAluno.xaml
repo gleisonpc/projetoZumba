@@ -5,11 +5,11 @@
     <Grid>
         <Label Content="Data de Início: " HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
         <Label Content="Modalidade:" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Modalidade" HorizontalAlignment="Left" Height="23" Margin="321,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Modalidade" HorizontalAlignment="Left" Height="23" Margin="321,10,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding}" SelectionChanged="Modalidade_SelectionChanged"/>
         <Label Content="Dia de vencimento:" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="DiaDeVencimento" HorizontalAlignment="Left" Height="23" Margin="127,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
         <Label Content="Valor:" HorizontalAlignment="Left" Margin="240,41,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Valor" HorizontalAlignment="Left" Height="23" Margin="321,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Valor" HorizontalAlignment="Left" Height="23" Margin="321,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <Label Content="Nome:" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="Nome" HorizontalAlignment="Left" Height="23" Margin="77,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="547"/>
         <Label Content="Endereço:" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
@@ -78,11 +78,12 @@
         <DatePicker x:Name="DataDeInicio" HorizontalAlignment="Left" Margin="99,9,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="DataDeNascimento" HorizontalAlignment="Left" Margin="135,195,0,0" VerticalAlignment="Top"/>
         <Label Content="Digital 1" HorizontalAlignment="Left" Margin="12,466,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Digital1" HorizontalAlignment="Left" Height="23" Margin="71,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490"/>
+        <TextBox x:Name="Digital1" HorizontalAlignment="Left" Height="23" Margin="71,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490" IsEnabled="False"/>
         <Label Content="Digital 2" HorizontalAlignment="Left" Margin="12,494,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Digital2" HorizontalAlignment="Left" Height="23" Margin="71,497,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490"/>
+        <TextBox x:Name="Digital2" HorizontalAlignment="Left" Height="23" Margin="71,497,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490" IsEnabled="False"/>
         <Button x:Name="CadastrarDigital1" Content="Cadastrar" HorizontalAlignment="Left" Margin="566,469,0,0" VerticalAlignment="Top" Width="58" Height="23" Click="CadastrarDigital1_Click"/>
         <Button x:Name="CadastrarDigital2" Content="Cadastrar" HorizontalAlignment="Left" Margin="566,497,0,0" VerticalAlignment="Top" Width="58" Height="23" Click="CadastrarDigital2_Click"/>
         <Button x:Name="Excluir" Content="Excluir" HorizontalAlignment="Left" Margin="548,549,0,0" VerticalAlignment="Top" Width="75" Background="Red" Click="Excluir_Click"/>
+        <ListBox Margin="456,10,24,526" x:Name="ModalidadeAdicional"/>
     </Grid>
 </Window>

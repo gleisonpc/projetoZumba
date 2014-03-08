@@ -28,9 +28,51 @@ namespace projetoZumba.Views
             // TODO: Complete member initialization
             this.alunoBanco = alunoBanco;
             this.alunos = pAlunos;
+            //Inlcuir valores na comboBox Modalidades
+            gerjfdEntities context = new gerjfdEntities();
+            var data = from p in context.gerjfd_modalidade select p.modalidade_nome;
+            Modalidade.ItemsSource = data.ToList();
 
             DataDeInicio.Text = alunoBanco.aluno_dataInicio.ToString();
-            Modalidade.Text = alunoBanco.aluno_modalidade; 
+            
+            //Setar ComboBox modalidade de acordo com amodalidade gravada no cadastro do aluno
+            int index = -1;
+            foreach (string item in Modalidade.Items)
+            {
+                index++;
+                if (item == alunoBanco.aluno_modalidade.ToString())
+                {
+                    break;
+                } 
+            }
+            Modalidade.SelectedItem = Modalidade.Items.GetItemAt(index);
+
+            //Modalidades adicionais
+            foreach (var text in data)
+            {
+                CheckBox label = new CheckBox();
+                label.Content = text;
+                label.Unchecked += new RoutedEventHandler(change_modalidadeAdicional);
+                label.Checked += new RoutedEventHandler(change_modalidadeAdicional);
+                ModalidadeAdicional.Items.Add(label);
+            }
+      
+            //Setar modalidades adicionais com as gravadas no cadastro do aluno no banco de dados 
+            if (alunoBanco.aluno_modalidadeAdicionais != null)
+            {
+                string[] list = alunoBanco.aluno_modalidadeAdicionais.Split(',');
+                foreach (string modalidade in list)
+                {
+                    foreach (CheckBox chk in ModalidadeAdicional.Items)
+                    {
+                        if (chk.Content.ToString() == modalidade)
+                        {
+                            chk.IsChecked = true;
+                        }
+                    }
+                }
+            }           
+
             DiaDeVencimento.Text = alunoBanco.aluno_diaVencimento;
             Valor.Text = alunoBanco.aluno_valor.ToString();
             Nome.Text = alunoBanco.aluno_nome;
@@ -52,13 +94,49 @@ namespace projetoZumba.Views
             Peso.Text = alunoBanco.aluno_peso;
             Altura.Text = alunoBanco.aluno_altura;
             PressaoArterial.Text = alunoBanco.aluno_pressaoArterial;
-            PraticouModalidade.Text = alunoBanco.aluno_praticouModalidade;
+            
+            //Setar praticouModalidade conforme o dado gravado no banco
+            index = -1;
+            foreach (ComboBoxItem item in PraticouModalidade.Items)
+            {
+                index++;
+                if (item.Content.ToString() == alunoBanco.aluno_praticouModalidade.ToString())
+                {
+                    break;
+                }
+            }
+            PraticouModalidade.SelectedItem = PraticouModalidade.Items.GetItemAt(index);
+            
             ModalidadePraticada.Text = alunoBanco.aluno_modalidadePraticada;
             ProblemaDeSaude.Text = alunoBanco.aluno_problemaSaude;
             CirurgiaRecente.Text = alunoBanco.aluno_cirurgia;
-            Fumante.Text = alunoBanco.aluno_fumante;
+
+            //Setar fumante conforme o dado gravado no banco
+            index = -1;
+            foreach (ComboBoxItem item in Fumante.Items)
+            {
+                index++;
+                if (item.Content.ToString() == alunoBanco.aluno_fumante.ToString())
+                {
+                    break;
+                }
+            }
+            Fumante.SelectedItem = Fumante.Items.GetItemAt(index);
+            
             AlergiaMedicamento.Text = alunoBanco.aluno_alergiaMedicamento;
-            DoencasCardiovasculares.Text = alunoBanco.aluno_doencaCardiovascular;
+
+            //Setar doencasVasculares conforme o dado gravado no banco
+            index = -1;
+            foreach (ComboBoxItem item in DoencasCardiovasculares.Items)
+            {
+                index++;
+                if (item.Content.ToString() == alunoBanco.aluno_doencaCardiovascular.ToString())
+                {
+                    break;
+                }
+            }
+            DoencasCardiovasculares.SelectedItem = DoencasCardiovasculares.Items.GetItemAt(index);
+            
             Parentesco.Text = alunoBanco.aluno_parentesco;
             Digital1.Text = alunoBanco.aluno_digital1;
             Digital2.Text = alunoBanco.aluno_digital2; 
@@ -66,12 +144,22 @@ namespace projetoZumba.Views
 
         private void Confirmar_Click(object sender, RoutedEventArgs e)
         {
+            //Modalidades adicionais
+            string modalidadesAdicionais = "";
+            foreach (CheckBox modalidade in ModalidadeAdicional.Items)
+            {
+                if (modalidade.IsChecked == true)
+                {
+                    modalidadesAdicionais += modalidade.Content + ",";
+                }
+            }
+
             gerjfdEntities context = new gerjfdEntities();
             gerjfd_aluno data = new gerjfd_aluno()
             {
                 aluno_id = alunoBanco.aluno_id,
                 aluno_dataInicio = Convert.ToDateTime(DataDeInicio.Text),
-                aluno_modalidade = Modalidade.Text,
+                aluno_modalidade = Modalidade.SelectedItem.ToString(),
                 aluno_diaVencimento = DiaDeVencimento.Text,
                 aluno_valor = Double.Parse(Valor.Text),
                 aluno_nome = Nome.Text,
@@ -103,6 +191,7 @@ namespace projetoZumba.Views
                 aluno_parentesco = Parentesco.Text,
                 aluno_digital1 = Digital1.Text,
                 aluno_digital2 = Digital2.Text,
+                aluno_modalidadeAdicionais = modalidadesAdicionais,
             };
             var original = context.gerjfd_aluno.Find(data.aluno_id);
             if (original != null)
@@ -139,6 +228,46 @@ namespace projetoZumba.Views
             context.SaveChanges();
             alunos.updateAlunos();
             this.Close();
+        }
+
+        private void Modalidade_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            calcularValor();
+        }
+
+        private void change_modalidadeAdicional(object sender, RoutedEventArgs e)
+        {
+            calcularValor();
+        }
+
+        private void calcularValor()
+        {
+            float valor = 0;
+            gerjfdEntities context = new gerjfdEntities();
+            foreach (gerjfd_modalidade modalidade in context.gerjfd_modalidade)
+            {
+                if (modalidade.modalidade_nome == Modalidade.SelectedItem.ToString())
+                {
+                    valor = float.Parse(modalidade.modalidade_vlrp.ToString());
+                }
+            }
+
+            //Calcula modalidades Adicionais 
+            foreach (CheckBox modalidade in ModalidadeAdicional.Items)
+            {
+                if (modalidade.IsChecked == true)
+                {
+                    foreach (gerjfd_modalidade modalidade2 in context.gerjfd_modalidade)
+                    {
+                        if (modalidade2.modalidade_nome == modalidade.Content.ToString())
+                        {
+                            valor += float.Parse(modalidade2.modalidade_vlra.ToString());
+                        }
+                    }
+                }
+            }
+
+            Valor.Text = valor.ToString();
         }
     }
 }

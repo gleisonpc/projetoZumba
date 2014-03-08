@@ -28,6 +28,37 @@ namespace projetoZumba
         {
             InitializeComponent();
             alunos = pAlunos;
+
+            //Inlcuir valores na comboBox Modalidades
+            gerjfdEntities context = new gerjfdEntities();
+            var data = from p in context.gerjfd_modalidade select p.modalidade_nome;
+            Modalidade.ItemsSource = data.ToList();
+            Modalidade.SelectedItem = Modalidade.Items.GetItemAt(0);
+
+            //Modalidades adicionais
+            foreach (var text in data)
+            {
+                CheckBox label = new CheckBox();
+                label.Content = text;
+                label.Unchecked += new RoutedEventHandler(change_modalidadeAdicional);
+                label.Checked += new RoutedEventHandler(change_modalidadeAdicional);
+                ModalidadeAdicional.Items.Add(label);
+            }
+            
+            //Data de inicio 
+            DataDeInicio.SelectedDate = DateTime.Today;
+
+            //Data de nacimento 
+            DataDeNascimento.SelectedDate = DateTime.Today;
+
+            //Modalidade esportiva
+            PraticouModalidade.SelectedItem = PraticouModalidade.Items.GetItemAt(0);
+
+            //Fumante
+            Fumante.SelectedItem = Fumante.Items.GetItemAt(0);
+
+            //Doencas Cardiovasculares
+            DoencasCardiovasculares.SelectedItem = DoencasCardiovasculares.Items.GetItemAt(0);
         }
 
         private void Cancelar_Click(object sender, RoutedEventArgs e)
@@ -37,11 +68,20 @@ namespace projetoZumba
 
         private void Confirmar_Click(object sender, RoutedEventArgs e)
         {
+            //Modalidades adicionais
+            string modalidadesAdicionais = "";
+            foreach (CheckBox modalidade in ModalidadeAdicional.Items)
+            {
+                if (modalidade.IsChecked == true)
+                {
+                    modalidadesAdicionais += modalidade.Content + ",";
+                }
+            }
             gerjfdEntities context = new gerjfdEntities();
             gerjfd_aluno data = new gerjfd_aluno()
             {
                 aluno_dataInicio = Convert.ToDateTime(DataDeInicio.Text),
-                aluno_modalidade = Modalidade.Text,
+                aluno_modalidade = Modalidade.SelectedItem.ToString(),
                 aluno_diaVencimento = DiaDeVencimento.Text,
                 aluno_valor = Double.Parse(Valor.Text),
                 aluno_nome = Nome.Text,
@@ -73,6 +113,7 @@ namespace projetoZumba
                 aluno_parentesco = Parentesco.Text,
                 aluno_digital1 = Digital1.Text,
                 aluno_digital2 = Digital2.Text,
+                aluno_modalidadeAdicionais = modalidadesAdicionais,
             };
             context.gerjfd_aluno.Add(data);
             context.SaveChanges();
@@ -92,6 +133,46 @@ namespace projetoZumba
         {
             leitorDig leitura2 = new leitorDig(Digital2);
             leitura2.Show();
+        }
+
+        private void Modalidade_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            calcularValor();
+        }
+
+        private void change_modalidadeAdicional(object sender, RoutedEventArgs e)
+        {
+            calcularValor();
+        }
+
+        private void calcularValor()
+        {
+            float valor = 0;
+            gerjfdEntities context = new gerjfdEntities();
+            foreach (gerjfd_modalidade modalidade in context.gerjfd_modalidade)
+            {
+                if (modalidade.modalidade_nome == Modalidade.SelectedItem.ToString())
+                {
+                    valor = float.Parse(modalidade.modalidade_vlrp.ToString());
+                }
+            }
+
+            //Calcula modalidades Adicionais 
+            foreach (CheckBox modalidade in ModalidadeAdicional.Items)
+            {
+                if (modalidade.IsChecked == true)
+                {
+                    foreach (gerjfd_modalidade modalidade2 in context.gerjfd_modalidade)
+                    {
+                        if (modalidade2.modalidade_nome == modalidade.Content.ToString())
+                        {
+                            valor += float.Parse(modalidade2.modalidade_vlra.ToString());
+                        }
+                    }
+                }
+            }
+
+            Valor.Text = valor.ToString();
         }
     }
 }
