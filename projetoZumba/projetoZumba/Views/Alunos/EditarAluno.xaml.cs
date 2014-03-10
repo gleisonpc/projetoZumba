@@ -85,7 +85,7 @@ namespace projetoZumba.Views
             TelResidencial.Text = alunoBanco.aluno_telResidencial;
             TelComercial.Text = alunoBanco.aluno_telComercial;
             Celular.Text = alunoBanco.aluno_celular;
-            DataDeNascimento.Text = alunoBanco.aluno_dataNacimento.ToString();
+            DataDeNascimento.Text = alunoBanco.aluno_dataNascimento.ToString();
             Email.Text = alunoBanco.aluno_email;
             NomeDaMae.Text = alunoBanco.aluno_nomeMae;
             TelefoneMae.Text = alunoBanco.aluno_telMae;
@@ -172,7 +172,7 @@ namespace projetoZumba.Views
                 aluno_telResidencial = TelResidencial.Text,
                 aluno_telComercial = TelComercial.Text,
                 aluno_celular = Celular.Text,
-                aluno_dataNacimento = Convert.ToDateTime(DataDeNascimento.Text),
+                aluno_dataNascimento = Convert.ToDateTime(DataDeNascimento.Text),
                 aluno_email = Email.Text,
                 aluno_nomeMae = NomeDaMae.Text,
                 aluno_telMae = TelefoneMae.Text,

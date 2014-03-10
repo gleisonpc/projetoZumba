@@ -25,7 +25,7 @@ namespace projetoZumba
         public string aluno_telResidencial { get; set; }
         public string aluno_telComercial { get; set; }
         public string aluno_celular { get; set; }
-        public Nullable<System.DateTime> aluno_dataNacimento { get; set; }
+        public System.DateTime aluno_dataNascimento { get; set; }
         public string aluno_email { get; set; }
         public string aluno_nomeMae { get; set; }
         public string aluno_telMae { get; set; }
@@ -34,20 +34,20 @@ namespace projetoZumba
         public string aluno_peso { get; set; }
         public string aluno_altura { get; set; }
         public string aluno_pressaoArterial { get; set; }
-        public string aluno_praticouModalidade { get; set; }
         public string aluno_modalidadePraticada { get; set; }
         public string aluno_problemaSaude { get; set; }
         public string aluno_cirurgia { get; set; }
-        public string aluno_fumante { get; set; }
         public string aluno_alergiaMedicamento { get; set; }
-        public string aluno_doencaCardiovascular { get; set; }
         public string aluno_parentesco { get; set; }
-        public Nullable<System.DateTime> aluno_dataInicio { get; set; }
-        public string aluno_modalidade { get; set; }
+        public System.DateTime aluno_dataInicio { get; set; }
         public string aluno_diaVencimento { get; set; }
         public Nullable<double> aluno_valor { get; set; }
         public string aluno_digital1 { get; set; }
         public string aluno_digital2 { get; set; }
+        public string aluno_modalidade { get; set; }
         public string aluno_modalidadeAdicionais { get; set; }
+        public string aluno_praticouModalidade { get; set; }
+        public string aluno_fumante { get; set; }
+        public string aluno_doencaCardiovascular { get; set; }
     }
 }

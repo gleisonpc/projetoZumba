@@ -10,7 +10,7 @@
             <PropertyRef Name="aluno_id" />
           </Key>
           <Property Name="aluno_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="aluno_nome" Type="nvarchar" MaxLength="50" />
+          <Property Name="aluno_nome" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="aluno_endereco" Type="nvarchar" MaxLength="50" />
           <Property Name="aluno_numero" Type="nchar" MaxLength="10" />
           <Property Name="aluno_bairro" Type="nvarchar" MaxLength="50" />
@@ -20,7 +20,7 @@
           <Property Name="aluno_telResidencial" Type="nvarchar" MaxLength="50" />
           <Property Name="aluno_telComercial" Type="nvarchar" MaxLength="50" />
           <Property Name="aluno_celular" Type="nvarchar" MaxLength="50" />
-          <Property Name="aluno_dataNacimento" Type="date" />
+          <Property Name="aluno_dataNascimento" Type="date" Nullable="false" />
           <Property Name="aluno_email" Type="nvarchar" MaxLength="50" />
           <Property Name="aluno_nomeMae" Type="nvarchar" MaxLength="50" />
           <Property Name="aluno_telMae" Type="nvarchar" MaxLength="50" />
@@ -34,7 +34,7 @@
           <Property Name="aluno_cirurgia" Type="nchar" MaxLength="10" />
           <Property Name="aluno_alergiaMedicamento" Type="nchar" MaxLength="10" />
           <Property Name="aluno_parentesco" Type="nchar" MaxLength="10" />
-          <Property Name="aluno_dataInicio" Type="date" />
+          <Property Name="aluno_dataInicio" Type="date" Nullable="false" />
           <Property Name="aluno_diaVencimento" Type="nchar" MaxLength="10" />
           <Property Name="aluno_valor" Type="float" />
           <Property Name="aluno_digital1" Type="nvarchar(max)" />
@@ -50,7 +50,7 @@
             <PropertyRef Name="modalidade_id" />
           </Key>
           <Property Name="modalidade_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="modalidade_nome" Type="varchar" MaxLength="50" />
+          <Property Name="modalidade_nome" Type="nvarchar" MaxLength="50" />
           <Property Name="modalidade_vlrp" Type="float" />
           <Property Name="modalidade_vlra" Type="float" />
         </EntityType>
@@ -62,12 +62,25 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="gerjfdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="gerjfdEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="gerjfd_modalidade" EntityType="gerjfdModel.gerjfd_modalidade" />
+          <EntitySet Name="gerjfd_aluno" EntityType="gerjfdModel.gerjfd_aluno" />
+        </EntityContainer>
+        <EntityType Name="gerjfd_modalidade">
+          <Key>
+            <PropertyRef Name="modalidade_id" />
+          </Key>
+          <Property Name="modalidade_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="modalidade_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="modalidade_vlrp" Type="Single" />
+          <Property Name="modalidade_vlra" Type="Single" />
+        </EntityType>
         <EntityType Name="gerjfd_aluno">
           <Key>
             <PropertyRef Name="aluno_id" />
           </Key>
           <Property Name="aluno_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="aluno_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aluno_nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="aluno_endereco" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="aluno_numero" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="aluno_bairro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -77,7 +90,7 @@
           <Property Name="aluno_telResidencial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="aluno_telComercial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="aluno_celular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="aluno_dataNacimento" Type="DateTime" Precision="0" />
+          <Property Name="aluno_dataNascimento" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="aluno_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="aluno_nomeMae" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="aluno_telMae" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -86,34 +99,21 @@
           <Property Name="aluno_peso" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="aluno_altura" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="aluno_pressaoArterial" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="aluno_praticouModalidade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="aluno_modalidadePraticada" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="aluno_problemaSaude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="aluno_cirurgia" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="aluno_fumante" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="aluno_alergiaMedicamento" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="aluno_doencaCardiovascular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="aluno_parentesco" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="aluno_dataInicio" Type="DateTime" Precision="0" />
-          <Property Name="aluno_modalidade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aluno_dataInicio" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="aluno_diaVencimento" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="aluno_valor" Type="Double" />
-          <Property Name="aluno_digital1" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="aluno_digital2" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="aluno_digital1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="aluno_digital2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="aluno_modalidade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="aluno_modalidadeAdicionais" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityContainer Name="gerjfdEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="gerjfd_aluno" EntityType="Self.gerjfd_aluno" />
-          <EntitySet Name="gerjfd_modalidade" EntityType="gerjfdModel.gerjfd_modalidade" />
-        </EntityContainer>
-        <EntityType Name="gerjfd_modalidade">
-          <Key>
-            <PropertyRef Name="modalidade_id" />
-          </Key>
-          <Property Name="modalidade_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="modalidade_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="modalidade_vlrp" Type="Single" />
-          <Property Name="modalidade_vlra" Type="Single" />
+          <Property Name="aluno_praticouModalidade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aluno_fumante" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aluno_doencaCardiovascular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -121,47 +121,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="gerjfdModelStoreContainer" CdmEntityContainer="gerjfdEntities">
-          <EntitySetMapping Name="gerjfd_aluno">
-            <EntityTypeMapping TypeName="gerjfdModel.gerjfd_aluno">
-              <MappingFragment StoreEntitySet="gerjfd_aluno">
-                <ScalarProperty Name="aluno_modalidadeAdicionais" ColumnName="aluno_modalidadeAdicionais" />
-                <ScalarProperty Name="aluno_digital2" ColumnName="aluno_digital2" />
-                <ScalarProperty Name="aluno_digital1" ColumnName="aluno_digital1" />
-                <ScalarProperty Name="aluno_id" ColumnName="aluno_id" />
-                <ScalarProperty Name="aluno_nome" ColumnName="aluno_nome" />
-                <ScalarProperty Name="aluno_endereco" ColumnName="aluno_endereco" />
-                <ScalarProperty Name="aluno_numero" ColumnName="aluno_numero" />
-                <ScalarProperty Name="aluno_bairro" ColumnName="aluno_bairro" />
-                <ScalarProperty Name="aluno_cidade" ColumnName="aluno_cidade" />
-                <ScalarProperty Name="aluno_rg" ColumnName="aluno_rg" />
-                <ScalarProperty Name="aluno_cpf" ColumnName="aluno_cpf" />
-                <ScalarProperty Name="aluno_telResidencial" ColumnName="aluno_telResidencial" />
-                <ScalarProperty Name="aluno_telComercial" ColumnName="aluno_telComercial" />
-                <ScalarProperty Name="aluno_celular" ColumnName="aluno_celular" />
-                <ScalarProperty Name="aluno_dataNacimento" ColumnName="aluno_dataNacimento" />
-                <ScalarProperty Name="aluno_email" ColumnName="aluno_email" />
-                <ScalarProperty Name="aluno_nomeMae" ColumnName="aluno_nomeMae" />
-                <ScalarProperty Name="aluno_telMae" ColumnName="aluno_telMae" />
-                <ScalarProperty Name="aluno_nomePai" ColumnName="aluno_nomePai" />
-                <ScalarProperty Name="aluno_telPai" ColumnName="aluno_telPai" />
-                <ScalarProperty Name="aluno_peso" ColumnName="aluno_peso" />
-                <ScalarProperty Name="aluno_altura" ColumnName="aluno_altura" />
-                <ScalarProperty Name="aluno_pressaoArterial" ColumnName="aluno_pressaoArterial" />
-                <ScalarProperty Name="aluno_praticouModalidade" ColumnName="aluno_praticouModalidade" />
-                <ScalarProperty Name="aluno_modalidadePraticada" ColumnName="aluno_modalidadePraticada" />
-                <ScalarProperty Name="aluno_problemaSaude" ColumnName="aluno_problemaSaude" />
-                <ScalarProperty Name="aluno_cirurgia" ColumnName="aluno_cirurgia" />
-                <ScalarProperty Name="aluno_fumante" ColumnName="aluno_fumante" />
-                <ScalarProperty Name="aluno_alergiaMedicamento" ColumnName="aluno_alergiaMedicamento" />
-                <ScalarProperty Name="aluno_doencaCardiovascular" ColumnName="aluno_doencaCardiovascular" />
-                <ScalarProperty Name="aluno_parentesco" ColumnName="aluno_parentesco" />
-                <ScalarProperty Name="aluno_dataInicio" ColumnName="aluno_dataInicio" />
-                <ScalarProperty Name="aluno_modalidade" ColumnName="aluno_modalidade" />
-                <ScalarProperty Name="aluno_diaVencimento" ColumnName="aluno_diaVencimento" />
-                <ScalarProperty Name="aluno_valor" ColumnName="aluno_valor" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="gerjfd_modalidade">
             <EntityTypeMapping TypeName="gerjfdModel.gerjfd_modalidade">
               <MappingFragment StoreEntitySet="gerjfd_modalidade">
@@ -169,6 +128,47 @@
                 <ScalarProperty Name="modalidade_vlrp" ColumnName="modalidade_vlrp" />
                 <ScalarProperty Name="modalidade_nome" ColumnName="modalidade_nome" />
                 <ScalarProperty Name="modalidade_id" ColumnName="modalidade_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gerjfd_aluno">
+            <EntityTypeMapping TypeName="gerjfdModel.gerjfd_aluno">
+              <MappingFragment StoreEntitySet="gerjfd_aluno">
+                <ScalarProperty Name="aluno_doencaCardiovascular" ColumnName="aluno_doencaCardiovascular" />
+                <ScalarProperty Name="aluno_fumante" ColumnName="aluno_fumante" />
+                <ScalarProperty Name="aluno_praticouModalidade" ColumnName="aluno_praticouModalidade" />
+                <ScalarProperty Name="aluno_modalidadeAdicionais" ColumnName="aluno_modalidadeAdicionais" />
+                <ScalarProperty Name="aluno_modalidade" ColumnName="aluno_modalidade" />
+                <ScalarProperty Name="aluno_digital2" ColumnName="aluno_digital2" />
+                <ScalarProperty Name="aluno_digital1" ColumnName="aluno_digital1" />
+                <ScalarProperty Name="aluno_valor" ColumnName="aluno_valor" />
+                <ScalarProperty Name="aluno_diaVencimento" ColumnName="aluno_diaVencimento" />
+                <ScalarProperty Name="aluno_dataInicio" ColumnName="aluno_dataInicio" />
+                <ScalarProperty Name="aluno_parentesco" ColumnName="aluno_parentesco" />
+                <ScalarProperty Name="aluno_alergiaMedicamento" ColumnName="aluno_alergiaMedicamento" />
+                <ScalarProperty Name="aluno_cirurgia" ColumnName="aluno_cirurgia" />
+                <ScalarProperty Name="aluno_problemaSaude" ColumnName="aluno_problemaSaude" />
+                <ScalarProperty Name="aluno_modalidadePraticada" ColumnName="aluno_modalidadePraticada" />
+                <ScalarProperty Name="aluno_pressaoArterial" ColumnName="aluno_pressaoArterial" />
+                <ScalarProperty Name="aluno_altura" ColumnName="aluno_altura" />
+                <ScalarProperty Name="aluno_peso" ColumnName="aluno_peso" />
+                <ScalarProperty Name="aluno_telPai" ColumnName="aluno_telPai" />
+                <ScalarProperty Name="aluno_nomePai" ColumnName="aluno_nomePai" />
+                <ScalarProperty Name="aluno_telMae" ColumnName="aluno_telMae" />
+                <ScalarProperty Name="aluno_nomeMae" ColumnName="aluno_nomeMae" />
+                <ScalarProperty Name="aluno_email" ColumnName="aluno_email" />
+                <ScalarProperty Name="aluno_dataNascimento" ColumnName="aluno_dataNascimento" />
+                <ScalarProperty Name="aluno_celular" ColumnName="aluno_celular" />
+                <ScalarProperty Name="aluno_telComercial" ColumnName="aluno_telComercial" />
+                <ScalarProperty Name="aluno_telResidencial" ColumnName="aluno_telResidencial" />
+                <ScalarProperty Name="aluno_cpf" ColumnName="aluno_cpf" />
+                <ScalarProperty Name="aluno_rg" ColumnName="aluno_rg" />
+                <ScalarProperty Name="aluno_cidade" ColumnName="aluno_cidade" />
+                <ScalarProperty Name="aluno_bairro" ColumnName="aluno_bairro" />
+                <ScalarProperty Name="aluno_numero" ColumnName="aluno_numero" />
+                <ScalarProperty Name="aluno_endereco" ColumnName="aluno_endereco" />
+                <ScalarProperty Name="aluno_nome" ColumnName="aluno_nome" />
+                <ScalarProperty Name="aluno_id" ColumnName="aluno_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -186,7 +186,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

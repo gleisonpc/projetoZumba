@@ -33,7 +33,11 @@ namespace projetoZumba
             gerjfdEntities context = new gerjfdEntities();
             var data = from p in context.gerjfd_modalidade select p.modalidade_nome;
             Modalidade.ItemsSource = data.ToList();
-            Modalidade.SelectedItem = Modalidade.Items.GetItemAt(0);
+            try
+            {
+                Modalidade.SelectedItem = Modalidade.Items.GetItemAt(0);
+            }
+            catch { }
 
             //Modalidades adicionais
             foreach (var text in data)
@@ -94,7 +98,7 @@ namespace projetoZumba
                 aluno_telResidencial = TelResidencial.Text,
                 aluno_telComercial = TelComercial.Text,
                 aluno_celular = Celular.Text,
-                aluno_dataNacimento = Convert.ToDateTime(DataDeNascimento.Text),
+                aluno_dataNascimento = Convert.ToDateTime(DataDeNascimento.Text),
                 aluno_email = Email.Text,
                 aluno_nomeMae = NomeDaMae.Text,
                 aluno_telMae = TelefoneMae.Text,
@@ -116,7 +120,12 @@ namespace projetoZumba
                 aluno_modalidadeAdicionais = modalidadesAdicionais,
             };
             context.gerjfd_aluno.Add(data);
-            context.SaveChanges();
+
+            
+            
+                context.SaveChanges();
+            
+            
             alunos.updateAlunos();
             this.Close();
         }

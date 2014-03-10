@@ -5,7 +5,7 @@
       <PropertyRef Name="aluno_id" />
     </Key>
     <Property Name="aluno_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="aluno_nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="aluno_nome" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="aluno_endereco" Type="nvarchar" MaxLength="50" />
     <Property Name="aluno_numero" Type="nchar" MaxLength="10" />
     <Property Name="aluno_bairro" Type="nvarchar" MaxLength="50" />
@@ -15,7 +15,7 @@
     <Property Name="aluno_telResidencial" Type="nvarchar" MaxLength="50" />
     <Property Name="aluno_telComercial" Type="nvarchar" MaxLength="50" />
     <Property Name="aluno_celular" Type="nvarchar" MaxLength="50" />
-    <Property Name="aluno_dataNacimento" Type="date" />
+    <Property Name="aluno_dataNascimento" Type="date" Nullable="false" />
     <Property Name="aluno_email" Type="nvarchar" MaxLength="50" />
     <Property Name="aluno_nomeMae" Type="nvarchar" MaxLength="50" />
     <Property Name="aluno_telMae" Type="nvarchar" MaxLength="50" />
@@ -24,27 +24,28 @@
     <Property Name="aluno_peso" Type="nchar" MaxLength="10" />
     <Property Name="aluno_altura" Type="nchar" MaxLength="10" />
     <Property Name="aluno_pressaoArterial" Type="nchar" MaxLength="10" />
-    <Property Name="aluno_praticouModalidade" Type="nchar" MaxLength="10" />
     <Property Name="aluno_modalidadePraticada" Type="nvarchar" MaxLength="50" />
     <Property Name="aluno_problemaSaude" Type="nvarchar" MaxLength="50" />
     <Property Name="aluno_cirurgia" Type="nchar" MaxLength="10" />
-    <Property Name="aluno_fumante" Type="nchar" MaxLength="10" />
     <Property Name="aluno_alergiaMedicamento" Type="nchar" MaxLength="10" />
-    <Property Name="aluno_doencaCardiovascular" Type="nchar" MaxLength="10" />
     <Property Name="aluno_parentesco" Type="nchar" MaxLength="10" />
-    <Property Name="aluno_dataInicio" Type="date" />
-    <Property Name="aluno_modalidade" Type="nchar" MaxLength="10" />
+    <Property Name="aluno_dataInicio" Type="date" Nullable="false" />
     <Property Name="aluno_diaVencimento" Type="nchar" MaxLength="10" />
     <Property Name="aluno_valor" Type="float" />
     <Property Name="aluno_digital1" Type="nvarchar(max)" />
     <Property Name="aluno_digital2" Type="nvarchar(max)" />
+    <Property Name="aluno_modalidade" Type="nvarchar" MaxLength="50" />
+    <Property Name="aluno_modalidadeAdicionais" Type="nvarchar" MaxLength="50" />
+    <Property Name="aluno_praticouModalidade" Type="nvarchar" MaxLength="50" />
+    <Property Name="aluno_fumante" Type="nvarchar" MaxLength="50" />
+    <Property Name="aluno_doencaCardiovascular" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="gerjfd_modalidade">
     <Key>
       <PropertyRef Name="modalidade_id" />
     </Key>
     <Property Name="modalidade_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="modalidade_nome" Type="varchar" MaxLength="50" />
+    <Property Name="modalidade_nome" Type="nvarchar" MaxLength="50" />
     <Property Name="modalidade_vlrp" Type="float" />
     <Property Name="modalidade_vlra" Type="float" />
   </EntityType>

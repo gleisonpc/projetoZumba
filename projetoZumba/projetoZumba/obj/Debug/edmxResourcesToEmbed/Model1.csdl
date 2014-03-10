@@ -1,11 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="gerjfdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="gerjfdEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="gerjfd_modalidade" EntityType="gerjfdModel.gerjfd_modalidade" />
+    <EntitySet Name="gerjfd_aluno" EntityType="gerjfdModel.gerjfd_aluno" />
+  </EntityContainer>
+  <EntityType Name="gerjfd_modalidade">
+    <Key>
+      <PropertyRef Name="modalidade_id" />
+    </Key>
+    <Property Name="modalidade_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="modalidade_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="modalidade_vlrp" Type="Single" />
+    <Property Name="modalidade_vlra" Type="Single" />
+  </EntityType>
   <EntityType Name="gerjfd_aluno">
     <Key>
       <PropertyRef Name="aluno_id" />
     </Key>
     <Property Name="aluno_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="aluno_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aluno_nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_endereco" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_numero" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="aluno_bairro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -15,7 +28,7 @@
     <Property Name="aluno_telResidencial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_telComercial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_celular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="aluno_dataNacimento" Type="DateTime" Precision="0" />
+    <Property Name="aluno_dataNascimento" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="aluno_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_nomeMae" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_telMae" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -24,32 +37,20 @@
     <Property Name="aluno_peso" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="aluno_altura" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="aluno_pressaoArterial" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="aluno_praticouModalidade" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="aluno_modalidadePraticada" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_problemaSaude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_cirurgia" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="aluno_fumante" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="aluno_alergiaMedicamento" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="aluno_doencaCardiovascular" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="aluno_parentesco" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="aluno_dataInicio" Type="DateTime" Precision="0" />
-    <Property Name="aluno_modalidade" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="aluno_dataInicio" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="aluno_diaVencimento" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="aluno_valor" Type="Double" />
-    <Property Name="aluno_digital1" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Name="aluno_digital2" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-  </EntityType>
-  <EntityContainer Name="gerjfdEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="gerjfd_aluno" EntityType="Self.gerjfd_aluno" />
-    <EntitySet Name="gerjfd_modalidade" EntityType="gerjfdModel.gerjfd_modalidade" />
-  </EntityContainer>
-  <EntityType Name="gerjfd_modalidade">
-    <Key>
-      <PropertyRef Name="modalidade_id" />
-    </Key>
-    <Property Name="modalidade_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="modalidade_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="modalidade_vlrp" Type="Single" />
-    <Property Name="modalidade_vlra" Type="Single" />
+    <Property Name="aluno_digital1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="aluno_digital2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="aluno_modalidade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aluno_modalidadeAdicionais" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aluno_praticouModalidade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aluno_fumante" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aluno_doencaCardiovascular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>
