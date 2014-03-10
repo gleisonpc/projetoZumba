@@ -2,20 +2,20 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
-        Title="Editar Modalidade" Height="218" Width="326">
+        Title="Editar Modalidade" Height="218" Width="408">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pt-br" Text="Nome:"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="10,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pt-br" Text="Valor Principal:"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="10,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="17"><Run Language="pt-br" Text="Valor Adicioonal:"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pt-br" Text="Valor Principal: R$"/><LineBreak/><Run Language="pt-br"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="17"><Run Language="pt-br" Text="Valor Adicioonal: R$ "/><LineBreak/><Run Language="pt-br"/></TextBlock>
         <TextBox x:Name="nomeModalidade" HorizontalAlignment="Left" Height="23" Margin="105,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
 
-        <WindowsFormsHost Margin="105,45,29,110">
+        <WindowsFormsHost Margin="124,45,10,110">
 
             <wf:MaskedTextBox x:Name="vlrPrincipal" Mask="00.00"/>
 
         </WindowsFormsHost>
 
-        <WindowsFormsHost Margin="105,94,29,63">
+        <WindowsFormsHost Margin="125,94,9,63">
 
             <wf:MaskedTextBox x:Name="vlrAdicional" Mask="00.00"/>
 
@@ -23,6 +23,6 @@
 
         <Button Content="Confirmar" HorizontalAlignment="Left" Margin="14,148,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.653,0.85" Click="Button_Click"/>
         <Button Content="Cancelar" HorizontalAlignment="Left" Margin="105,148,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.653,0.85" Click="Button_Click_1"/>
-        <Button Content="Excluir" HorizontalAlignment="Left" Margin="228,148,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.653,0.85" Background="#FFC91F1F" Click="Button_Click_2"/>
+        <Button Content="Excluir" HorizontalAlignment="Left" Margin="317,148,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.653,0.85" Background="#FFC91F1F" Click="Button_Click_2"/>
     </Grid>
 </Window>

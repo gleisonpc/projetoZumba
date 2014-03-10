@@ -1,88 +1,88 @@
 ﻿<Window x:Class="projetoZumba.NovoAluno"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="FICHA DO ALUNO" Height="627.317" Width="654.46" ResizeMode="NoResize">
+        Title="FICHA DO ALUNO" Height="627.317" Width="764.908" ResizeMode="NoResize">
     <Grid>
         <Label Content="Data de Início: " HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="DataDeInicio" HorizontalAlignment="Left" Margin="99,9,0,0" VerticalAlignment="Top"/>
         <Label Content="Modalidade:" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="Modalidade" HorizontalAlignment="Left" Height="23" Margin="321,10,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding}" SelectionChanged="Modalidade_SelectionChanged"/>
         <Label Content="Dia de vencimento:" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="DiaDeVencimento" HorizontalAlignment="Left" Height="23" Margin="127,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
-        <Label Content="Valor:" HorizontalAlignment="Left" Margin="240,41,0,0" VerticalAlignment="Top"/>
+        <Label Content="Valor:  R$" HorizontalAlignment="Left" Margin="240,41,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="Valor" HorizontalAlignment="Left" Height="23" Margin="321,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <Label Content="Nome:" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Nome" HorizontalAlignment="Left" Height="23" Margin="77,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="547"/>
+        <TextBox x:Name="Nome" HorizontalAlignment="Left" Height="23" Margin="77,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="658"/>
         <Label Content="Endereço:" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="Endereco" HorizontalAlignment="Left" Height="23" Margin="77,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326"/>
         <Label Content="Nº" HorizontalAlignment="Left" Margin="408,100,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Numero" HorizontalAlignment="Left" Height="23" Margin="437,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="29"/>
-        <Label Content="Bairro:" HorizontalAlignment="Left" Margin="471,101,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Bairro" HorizontalAlignment="Left" Height="23" Margin="520,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104"/>
+        <TextBox x:Name="Numero" HorizontalAlignment="Left" Height="23" Margin="437,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+        <Label Content="Bairro:" HorizontalAlignment="Left" Margin="546,101,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Bairro" HorizontalAlignment="Left" Height="23" Margin="595,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
         <Label Content="Cidade:" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="Cidade" HorizontalAlignment="Left" Height="23" Margin="77,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203"/>
-        <Label Content="RG:" HorizontalAlignment="Left" Margin="285,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.898,1.122"/>
-        <TextBox x:Name="Rg" HorizontalAlignment="Left" Height="23" Margin="318,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123"/>
-        <Label Content="CPF:" HorizontalAlignment="Left" Margin="446,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.898,1.122"/>
-        <TextBox x:Name="Cpf" HorizontalAlignment="Left" Height="23" Margin="484,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-        <Label Content="Tel. Resiencial:" HorizontalAlignment="Left" Margin="10,162,0,0" VerticalAlignment="Top"/>
+        <Label Content="RG:" HorizontalAlignment="Left" Margin="332,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.898,1.122"/>
+        <TextBox x:Name="Rg" HorizontalAlignment="Left" Height="23" Margin="365,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123"/>
+        <Label Content="CPF:" HorizontalAlignment="Left" Margin="541,134,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.898,1.122"/>
+        <TextBox x:Name="Cpf" HorizontalAlignment="Left" Height="23" Margin="595,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Tel. Residencial:" HorizontalAlignment="Left" Margin="10,162,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TelResidencial" HorizontalAlignment="Left" Height="23" Margin="101,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
-        <Label Content="Tel. Comercial:" HorizontalAlignment="Left" Margin="228,162,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TelComercial" HorizontalAlignment="Left" Height="23" Margin="315,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
-        <Label Content="Cel:" HorizontalAlignment="Left" Margin="444,162,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Celular" HorizontalAlignment="Left" Height="23" Margin="484,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Tel. Comercial:" HorizontalAlignment="Left" Margin="274,162,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TelComercial" HorizontalAlignment="Left" Height="23" Margin="361,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
+        <Label Content="Cel:" HorizontalAlignment="Left" Margin="539,165,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Celular" HorizontalAlignment="Left" Height="23" Margin="595,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
         <Label Content="Data de Nascimento:" HorizontalAlignment="Left" Margin="10,193,0,0" VerticalAlignment="Top"/>
-        <Label Content="e-mail:" HorizontalAlignment="Left" Margin="260,193,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="23" Margin="306,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="318"/>
+        <DatePicker x:Name="DataDeNascimento" HorizontalAlignment="Left" Margin="135,195,0,0" VerticalAlignment="Top"/>
+        <Label Content="e-mail:" HorizontalAlignment="Left" Margin="371,193,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="23" Margin="417,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="318"/>
         <Label Content="Nome da Mãe:" HorizontalAlignment="Left" Margin="11,224,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="NomeDaMae" HorizontalAlignment="Left" Height="23" Margin="99,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="318"/>
-        <Label Content="Telefone:" HorizontalAlignment="Left" Margin="421,224,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TelefoneMae" HorizontalAlignment="Left" Height="23" Margin="484,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <TextBox x:Name="NomeDaMae" HorizontalAlignment="Left" Height="23" Margin="99,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389"/>
+        <Label Content="Telefone:" HorizontalAlignment="Left" Margin="503,224,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TelefoneMae" HorizontalAlignment="Left" Height="23" Margin="566,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"/>
         <Label Content="Nome do Pai:" HorizontalAlignment="Left" Margin="11,252,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="NomeDoPai" HorizontalAlignment="Left" Height="23" Margin="99,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="318"/>
-        <Label Content="Telefone:" HorizontalAlignment="Left" Margin="421,252,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TelefonePai" HorizontalAlignment="Left" Height="23" Margin="484,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <TextBox x:Name="NomeDoPai" HorizontalAlignment="Left" Height="23" Margin="99,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389"/>
+        <Label Content="Telefone:" HorizontalAlignment="Left" Margin="503,252,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TelefonePai" HorizontalAlignment="Left" Height="23" Margin="566,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"/>
         <Label Content="HISTÓRICO MÉDICO" HorizontalAlignment="Left" Margin="11,283,0,0" VerticalAlignment="Top" Width="613" FontWeight="Bold"/>
         <Label Content="Peso:" HorizontalAlignment="Left" Margin="10,314,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="Peso" HorizontalAlignment="Left" Height="23" Margin="53,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
-        <Label Content="Altura:" HorizontalAlignment="Left" Margin="188,314,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Altura" HorizontalAlignment="Left" Height="23" Margin="232,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
-        <Label Content="Pressão Arterial:" HorizontalAlignment="Left" Margin="367,314,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="PressaoArterial" HorizontalAlignment="Left" Height="23" Margin="467,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
+        <Label Content="Altura:" HorizontalAlignment="Left" Margin="232,314,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Altura" HorizontalAlignment="Left" Height="23" Margin="276,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Pressão Arterial:" HorizontalAlignment="Left" Margin="478,314,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="PressaoArterial" HorizontalAlignment="Left" Height="23" Margin="578,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
         <Label Content="Já praticou alguma modalidade esportiva?" HorizontalAlignment="Left" Margin="10,345,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="PraticouModalidade" HorizontalAlignment="Left" Margin="248,349,0,0" VerticalAlignment="Top" Width="58">
             <ComboBoxItem>Sim</ComboBoxItem>
             <ComboBoxItem>Não</ComboBoxItem>
         </ComboBox>
-        <Label Content="Qual?" HorizontalAlignment="Left" Margin="311,345,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="ModalidadePraticada" HorizontalAlignment="Left" Height="23" Margin="356,348,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="268"/>
+        <Label Content="Qual?" HorizontalAlignment="Left" Margin="372,345,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ModalidadePraticada" HorizontalAlignment="Left" Height="23" Margin="417,348,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="318"/>
         <Label Content="Problema de saúde?" HorizontalAlignment="Left" Margin="11,376,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="ProblemaDeSaude" HorizontalAlignment="Left" Height="23" Margin="133,379,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="491"/>
+        <TextBox x:Name="ProblemaDeSaude" HorizontalAlignment="Left" Height="23" Margin="133,379,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="602"/>
         <Label Content="Cirurgia Recente?" HorizontalAlignment="Left" Margin="10,407,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="CirurgiaRecente" HorizontalAlignment="Left" Height="23" Margin="133,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
-        <Label Content="Fumante?" HorizontalAlignment="Left" Margin="285,407,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="Fumante" HorizontalAlignment="Left" Margin="347,411,0,0" VerticalAlignment="Top" Width="58">
+        <Label Content="Fumante?" HorizontalAlignment="Left" Margin="336,407,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="Fumante" HorizontalAlignment="Left" Margin="398,411,0,0" VerticalAlignment="Top" Width="58">
             <ComboBoxItem Content="Sim"/>
             <ComboBoxItem Content="Não"/>
         </ComboBox>
-        <Label Content="Alergia Medicamento?" HorizontalAlignment="Left" Margin="410,407,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="AlergiaMedicamento" HorizontalAlignment="Left" Height="23" Margin="539,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85"/>
+        <Label Content="Alergia Medicamento?" HorizontalAlignment="Left" Margin="501,407,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="AlergiaMedicamento" HorizontalAlignment="Left" Height="23" Margin="630,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105"/>
         <Label Content="Doenças Cardiovasculares?" HorizontalAlignment="Left" Margin="10,438,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="DoencasCardiovasculares" HorizontalAlignment="Left" Margin="162,442,0,0" VerticalAlignment="Top" Width="58">
             <ComboBoxItem Content="Sim"/>
             <ComboBoxItem Content="Não"/>
         </ComboBox>
         <Label Content="Parentesco:" HorizontalAlignment="Left" Margin="225,438,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Parentesco" HorizontalAlignment="Left" Height="23" Margin="296,441,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328"/>
+        <TextBox x:Name="Parentesco" HorizontalAlignment="Left" Height="23" Margin="296,441,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="439"/>
         <Button x:Name="Confirmar" Content="Confirmar" HorizontalAlignment="Left" Margin="16,549,0,0" VerticalAlignment="Top" Width="75" Click="Confirmar_Click"/>
         <Button x:Name="Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="101,549,0,0" VerticalAlignment="Top" Width="75" Click="Cancelar_Click"/>
-        <DatePicker x:Name="DataDeInicio" HorizontalAlignment="Left" Margin="99,9,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="DataDeNascimento" HorizontalAlignment="Left" Margin="135,195,0,0" VerticalAlignment="Top"/>
         <Label Content="Digital 1" HorizontalAlignment="Left" Margin="12,466,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Digital1" HorizontalAlignment="Left" Height="23" Margin="71,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490" IsEnabled="False"/>
+        <TextBox x:Name="Digital1" HorizontalAlignment="Left" Height="23" Margin="71,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="586" IsEnabled="False"/>
         <Label Content="Digital 2" HorizontalAlignment="Left" Margin="12,494,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Digital2" HorizontalAlignment="Left" Height="23" Margin="71,497,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490" IsEnabled="False"/>
-        <Button x:Name="CadastrarDigital1" Content="Cadastrar" HorizontalAlignment="Left" Margin="566,469,0,0" VerticalAlignment="Top" Width="58" Click="CadastrarDigital1_Click" Height="23"/>
-        <Button x:Name="CadastrarDigital2" Content="Cadastrar" HorizontalAlignment="Left" Margin="566,497,0,0" VerticalAlignment="Top" Width="58" Click="CadastrarDigital2_Click" Height="23"/>
+        <TextBox x:Name="Digital2" HorizontalAlignment="Left" Height="23" Margin="71,497,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="586" IsEnabled="False"/>
+        <Button x:Name="CadastrarDigital1" Content="Cadastrar" HorizontalAlignment="Left" Margin="677,469,0,0" VerticalAlignment="Top" Width="58" Click="CadastrarDigital1_Click" Height="23"/>
+        <Button x:Name="CadastrarDigital2" Content="Cadastrar" HorizontalAlignment="Left" Margin="677,497,0,0" VerticalAlignment="Top" Width="58" Click="CadastrarDigital2_Click" Height="23"/>
         <ListBox Margin="456,10,24,526" x:Name="ModalidadeAdicional"/>
     </Grid>
 </Window>

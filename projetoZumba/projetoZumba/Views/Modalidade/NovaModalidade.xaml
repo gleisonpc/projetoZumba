@@ -2,20 +2,20 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
-        Title="Cadastro de Modalidade" Height="218" Width="326">
+        Title="Cadastro de Modalidade" Height="218" Width="408">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pt-br" Text="Nome:"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="10,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pt-br" Text="Valor Principal:"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="11,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="17"><Run Language="pt-br" Text="Valor Adicioonal:"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pt-br" Text="Valor Principal: R$"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="11,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="17"><Run Language="pt-br" Text="Valor Adicioonal: R$ "/><LineBreak/><Run Language="pt-br"/></TextBlock>
         <TextBox x:Name="nomeModalidade" HorizontalAlignment="Left" Height="23" Margin="105,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
 
-        <WindowsFormsHost Margin="105,45,29,110">
+        <WindowsFormsHost Margin="124,45,10,110">
 
             <wf:MaskedTextBox x:Name="vlrPrincipal" Mask="00.00"/>
 
         </WindowsFormsHost>
 
-        <WindowsFormsHost Margin="105,94,29,63">
+        <WindowsFormsHost Margin="122,94,12,63">
 
             <wf:MaskedTextBox x:Name="vlrAdicional" Mask="00.00"/>
 
