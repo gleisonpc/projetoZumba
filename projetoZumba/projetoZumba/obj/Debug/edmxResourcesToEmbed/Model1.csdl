@@ -52,5 +52,9 @@
     <Property Name="aluno_praticouModalidade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_fumante" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_doencaCardiovascular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aluno_problemaSaudeObs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aluno_periodoCirurgiaData" Type="DateTime" Precision="0" />
+    <Property Name="aluno_cirurgiaObs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aluno_alergiaMedicamentoObs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

@@ -1,0 +1,5 @@
+ALTER TABLE gerjfd_aluno
+ADD [aluno_problemaSaudeObs] [nvarchar](50) NULL DEFAULT '',
+	[aluno_periodoCirurgiaData] [date] NULL DEFAULT '',
+	[aluno_cirurgiaObs] [nvarchar](50) NULL DEFAULT '',
+	[aluno_alergiaMedicamentoObs] [nvarchar](50) NULL DEFAULT ''

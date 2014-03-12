@@ -39,6 +39,10 @@
     <Property Name="aluno_praticouModalidade" Type="nvarchar" MaxLength="50" />
     <Property Name="aluno_fumante" Type="nvarchar" MaxLength="50" />
     <Property Name="aluno_doencaCardiovascular" Type="nvarchar" MaxLength="50" />
+    <Property Name="aluno_problemaSaudeObs" Type="nvarchar" MaxLength="50" />
+    <Property Name="aluno_periodoCirurgiaData" Type="date" />
+    <Property Name="aluno_cirurgiaObs" Type="nvarchar" MaxLength="50" />
+    <Property Name="aluno_alergiaMedicamentoObs" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="gerjfd_modalidade">
     <Key>

@@ -1,0 +1,71 @@
+USE [gerjfd]
+GO
+
+/****** Object:  Table [dbo].[gerjfd_aluno]    Script Date: 11/03/2014 11:38:32 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[gerjfd_aluno](
+	[aluno_id] [int] IDENTITY(1,1) NOT NULL,
+	[aluno_nome] [nvarchar](50) NOT NULL,
+	[aluno_endereco] [nvarchar](50) NULL,
+	[aluno_numero] [nchar](10) NULL,
+	[aluno_bairro] [nvarchar](50) NULL,
+	[aluno_cidade] [nvarchar](50) NULL,
+	[aluno_rg] [nvarchar](50) NULL,
+	[aluno_cpf] [nvarchar](50) NULL,
+	[aluno_telResidencial] [nvarchar](50) NULL,
+	[aluno_telComercial] [nvarchar](50) NULL,
+	[aluno_celular] [nvarchar](50) NULL,
+	[aluno_dataNascimento] [date] NOT NULL,
+	[aluno_email] [nvarchar](50) NULL,
+	[aluno_nomeMae] [nvarchar](50) NULL,
+	[aluno_telMae] [nvarchar](50) NULL,
+	[aluno_nomePai] [nvarchar](50) NULL,
+	[aluno_telPai] [nvarchar](50) NULL,
+	[aluno_peso] [nchar](10) NULL,
+	[aluno_altura] [nchar](10) NULL,
+	[aluno_pressaoArterial] [nchar](10) NULL,
+	[aluno_modalidadePraticada] [nvarchar](50) NULL,
+	[aluno_problemaSaude] [nvarchar](50) NULL,
+	[aluno_cirurgia] [nchar](10) NULL,
+	[aluno_alergiaMedicamento] [nchar](10) NULL,
+	[aluno_parentesco] [nchar](10) NULL,
+	[aluno_dataInicio] [date] NOT NULL,
+	[aluno_diaVencimento] [nchar](10) NULL,
+	[aluno_valor] [float] NULL,
+	[aluno_digital1] [nvarchar](max) NULL,
+	[aluno_digital2] [nvarchar](max) NULL,
+	[aluno_modalidade] [nvarchar](50) NULL,
+	[aluno_modalidadeAdicionais] [nvarchar](50) NULL,
+	[aluno_praticouModalidade] [nvarchar](50) NULL,
+	[aluno_fumante] [nvarchar](50) NULL,
+	[aluno_doencaCardiovascular] [nvarchar](50) NULL,
+	[aluno_problemaSaudeObs] [nvarchar](50) NULL,
+	[aluno_periodoCirurgiaData] [date] NULL,
+	[aluno_cirurgiaObs] [nvarchar](50) NULL,
+	[aluno_alergiaMedicamentoObs] [nvarchar](50) NULL,
+ CONSTRAINT [PK_gerjfd_aluno] PRIMARY KEY CLUSTERED 
+(
+	[aluno_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[gerjfd_aluno] ADD  DEFAULT ('') FOR [aluno_problemaSaudeObs]
+GO
+
+ALTER TABLE [dbo].[gerjfd_aluno] ADD  DEFAULT ('') FOR [aluno_periodoCirurgiaData]
+GO
+
+ALTER TABLE [dbo].[gerjfd_aluno] ADD  DEFAULT ('') FOR [aluno_cirurgiaObs]
+GO
+
+ALTER TABLE [dbo].[gerjfd_aluno] ADD  DEFAULT ('') FOR [aluno_alergiaMedicamentoObs]
+GO
+
+

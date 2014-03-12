@@ -55,11 +55,20 @@ namespace projetoZumba
             //Data de nacimento 
             DataDeNascimento.SelectedDate = DateTime.Today;
 
+            //Data de cirurgia
+            cirurgiaData.SelectedDate = DateTime.Today;
+
             //Modalidade esportiva
             PraticouModalidade.SelectedItem = PraticouModalidade.Items.GetItemAt(0);
 
+            //Cirurgia
+            CirurgiaRecente.SelectedItem = CirurgiaRecente.Items.GetItemAt(0);
+
             //Fumante
             Fumante.SelectedItem = Fumante.Items.GetItemAt(0);
+
+            //Alergia Medicamento
+            AlergiaMedicamento.SelectedItem = AlergiaMedicamento.Items.GetItemAt(0);
 
             //Doencas Cardiovasculares
             DoencasCardiovasculares.SelectedItem = DoencasCardiovasculares.Items.GetItemAt(0);
@@ -81,6 +90,17 @@ namespace projetoZumba
                     modalidadesAdicionais += modalidade.Content + ",";
                 }
             }
+
+            //Problemas de Saúde
+            string problemasdeSaude = "";
+            foreach (CheckBox problemas in ProblemaDeSaude.Items)
+            {
+                if (problemas.IsChecked == true)
+                {
+                    problemasdeSaude += problemas.Content + ",";
+                }
+            }
+
             gerjfdEntities context = new gerjfdEntities();
             gerjfd_aluno data = new gerjfd_aluno()
             {
@@ -109,7 +129,7 @@ namespace projetoZumba
                 aluno_pressaoArterial = PressaoArterial.Text,
                 aluno_praticouModalidade = PraticouModalidade.Text,
                 aluno_modalidadePraticada = ModalidadePraticada.Text,
-                aluno_problemaSaude = ProblemaDeSaude.Text,
+                aluno_problemaSaude = problemasdeSaude,
                 aluno_cirurgia = CirurgiaRecente.Text,
                 aluno_fumante = Fumante.Text,
                 aluno_alergiaMedicamento = AlergiaMedicamento.Text,
@@ -118,14 +138,13 @@ namespace projetoZumba
                 aluno_digital1 = Digital1.Text,
                 aluno_digital2 = Digital2.Text,
                 aluno_modalidadeAdicionais = modalidadesAdicionais,
+                aluno_problemaSaudeObs = ProblemaDeSaudeObs.Text,
+                aluno_periodoCirurgiaData = Convert.ToDateTime(cirurgiaData.Text),
+                aluno_cirurgiaObs = cirurgiaObs.Text,
+                aluno_alergiaMedicamentoObs = alergiaMedicamentoObs.Text,
             };
             context.gerjfd_aluno.Add(data);
-
-            
-            
-                context.SaveChanges();
-            
-            
+            context.SaveChanges();
             alunos.updateAlunos();
             this.Close();
         }
@@ -183,5 +202,6 @@ namespace projetoZumba
 
             Valor.Text = valor.ToString();
         }
+
     }
 }

@@ -44,6 +44,10 @@
           <Property Name="aluno_praticouModalidade" Type="nvarchar" MaxLength="50" />
           <Property Name="aluno_fumante" Type="nvarchar" MaxLength="50" />
           <Property Name="aluno_doencaCardiovascular" Type="nvarchar" MaxLength="50" />
+          <Property Name="aluno_problemaSaudeObs" Type="nvarchar" MaxLength="50" />
+          <Property Name="aluno_periodoCirurgiaData" Type="date" />
+          <Property Name="aluno_cirurgiaObs" Type="nvarchar" MaxLength="50" />
+          <Property Name="aluno_alergiaMedicamentoObs" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="gerjfd_modalidade">
           <Key>
@@ -114,6 +118,10 @@
           <Property Name="aluno_praticouModalidade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="aluno_fumante" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="aluno_doencaCardiovascular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aluno_problemaSaudeObs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aluno_periodoCirurgiaData" Type="DateTime" Precision="0" />
+          <Property Name="aluno_cirurgiaObs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aluno_alergiaMedicamentoObs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -134,6 +142,10 @@
           <EntitySetMapping Name="gerjfd_aluno">
             <EntityTypeMapping TypeName="gerjfdModel.gerjfd_aluno">
               <MappingFragment StoreEntitySet="gerjfd_aluno">
+                <ScalarProperty Name="aluno_alergiaMedicamentoObs" ColumnName="aluno_alergiaMedicamentoObs" />
+                <ScalarProperty Name="aluno_cirurgiaObs" ColumnName="aluno_cirurgiaObs" />
+                <ScalarProperty Name="aluno_periodoCirurgiaData" ColumnName="aluno_periodoCirurgiaData" />
+                <ScalarProperty Name="aluno_problemaSaudeObs" ColumnName="aluno_problemaSaudeObs" />
                 <ScalarProperty Name="aluno_doencaCardiovascular" ColumnName="aluno_doencaCardiovascular" />
                 <ScalarProperty Name="aluno_fumante" ColumnName="aluno_fumante" />
                 <ScalarProperty Name="aluno_praticouModalidade" ColumnName="aluno_praticouModalidade" />

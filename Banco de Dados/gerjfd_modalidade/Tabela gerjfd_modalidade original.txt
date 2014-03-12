@@ -1,0 +1,24 @@
+USE [gerjfd]
+GO
+
+/****** Object:  Table [dbo].[gerjfd_modalidade]    Script Date: 11/03/2014 11:39:27 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[gerjfd_modalidade](
+	[modalidade_id] [int] IDENTITY(1,1) NOT NULL,
+	[modalidade_nome] [nvarchar](50) NULL,
+	[modalidade_vlrp] [real] NULL,
+	[modalidade_vlra] [real] NULL,
+ CONSTRAINT [PK_gerjfd_modalidade] PRIMARY KEY CLUSTERED 
+(
+	[modalidade_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
