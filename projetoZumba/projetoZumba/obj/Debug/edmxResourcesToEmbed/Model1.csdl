@@ -20,7 +20,7 @@
     <Property Name="aluno_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="aluno_nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_endereco" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="aluno_numero" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="aluno_numero" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="aluno_bairro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_cidade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_rg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -34,16 +34,16 @@
     <Property Name="aluno_telMae" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_nomePai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_telPai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="aluno_peso" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="aluno_altura" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="aluno_pressaoArterial" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="aluno_peso" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="aluno_altura" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="aluno_pressaoArterial" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="aluno_modalidadePraticada" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_problemaSaude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="aluno_cirurgia" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="aluno_cirurgia" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="aluno_alergiaMedicamento" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="aluno_parentesco" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="aluno_parentesco" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="aluno_dataInicio" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="aluno_diaVencimento" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="aluno_diaVencimento" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="aluno_valor" Type="Double" />
     <Property Name="aluno_digital1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="aluno_digital2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
