@@ -78,14 +78,6 @@ namespace projetoZumba.Views
                 }
             }
 
-            //Problemas de Saude
-            foreach (var text in data1)
-            {
-                CheckBox label = new CheckBox();
-                label.Content = text;
-                ProblemaDeSaude.Items.Add(label);
-            }
-
             //Setar problemas de saude com as gravadas no cadastro do aluno no banco de dados 
             if (alunoBanco.aluno_problemaSaude != null)
             {

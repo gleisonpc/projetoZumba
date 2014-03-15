@@ -62,16 +62,16 @@ namespace projetoZumba
             PraticouModalidade.SelectedItem = PraticouModalidade.Items.GetItemAt(0);
 
             //Cirurgia
-            CirurgiaRecente.SelectedItem = CirurgiaRecente.Items.GetItemAt(0);
+            CirurgiaRecente.SelectedItem = CirurgiaRecente.Items.GetItemAt(1);
 
             //Fumante
-            Fumante.SelectedItem = Fumante.Items.GetItemAt(0);
+            Fumante.SelectedItem = Fumante.Items.GetItemAt(1);
 
             //Alergia Medicamento
-            AlergiaMedicamento.SelectedItem = AlergiaMedicamento.Items.GetItemAt(0);
+            AlergiaMedicamento.SelectedItem = AlergiaMedicamento.Items.GetItemAt(1);
 
             //Doencas Cardiovasculares
-            DoencasCardiovasculares.SelectedItem = DoencasCardiovasculares.Items.GetItemAt(0);
+            DoencasCardiovasculares.SelectedItem = DoencasCardiovasculares.Items.GetItemAt(1);
         }
 
         private void Cancelar_Click(object sender, RoutedEventArgs e)
