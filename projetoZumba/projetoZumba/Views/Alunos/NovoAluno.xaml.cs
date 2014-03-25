@@ -29,7 +29,7 @@ namespace projetoZumba
             InitializeComponent();
             alunos = pAlunos;
 
-            //Inlcuir valores na comboBox Modalidades
+            //Inlcuir valores na Modalidades Principal
             gerjfdEntities context = new gerjfdEntities();
             var data = from p in context.gerjfd_modalidade select p.modalidade_nome;
             Modalidade.ItemsSource = data.ToList();
@@ -39,7 +39,7 @@ namespace projetoZumba
             }
             catch { }
 
-            //Modalidades adicionais
+            //Modalidades adicionais Combobox
             foreach (var text in data)
             {
                 CheckBox label = new CheckBox();
@@ -142,6 +142,7 @@ namespace projetoZumba
                 aluno_periodoCirurgiaData = Convert.ToDateTime(cirurgiaData.Text),
                 aluno_cirurgiaObs = cirurgiaObs.Text,
                 aluno_alergiaMedicamentoObs = alergiaMedicamentoObs.Text,
+                aluno_status = "OK",
             };
             context.gerjfd_aluno.Add(data);
             context.SaveChanges();

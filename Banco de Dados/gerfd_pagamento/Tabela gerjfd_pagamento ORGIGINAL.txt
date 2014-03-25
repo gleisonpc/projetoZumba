@@ -1,0 +1,33 @@
+USE [gerjfd]
+GO
+
+/****** Object:  Table [dbo].[gerjfd_pagamento]    Script Date: 16/03/2014 22:35:19 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[gerjfd_pagamento](
+	[pagamento_id] [int] IDENTITY(1,1) NOT NULL,
+	[pagamento_aluno_id] [int] NOT NULL,
+	[pagamento_vencimento] [date] NULL,
+	[pagamento_modalidade] [nvarchar](50) NULL,
+	[pagamento_valor] [real] NULL,
+	[pagamento_obs] [nvarchar](50) NULL,
+	[pagamento_status] [nvarchar](50) NULL,
+	[patamento_formapgt] [nvarchar](50) NULL,
+	[pagamento_data] [date] NULL,
+	[pagamento_valorpgt] [real] NULL,
+	[pagamento_ncheque] [nvarchar](10) NULL,
+	[pagamento_nbanco] [nvarchar](10) NULL,
+	[pagamento_nagencia] [nvarchar](10) NULL,
+ CONSTRAINT [PK_gerjfd_pagamento] PRIMARY KEY CLUSTERED 
+(
+	[pagamento_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+

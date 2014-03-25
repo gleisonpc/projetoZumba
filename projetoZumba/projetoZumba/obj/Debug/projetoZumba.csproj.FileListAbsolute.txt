@@ -62,3 +62,11 @@ C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\D
 C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\Modalidade\Modalidades.g.cs
 C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\Modalidade\NovaModalidade.g.cs
 C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\Alunos\NovoAluno.g.cs
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\Pagamentos\Pagamento.baml
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\Pagamentos\Pagamento.g.cs
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\Pagamentos\PagamentoAluno.baml
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\Pagamentos\PagamentoAluno.g.cs
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\Pagamentos\NovoPagamento.baml
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\Pagamentos\NovoPagamento.g.cs
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\Pagamentos\EditarPagamento.baml
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\Views\Pagamentos\EditarPagamento.g.cs

@@ -21,6 +21,7 @@ namespace projetoZumba.Views
     {
         private gerjfd_aluno alunoBanco;
         private Alunos alunos;
+        private String status;
 
         public EditarAluno(gerjfd_aluno alunoBanco,Alunos pAlunos)
         {
@@ -186,6 +187,7 @@ namespace projetoZumba.Views
             cirurgiaData.Text = alunoBanco.aluno_periodoCirurgiaData.ToString();
             cirurgiaObs.Text = alunoBanco.aluno_cirurgiaObs;
             alergiaMedicamentoObs.Text = alunoBanco.aluno_alergiaMedicamentoObs;
+            status = alunoBanco.aluno_status;
 
         }
 
@@ -253,6 +255,7 @@ namespace projetoZumba.Views
                 aluno_periodoCirurgiaData = Convert.ToDateTime(cirurgiaData.Text),
                 aluno_cirurgiaObs = cirurgiaObs.Text,
                 aluno_alergiaMedicamentoObs = alergiaMedicamentoObs.Text,
+                aluno_status = status,
             };
             var original = context.gerjfd_aluno.Find(data.aluno_id);
             if (original != null)

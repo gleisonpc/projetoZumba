@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\App.xaml
-91037709826
+13223587959
 
-26-269845639
+351665882247
 251213454596
-Views\Alunos\Alunos.xaml;Views\Alunos\EditarAluno.xaml;Views\Leitor\findAluno.xaml;Views\Leitor\leitorDig.xaml;Views\Modalidade\EditarModalidade.xaml;Views\Modalidade\Modalidades.xaml;Views\Modalidade\NovaModalidade.xaml;Views\Alunos\NovoAluno.xaml;Views\MainWindow.xaml;
+Views\Alunos\Alunos.xaml;Views\Alunos\EditarAluno.xaml;Views\Leitor\findAluno.xaml;Views\Leitor\leitorDig.xaml;Views\Modalidade\EditarModalidade.xaml;Views\Modalidade\Modalidades.xaml;Views\Modalidade\NovaModalidade.xaml;Views\Alunos\NovoAluno.xaml;Views\MainWindow.xaml;Views\Pagamentos\EditarPagamento.xaml;Views\Pagamentos\NovoPagamento.xaml;Views\Pagamentos\Pagamento.xaml;Views\Pagamentos\PagamentoAluno.xaml;
 
 False
 

@@ -1,0 +1,8 @@
+﻿<Window x:Class="projetoZumba.Views.Pagamentos.Pagamento"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pagamentos" Height="484" Width="699" Loaded="Window_Loaded" ResizeMode="NoResize">
+    <Grid>
+        <DataGrid x:Name="DataGridPagamento" ItemsSource="{Binding}" CanUserAddRows="False" CanUserDeleteRows="False" Margin="0,106,0,0" MouseDoubleClick="DataGridPagamento_MouseDoubleClick"/>
+    </Grid>
+</Window>

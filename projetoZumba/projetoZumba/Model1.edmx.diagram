@@ -4,9 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8ace4227d1a444b89fba126c001493d6" Name="Diagram1" ZoomLevel="41">
-        <EntityTypeShape EntityType="gerjfdModel.gerjfd_modalidade" Width="1.5" PointX="6.375" PointY="3.75" />
-        <EntityTypeShape EntityType="gerjfdModel.gerjfd_aluno" Width="1.5" PointX="0.75" PointY="0.75" />
+      <Diagram DiagramId="8ace4227d1a444b89fba126c001493d6" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="gerjfdModel.gerjfd_modalidade" Width="1.5" PointX="10" PointY="3.375" />
+        <EntityTypeShape EntityType="gerjfdModel.gerjfd_aluno" Width="3" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="gerjfdModel.gerjfd_pagamento" Width="2.125" PointX="5.5" PointY="0.75" />
+        <EntityTypeShape EntityType="gerjfdModel.sysdiagram" Width="1.5" PointX="10" PointY="1.125" />
+        <AssociationConnector Association="gerjfdModel.FK_gerjfd_pagamento_gerjfd_aluno" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

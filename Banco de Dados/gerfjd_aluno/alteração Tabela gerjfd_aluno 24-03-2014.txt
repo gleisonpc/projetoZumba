@@ -1,0 +1,3 @@
+ALTER TABLE gerjfd_aluno
+ADD [aluno_status] [nvarchar](50) NULL DEFAULT 'OK'
+	

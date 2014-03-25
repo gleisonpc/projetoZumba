@@ -3,6 +3,42 @@
   <EntityContainer Name="gerjfdEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="gerjfd_modalidade" EntityType="gerjfdModel.gerjfd_modalidade" />
     <EntitySet Name="gerjfd_aluno" EntityType="gerjfdModel.gerjfd_aluno" />
+    <EntitySet Name="gerjfd_pagamento" EntityType="gerjfdModel.gerjfd_pagamento" />
+    <EntitySet Name="sysdiagrams" EntityType="gerjfdModel.sysdiagram" />
+    <AssociationSet Name="FK_gerjfd_pagamento_gerjfd_aluno" Association="gerjfdModel.FK_gerjfd_pagamento_gerjfd_aluno">
+      <End Role="gerjfd_aluno" EntitySet="gerjfd_aluno" />
+      <End Role="gerjfd_pagamento" EntitySet="gerjfd_pagamento" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(gerjfdModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(gerjfdModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
   </EntityContainer>
   <EntityType Name="gerjfd_modalidade">
     <Key>
@@ -56,5 +92,61 @@
     <Property Name="aluno_periodoCirurgiaData" Type="DateTime" Precision="0" />
     <Property Name="aluno_cirurgiaObs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="aluno_alergiaMedicamentoObs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="gerjfd_pagamento" Relationship="gerjfdModel.FK_gerjfd_pagamento_gerjfd_aluno" FromRole="gerjfd_aluno" ToRole="gerjfd_pagamento" />
+    <Property Name="aluno_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="gerjfd_pagamento">
+    <Key>
+      <PropertyRef Name="pagamento_id" />
+    </Key>
+    <Property Name="pagamento_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pagamento_aluno_id" Type="Int32" Nullable="false" />
+    <Property Name="pagamento_vencimento" Type="DateTime" Precision="0" />
+    <Property Name="pagamento_modalidade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pagamento_valor" Type="Single" />
+    <Property Name="pagamento_obs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pagamento_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="patamento_formapgt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pagamento_data" Type="DateTime" Precision="0" />
+    <Property Name="pagamento_valorpgt" Type="Single" />
+    <Property Name="pagamento_ncheque" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="pagamento_nbanco" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="pagamento_nagencia" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="gerjfd_aluno" Relationship="gerjfdModel.FK_gerjfd_pagamento_gerjfd_aluno" FromRole="gerjfd_pagamento" ToRole="gerjfd_aluno" />
+    <Property Name="pagamento_modalidadesAdicionais" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pagamento_tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_gerjfd_pagamento_gerjfd_aluno">
+    <End Type="gerjfdModel.gerjfd_aluno" Role="gerjfd_aluno" Multiplicity="1" />
+    <End Type="gerjfdModel.gerjfd_pagamento" Role="gerjfd_pagamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gerjfd_aluno">
+        <PropertyRef Name="aluno_id" />
+      </Principal>
+      <Dependent Role="gerjfd_pagamento">
+        <PropertyRef Name="pagamento_aluno_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
 </Schema>

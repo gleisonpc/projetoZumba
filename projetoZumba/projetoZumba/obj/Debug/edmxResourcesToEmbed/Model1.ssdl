@@ -43,6 +43,7 @@
     <Property Name="aluno_periodoCirurgiaData" Type="date" />
     <Property Name="aluno_cirurgiaObs" Type="nvarchar" MaxLength="50" />
     <Property Name="aluno_alergiaMedicamentoObs" Type="nvarchar" MaxLength="50" />
+    <Property Name="aluno_status" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="gerjfd_modalidade">
     <Key>
@@ -53,8 +54,87 @@
     <Property Name="modalidade_vlrp" Type="float" />
     <Property Name="modalidade_vlra" Type="float" />
   </EntityType>
+  <EntityType Name="gerjfd_pagamento">
+    <Key>
+      <PropertyRef Name="pagamento_id" />
+    </Key>
+    <Property Name="pagamento_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pagamento_aluno_id" Type="int" Nullable="false" />
+    <Property Name="pagamento_vencimento" Type="date" />
+    <Property Name="pagamento_modalidade" Type="nvarchar" MaxLength="50" />
+    <Property Name="pagamento_valor" Type="real" />
+    <Property Name="pagamento_obs" Type="nvarchar" MaxLength="50" />
+    <Property Name="pagamento_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="patamento_formapgt" Type="nvarchar" MaxLength="50" />
+    <Property Name="pagamento_data" Type="date" />
+    <Property Name="pagamento_valorpgt" Type="real" />
+    <Property Name="pagamento_ncheque" Type="nvarchar" MaxLength="10" />
+    <Property Name="pagamento_nbanco" Type="nvarchar" MaxLength="10" />
+    <Property Name="pagamento_nagencia" Type="nvarchar" MaxLength="10" />
+    <Property Name="pagamento_modalidadesAdicionais" Type="nvarchar" MaxLength="50" />
+    <Property Name="pagamento_tipo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_gerjfd_pagamento_gerjfd_aluno">
+    <End Role="gerjfd_aluno" Type="Self.gerjfd_aluno" Multiplicity="1" />
+    <End Role="gerjfd_pagamento" Type="Self.gerjfd_pagamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gerjfd_aluno">
+        <PropertyRef Name="aluno_id" />
+      </Principal>
+      <Dependent Role="gerjfd_pagamento">
+        <PropertyRef Name="pagamento_aluno_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="gerjfdModelStoreContainer">
     <EntitySet Name="gerjfd_aluno" EntityType="Self.gerjfd_aluno" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="gerjfd_modalidade" EntityType="Self.gerjfd_modalidade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gerjfd_pagamento" EntityType="Self.gerjfd_pagamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_gerjfd_pagamento_gerjfd_aluno" Association="Self.FK_gerjfd_pagamento_gerjfd_aluno">
+      <End Role="gerjfd_aluno" EntitySet="gerjfd_aluno" />
+      <End Role="gerjfd_pagamento" EntitySet="gerjfd_pagamento" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

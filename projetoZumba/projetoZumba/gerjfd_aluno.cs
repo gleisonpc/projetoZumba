@@ -14,6 +14,11 @@ namespace projetoZumba
     
     public partial class gerjfd_aluno
     {
+        public gerjfd_aluno()
+        {
+            this.gerjfd_pagamento = new HashSet<gerjfd_pagamento>();
+        }
+    
         public int aluno_id { get; set; }
         public string aluno_nome { get; set; }
         public string aluno_endereco { get; set; }
@@ -53,5 +58,8 @@ namespace projetoZumba
         public Nullable<System.DateTime> aluno_periodoCirurgiaData { get; set; }
         public string aluno_cirurgiaObs { get; set; }
         public string aluno_alergiaMedicamentoObs { get; set; }
+        public string aluno_status { get; set; }
+    
+        public virtual ICollection<gerjfd_pagamento> gerjfd_pagamento { get; set; }
     }
 }

@@ -1,0 +1,3 @@
+ALTER TABLE gerjfd_pagamento
+ADD [pagamento_modalidadesAdicionais] [nvarchar](50),
+    [pagamento_tipo] [nvarchar](50)
