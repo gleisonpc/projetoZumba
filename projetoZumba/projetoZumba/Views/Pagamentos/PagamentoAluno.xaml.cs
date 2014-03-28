@@ -121,5 +121,29 @@ namespace projetoZumba.Views.Pagamentos
             pagamentoModel.mostrarPagamentos(dataGridPagamento, alunoBanco.aluno_id);
         }
 
+        private void dataGridPagamento_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            dynamic pag = dataGridPagamento.SelectedItem;
+
+            if (pag != null)
+            {
+                int id = pag.pagamento_id;
+                gerjfdEntities context = new gerjfdEntities();
+
+                foreach (gerjfd_pagamento pagamentoBanco in context.gerjfd_pagamento)
+                {
+                    if (pagamentoBanco.pagamento_id  == id)
+                    {
+                        EditarPagamento editarPagamento = new EditarPagamento(pagamentoBanco, this);
+                        editarPagamento.Show();
+                    }
+                }
+            }            
+        }
+
+        
+
+       
+
     }
 }

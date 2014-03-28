@@ -1,0 +1,227 @@
+USE [gerjfd]
+GO
+
+/****** Object:  Table [dbo].[gerjfd_aluno]    Script Date: 14/03/2014 08:40:46 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[gerjfd_alunonew](
+	[aluno_id] [int] IDENTITY(1,1) NOT NULL,
+	[aluno_nome] [nvarchar](50) NOT NULL,
+	[aluno_endereco] [nvarchar](50) NULL,
+	[aluno_numero] [nvarchar](10) NULL,
+	[aluno_bairro] [nvarchar](50) NULL,
+	[aluno_cidade] [nvarchar](50) NULL,
+	[aluno_rg] [nvarchar](50) NULL,
+	[aluno_cpf] [nvarchar](50) NULL,
+	[aluno_telResidencial] [nvarchar](50) NULL,
+	[aluno_telComercial] [nvarchar](50) NULL,
+	[aluno_celular] [nvarchar](50) NULL,
+	[aluno_dataNascimento] [date] NOT NULL,
+	[aluno_email] [nvarchar](50) NULL,
+	[aluno_nomeMae] [nvarchar](50) NULL,
+	[aluno_telMae] [nvarchar](50) NULL,
+	[aluno_nomePai] [nvarchar](50) NULL,
+	[aluno_telPai] [nvarchar](50) NULL,
+	[aluno_peso] [nvarchar](50) NULL,
+	[aluno_altura] [nvarchar](50) NULL,
+	[aluno_pressaoArterial] [nvarchar](10) NULL,
+	[aluno_modalidadePraticada] [nvarchar](50) NULL,
+	[aluno_problemaSaude] [nvarchar](50) NULL,
+	[aluno_cirurgia] [nvarchar](50) NULL,
+	[aluno_alergiaMedicamento] [nvarchar](50) NULL,
+	[aluno_parentesco] [nvarchar](50) NULL,
+	[aluno_dataInicio] [date] NOT NULL,
+	[aluno_diaVencimento] [nvarchar](10) NULL,
+	[aluno_valor] [float] NULL,
+	[aluno_digital1] [nvarchar](max) NULL,
+	[aluno_digital2] [nvarchar](max) NULL,
+	[aluno_modalidade] [nvarchar](50) NULL,
+	[aluno_modalidadeAdicionais] [nvarchar](50) NULL,
+	[aluno_praticouModalidade] [nvarchar](50) NULL,
+	[aluno_fumante] [nvarchar](50) NULL,
+	[aluno_doencaCardiovascular] [nvarchar](50) NULL,
+	[aluno_problemaSaudeObs] [nvarchar](50) NULL,
+	[aluno_cirurgiaObs] [nvarchar](50) NULL,
+	[aluno_alergiaMedicamentoObs] [nvarchar](50) NULL,
+        [aluno_status] [nvarchar](50) NULL
+	
+ CONSTRAINT [PK_gerjfd_alunonew] PRIMARY KEY CLUSTERED 
+(
+	[aluno_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+INSERT INTO gerjfd_alunonew
+select aluno_nome,
+	   aluno_endereco,
+	   aluno_numero,
+	   aluno_bairro,
+	   aluno_cidade,
+	   aluno_rg,
+	   aluno_cpf,
+	   aluno_telResidencial,
+	   aluno_telComercial,
+	   aluno_celular,
+	   aluno_dataNascimento,
+	   aluno_email,
+	   aluno_nomeMae,
+	   aluno_telMae,
+	   aluno_nomePai,
+	   aluno_telPai,
+	   aluno_peso,
+	   aluno_altura,
+	   aluno_pressaoArterial,
+	   aluno_modalidadePraticada,
+	   aluno_problemaSaude,
+	   aluno_cirurgia,
+	   aluno_alergiaMedicamento,
+	   aluno_parentesco,
+	   aluno_dataInicio,
+	   aluno_diaVencimento,
+	   aluno_valor,
+	   aluno_digital1,
+	   aluno_digital2,
+	   aluno_modalidade,
+	   aluno_modalidadeAdicionais,
+	   aluno_praticouModalidade,
+	   aluno_fumante,
+	   aluno_doencaCardiovascular,
+	   aluno_problemaSaudeObs,
+	   aluno_cirurgiaObs,
+           aluno_status,
+	   aluno_alergiaMedicamentoObs  from gerjfd..gerjfd_aluno
+GO
+
+DROP TABLE gerjfd_aluno
+GO
+
+CREATE TABLE [dbo].[gerjfd_aluno](
+	[aluno_id] [int] IDENTITY(1,1) NOT NULL,
+	[aluno_nome] [nvarchar](50) NOT NULL,
+	[aluno_endereco] [nvarchar](50) NULL,
+	[aluno_numero] [nvarchar](50) NULL,
+	[aluno_bairro] [nvarchar](50) NULL,
+	[aluno_cidade] [nvarchar](50) NULL,
+	[aluno_rg] [nvarchar](50) NULL,
+	[aluno_cpf] [nvarchar](50) NULL,
+	[aluno_telResidencial] [nvarchar](50) NULL,
+	[aluno_telComercial] [nvarchar](50) NULL,
+	[aluno_celular] [nvarchar](50) NULL,
+	[aluno_dataNascimento] [date] NOT NULL,
+	[aluno_email] [nvarchar](50) NULL,
+	[aluno_nomeMae] [nvarchar](50) NULL,
+	[aluno_telMae] [nvarchar](50) NULL,
+	[aluno_nomePai] [nvarchar](50) NULL,
+	[aluno_telPai] [nvarchar](50) NULL,
+	[aluno_peso] [nvarchar](50) NULL,
+	[aluno_altura] [nvarchar](50) NULL,
+	[aluno_pressaoArterial] [nvarchar](50) NULL,
+	[aluno_modalidadePraticada] [nvarchar](50) NULL,
+	[aluno_problemaSaude] [nvarchar](50) NULL,
+	[aluno_cirurgia] [nvarchar](50) NULL,
+	[aluno_alergiaMedicamento] [nvarchar](50) NULL,
+	[aluno_parentesco] [nvarchar](50) NULL,
+	[aluno_dataInicio] [date] NOT NULL,
+	[aluno_diaVencimento] [nvarchar](50) NULL,
+	[aluno_valor] [float] NULL,
+	[aluno_digital1] [nvarchar](max) NULL,
+	[aluno_digital2] [nvarchar](max) NULL,
+	[aluno_modalidade] [nvarchar](50) NULL,
+	[aluno_modalidadeAdicionais] [nvarchar](50) NULL,
+	[aluno_praticouModalidade] [nvarchar](50) NULL,
+	[aluno_fumante] [nvarchar](50) NULL,
+	[aluno_doencaCardiovascular] [nvarchar](50) NULL,
+	[aluno_problemaSaudeObs] [nvarchar](50) NULL,
+	[aluno_cirurgiaObs] [nvarchar](50) NULL,
+	[aluno_alergiaMedicamentoObs] [nvarchar](50) NULL,
+	[aluno_status] [nvarchar](50) NULL
+	
+ CONSTRAINT [PK_gerjfd_aluno] PRIMARY KEY CLUSTERED 
+(
+	[aluno_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+INSERT INTO gerjfd_aluno
+select aluno_nome,
+	   aluno_endereco,
+	   aluno_numero,
+	   aluno_bairro,
+	   aluno_cidade,
+	   aluno_rg,
+	   aluno_cpf,
+	   aluno_telResidencial,
+	   aluno_telComercial,
+	   aluno_celular,
+	   aluno_dataNascimento,
+	   aluno_email,
+	   aluno_nomeMae,
+	   aluno_telMae,
+	   aluno_nomePai,
+	   aluno_telPai,
+	   aluno_peso,
+	   aluno_altura,
+	   aluno_pressaoArterial,
+	   aluno_modalidadePraticada,
+	   aluno_problemaSaude,
+	   aluno_cirurgia,
+	   aluno_alergiaMedicamento,
+	   aluno_parentesco,
+	   aluno_dataInicio,
+	   aluno_diaVencimento,
+	   aluno_valor,
+	   aluno_digital1,
+	   aluno_digital2,
+	   aluno_modalidade,
+	   aluno_modalidadeAdicionais,
+	   aluno_praticouModalidade,
+	   aluno_fumante,
+	   aluno_doencaCardiovascular,
+	   aluno_problemaSaudeObs,
+	   aluno_cirurgiaObs,
+	   aluno_status,
+	   aluno_alergiaMedicamentoObs  from gerjfd..gerjfd_alunonew
+GO
+
+DROP TABLE gerjfd_alunonew
+GO
+
+
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+ALTER TABLE dbo.gerjfd_aluno SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+BEGIN TRANSACTION
+GO
+ALTER TABLE dbo.gerjfd_pagamento ADD CONSTRAINT
+	FK_gerjfd_pagamento_gerjfd_aluno FOREIGN KEY
+	(
+	pagamento_aluno_id
+	) REFERENCES dbo.gerjfd_aluno
+	(
+	aluno_id
+	) ON UPDATE  NO ACTION 
+	 ON DELETE  NO ACTION 
+	
+GO
+ALTER TABLE dbo.gerjfd_pagamento SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT

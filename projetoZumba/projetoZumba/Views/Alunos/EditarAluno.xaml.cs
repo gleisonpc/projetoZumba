@@ -184,7 +184,6 @@ namespace projetoZumba.Views
             Digital1.Text = alunoBanco.aluno_digital1;
             Digital2.Text = alunoBanco.aluno_digital2;
             ProblemaDeSaudeObs.Text = alunoBanco.aluno_problemaSaudeObs;
-            cirurgiaData.Text = alunoBanco.aluno_periodoCirurgiaData.ToString();
             cirurgiaObs.Text = alunoBanco.aluno_cirurgiaObs;
             alergiaMedicamentoObs.Text = alunoBanco.aluno_alergiaMedicamentoObs;
             status = alunoBanco.aluno_status;
@@ -252,7 +251,6 @@ namespace projetoZumba.Views
                 aluno_digital2 = Digital2.Text,
                 aluno_modalidadeAdicionais = modalidadesAdicionais,
                 aluno_problemaSaudeObs = ProblemaDeSaudeObs.Text,
-                aluno_periodoCirurgiaData = Convert.ToDateTime(cirurgiaData.Text),
                 aluno_cirurgiaObs = cirurgiaObs.Text,
                 aluno_alergiaMedicamentoObs = alergiaMedicamentoObs.Text,
                 aluno_status = status,

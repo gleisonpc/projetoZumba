@@ -16,14 +16,14 @@
         <TextBlock HorizontalAlignment="Left" Margin="11,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="14"><Run Text="Valor:"/><Run Language="pt-br" Text=" R$"/><LineBreak/><Run Language="pt-br"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="10,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Situação:"/>
         <Button Content="Adic. Pagamento" HorizontalAlignment="Left" Margin="452,204,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click"/>
-        <DataGrid x:Name="dataGridPagamento" Margin="10,232,2,0" VerticalAlignment="Top" Height="184" Width="574" AutoGenerateColumns="False">
+        <DataGrid x:Name="dataGridPagamento" Margin="10,232,2,0" VerticalAlignment="Top" Height="184" Width="574" MouseDoubleClick="dataGridPagamento_MouseDoubleClick" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Código" Binding="{Binding Path=pagamento_id}" />
-                <DataGridTextColumn Header="Vencimento" Binding="{Binding Path=pagamento_vencimento, StringFormat=dd-MM-yyyy}" />
-                <DataGridTextColumn Header="Valor Cobrado" Binding="{Binding Path=pagamento_valor}" />
-                <DataGridTextColumn Header="Data Pagamento" Binding="{Binding Path=pagamento_data, StringFormat=dd-MM-yyyy}" />
-                <DataGridTextColumn Header="Valor Recebido" Binding="{Binding Path=pagamento_valorpgt}" />
-                <DataGridTextColumn Header="Situação" Binding="{Binding Path=pagamento_status}" />
+                <DataGridTextColumn x:Name="pagamentoId" Header="Código" Binding="{Binding Path=pagamento_id, Mode=OneWay }" />
+                <DataGridTextColumn Header="Vencimento" Binding="{Binding Path=pagamento_vencimento, StringFormat=dd-MM-yyyy, Mode=OneWay}" />
+                <DataGridTextColumn Header="Valor Cobrado" Binding="{Binding Path=pagamento_valor, Mode=OneWay}" />
+                <DataGridTextColumn Header="Data Pagamento" Binding="{Binding Path=pagamento_data, StringFormat=dd-MM-yyyy, Mode=OneWay}" />
+                <DataGridTextColumn Header="Valor Recebido" Binding="{Binding Path=pagamento_valorpgt, Mode=OneWay}" />
+                <DataGridTextColumn Header="Situação" Binding="{Binding Path=pagamento_status, Mode=OneWay}" />
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock HorizontalAlignment="Left" Margin="10,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Dia Vencimento:"/>

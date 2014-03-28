@@ -55,9 +55,6 @@ namespace projetoZumba
             //Data de nacimento 
             DataDeNascimento.SelectedDate = DateTime.Today;
 
-            //Data de cirurgia
-            cirurgiaData.SelectedDate = DateTime.Today;
-
             //Modalidade esportiva
             PraticouModalidade.SelectedItem = PraticouModalidade.Items.GetItemAt(0);
 
@@ -139,7 +136,6 @@ namespace projetoZumba
                 aluno_digital2 = Digital2.Text,
                 aluno_modalidadeAdicionais = modalidadesAdicionais,
                 aluno_problemaSaudeObs = ProblemaDeSaudeObs.Text,
-                aluno_periodoCirurgiaData = Convert.ToDateTime(cirurgiaData.Text),
                 aluno_cirurgiaObs = cirurgiaObs.Text,
                 aluno_alergiaMedicamentoObs = alergiaMedicamentoObs.Text,
                 aluno_status = "OK",

@@ -76,8 +76,7 @@
             <ComboBoxItem Content="Sim"/>
             <ComboBoxItem Content="Não"/>
         </ComboBox>
-        <DatePicker x:Name="cirurgiaData" HorizontalAlignment="Left" Margin="244,467,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="cirurgiaObs" HorizontalAlignment="Left" Height="23" Margin="478,467,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257"/>
+        <TextBox x:Name="cirurgiaObs" HorizontalAlignment="Left" Height="23" Margin="278,467,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="457"/>
         <Label Content="Fumante?" HorizontalAlignment="Left" Margin="12,495,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="Fumante" HorizontalAlignment="Left" Margin="74,499,0,0" VerticalAlignment="Top" Width="58">
             <ComboBoxItem Content="Sim"/>
@@ -107,9 +106,8 @@
         <ListBox Margin="456,10,24,616" x:Name="ModalidadeAdicional">
         </ListBox>
         <Label Content="Observações:" HorizontalAlignment="Left" Margin="296,379,0,0" VerticalAlignment="Top"/>
-        <Label Content="Data:" HorizontalAlignment="Left" Margin="200,466,0,0" VerticalAlignment="Top"/>
         <Label Content="Observações:" HorizontalAlignment="Left" Margin="348,497,0,0" VerticalAlignment="Top"/>
-        <Label Content="Observações:" HorizontalAlignment="Left" Margin="396,466,0,0" VerticalAlignment="Top"/>
+        <Label Content="Observações:" HorizontalAlignment="Left" Margin="187,466,0,0" VerticalAlignment="Top"/>
         <Button x:Name="Excluir" Content="Excluir" HorizontalAlignment="Left" Margin="610,618,0,0" VerticalAlignment="Top" Width="75" Background="Red" Click="Excluir_Click"/>
         <Label Content="Kg" HorizontalAlignment="Left" Margin="187,314,0,0" VerticalAlignment="Top"/>
     </Grid>

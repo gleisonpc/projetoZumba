@@ -58,5 +58,15 @@ namespace projetoZumba.Views.Pagamentos
             }            
             
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            pagamentoModel.mostrarBuscaAlunos(DataGridPagamento , campoBusca.Text, tipoBusca.Text );
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            updateAlunos();
+        }
     }
 }

@@ -61,5 +61,15 @@ namespace projetoZumba
                 }
             }            
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            updateAlunos();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            alunosModel.mostrarBuscaAlunos(DataGridAlunos, campoBusca.Text, tipoBusca.Text);
+        }
     }
 }

@@ -55,7 +55,6 @@ namespace projetoZumba
         public string aluno_fumante { get; set; }
         public string aluno_doencaCardiovascular { get; set; }
         public string aluno_problemaSaudeObs { get; set; }
-        public Nullable<System.DateTime> aluno_periodoCirurgiaData { get; set; }
         public string aluno_cirurgiaObs { get; set; }
         public string aluno_alergiaMedicamentoObs { get; set; }
         public string aluno_status { get; set; }
