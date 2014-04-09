@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using projetoZumba.Moldel;
 
-namespace projetoZumba.Views
+namespace projetoZumba.Views.Modalidade
 {
     /// <summary>
     /// Interaction logic for Modalidades.xaml

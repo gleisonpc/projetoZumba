@@ -1,0 +1,19 @@
+USE gerjfd
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[gerjfd_view_dev]
+AS
+
+
+select aluno_id, aluno_nome, pagamento_id, pagamento_vencimento, pagamento_valor, pagamento_data, pagamento_valorpgt, pagamento_modalidade, pagamento_modalidadesAdicionais
+from gerjfd_aluno T0
+join gerjfd_pagamento T1 on T0.aluno_id = T1.pagamento_aluno_id
+
+
+GO

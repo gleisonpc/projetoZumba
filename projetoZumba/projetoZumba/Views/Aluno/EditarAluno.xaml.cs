@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace projetoZumba.Views
+namespace projetoZumba.Views.Aluno
 {
     /// <summary>
     /// Interaction logic for EditarAluno.xaml
@@ -96,7 +96,28 @@ namespace projetoZumba.Views
             }
 
             DiaDeVencimento.Text = alunoBanco.aluno_diaVencimento;
-            Valor.Text = alunoBanco.aluno_valor.ToString();
+
+            //COLOCAR VIRGULA NO VALOR DA MODALIDADE
+            if (!alunoBanco.aluno_valor.ToString().Contains("."))
+            {
+                Valor.Text = alunoBanco.aluno_valor.ToString() + ",00";
+            }
+            else
+            {
+                string[] str = alunoBanco.aluno_valor.ToString().Split('.');
+
+                if (str[1].Length == 1)
+                {
+                    Valor.Text = alunoBanco.aluno_valor.ToString() + "0";
+                }
+                else
+                {
+                    Valor.Text = alunoBanco.aluno_valor.ToString();
+                }
+
+            }
+
+            //PREENCHE CAMPOS DO FORMULARIO
             Nome.Text = alunoBanco.aluno_nome;
             Endereco.Text = alunoBanco.aluno_endereco;
             Numero.Text = alunoBanco.aluno_numero;
@@ -187,6 +208,8 @@ namespace projetoZumba.Views
             cirurgiaObs.Text = alunoBanco.aluno_cirurgiaObs;
             alergiaMedicamentoObs.Text = alunoBanco.aluno_alergiaMedicamentoObs;
             status = alunoBanco.aluno_status;
+            CelularMae.Text = alunoBanco.aluno_celularMae;
+            CelularPai.Text = alunoBanco.aluno_celularPai;
 
         }
 
@@ -210,6 +233,12 @@ namespace projetoZumba.Views
                 {
                     problemasdeSaude += problemas.Content + ",";
                 }
+            }
+
+            //SUBSTITUIR VIRGULA POR PONTO PARA GRAVAR NO BANCO VALOR COBRADO
+            if (Valor.Text.Contains(','))
+            {
+                Valor.Text.Replace(',', '.');
             }
 
             gerjfdEntities context = new gerjfdEntities();
@@ -254,6 +283,8 @@ namespace projetoZumba.Views
                 aluno_cirurgiaObs = cirurgiaObs.Text,
                 aluno_alergiaMedicamentoObs = alergiaMedicamentoObs.Text,
                 aluno_status = status,
+                aluno_celularMae = CelularMae.Text,
+                aluno_celularPai = CelularPai.Text,
             };
             var original = context.gerjfd_aluno.Find(data.aluno_id);
             if (original != null)
@@ -329,7 +360,24 @@ namespace projetoZumba.Views
                 }
             }
 
-            Valor.Text = valor.ToString();
+            if (!valor.ToString().Contains("."))
+            {
+                Valor.Text = valor.ToString() + ",00";
+            }
+            else
+            {
+                string[] str = valor.ToString().Split('.');
+
+                if (str[1].Length == 1)
+                {
+                    Valor.Text = valor.ToString() + "0";
+                }
+                else
+                {
+                    Valor.Text = valor.ToString();
+                }
+
+            }
         }
     }
 }

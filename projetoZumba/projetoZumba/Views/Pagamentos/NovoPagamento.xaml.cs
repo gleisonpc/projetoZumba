@@ -85,59 +85,69 @@ namespace projetoZumba.Views.Pagamentos
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            //Modalidades adicionais
-            string modalidadesAdicionais = "";
-            foreach (CheckBox modalidade in pagamentoAluno.modalidadeAdicional.Items)
+            if (dataVencimento.Text != "")
             {
-                if (modalidade.IsChecked == true)
+                //Modalidades adicionais
+                string modalidadesAdicionais = "";
+                foreach (CheckBox modalidade in pagamentoAluno.modalidadeAdicional.Items)
                 {
-                    modalidadesAdicionais += modalidade.Content + ",";
+                    if (modalidade.IsChecked == true)
+                    {
+                        modalidadesAdicionais += modalidade.Content + ",";
+                    }
                 }
-            }
 
-            //SUBSTITUIR VIRGULA POR PONTO PARA GRAVAR NO BANCO VALOR COBRADO
-            if (valorCobrado.Text.Contains(','))
-            {
-                valorCobrado.Text.Replace(',', '.');
-            }
+                //SUBSTITUIR VIRGULA POR PONTO PARA GRAVAR NO BANCO VALOR COBRADO
+                if (valorCobrado.Text.Contains(','))
+                {
+                    valorCobrado.Text.Replace(',', '.');
+                }
 
-            //SUBSTITUIRA VIRGULA POR PONTO PARA GRAVAR NO BANCO VALOR RECEBIDO
-            if (valorRecebido.Text.Contains(','))
-            {
-                valorRecebido.Text.Replace(',', '.');
-            }
+                //SUBSTITUIRA VIRGULA POR PONTO PARA GRAVAR NO BANCO VALOR RECEBIDO
+                if (valorRecebido.Text.Contains(','))
+                {
+                    valorRecebido.Text.Replace(',', '.');
+                }
 
-            //GERAR SITUAÇÃO DO PAGAMENTO
-            string status;
-            if ((float.Parse(valorCobrado.Text) - float.Parse(valorRecebido.Text)) == 0)
-            {
-                status = "FECHADO";
+                //GERAR SITUAÇÃO DO PAGAMENTO
+                string status;
+                if ((float.Parse(valorCobrado.Text) - float.Parse(valorRecebido.Text)) == 0)
+                {
+                    status = "FECHADO";
+                }
+                else
+                    status = "ABERTO";
+
+                gerjfdEntities context = new gerjfdEntities();
+                gerjfd_pagamento data = new gerjfd_pagamento()
+                {
+                    pagamento_aluno_id = Convert.ToInt32(pagamentoAluno.codigoAluno.Text),
+                    pagamento_tipo = tipoPagamento.Text,
+                    pagamento_vencimento = Convert.ToDateTime(dataVencimento.Text),
+                    pagamento_modalidade = pagamentoAluno.modalidadeAluno.Text,
+                    pagamento_modalidadesAdicionais = modalidadesAdicionais,
+                    pagamento_valor = float.Parse(valorCobrado.Text),
+                    pagamento_obs = obsPagamento.Text,
+                    patamento_formapgt = formaPagamento.Text,
+                    pagamento_data = Convert.ToDateTime(dataPagamento.Text),
+                    pagamento_valorpgt = float.Parse(valorRecebido.Text),
+                    pagamento_ncheque = nCheque.Text,
+                    pagamento_nbanco = nBanco.Text,
+                    pagamento_nagencia = nAgencia.Text,
+                    pagamento_status = status,
+                };
+                context.gerjfd_pagamento.Add(data);
+                context.SaveChanges();
+                pagamentoAluno.updatePagamentos();
+
+                reciboPagamento recibo = new reciboPagamento(data);
+
+                recibo.Show();
+
+                this.Close();
             }
             else
-                status = "ABERTO";
-
-            gerjfdEntities context = new gerjfdEntities();
-            gerjfd_pagamento data = new gerjfd_pagamento()
-            {
-                pagamento_aluno_id = Convert.ToInt32(pagamentoAluno.codigoAluno.Text),
-                pagamento_tipo = tipoPagamento.Text,
-                pagamento_vencimento = Convert.ToDateTime(dataVencimento.Text),
-                pagamento_modalidade = pagamentoAluno.modalidadeAluno.Text,
-                pagamento_modalidadesAdicionais = modalidadesAdicionais,
-                pagamento_valor = float.Parse(valorCobrado.Text),
-                pagamento_obs = obsPagamento.Text,
-                patamento_formapgt = formaPagamento.Text,
-                pagamento_data = Convert.ToDateTime(dataPagamento.Text),
-                pagamento_valorpgt = float.Parse(valorRecebido.Text),
-                pagamento_ncheque = nCheque.Text,
-                pagamento_nbanco  = nBanco.Text,
-                pagamento_nagencia = nAgencia.Text,
-                pagamento_status  = status,
-            };
-            context.gerjfd_pagamento.Add(data);
-            context.SaveChanges();
-            pagamentoAluno.updatePagamentos();
-            this.Close();
+                MessageBox.Show("Favor Preencher a Data de Vencimento!");
         }
 
         private void ComboBoxItem2_Selected(object sender, RoutedEventArgs e)

@@ -7,9 +7,9 @@
       <Diagram DiagramId="8ace4227d1a444b89fba126c001493d6" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="gerjfdModel.gerjfd_modalidade" Width="1.5" PointX="10" PointY="3.375" />
         <EntityTypeShape EntityType="gerjfdModel.gerjfd_pagamento" Width="2.125" PointX="5.5" PointY="0.75" />
-        <EntityTypeShape EntityType="gerjfdModel.sysdiagram" Width="1.5" PointX="10" PointY="1.125" />
         <EntityTypeShape EntityType="gerjfdModel.gerjfd_aluno" Width="2.375" PointX="0.75" PointY="0.75" />
         <AssociationConnector Association="gerjfdModel.FK_gerjfd_pagamento_gerjfd_aluno" />
+        <EntityTypeShape EntityType="gerjfdModel.gerjfd_view_dev" Width="1.5" PointX="4.375" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

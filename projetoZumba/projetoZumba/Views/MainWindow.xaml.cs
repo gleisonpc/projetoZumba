@@ -15,8 +15,10 @@ using System.Windows.Shapes;
 using projetoZumba.Lib;
 using projetoZumba.Views;
 using projetoZumba.Views.Pagamentos;
+using projetoZumba.Views.Aluno;
+using projetoZumba.Views.Modalidade;
 
-namespace projetoZumba
+namespace projetoZumba.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -27,6 +29,8 @@ namespace projetoZumba
         public MainWindow()
         {
             InitializeComponent();
+
+            alertDev alerta = new alertDev();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -47,10 +51,5 @@ namespace projetoZumba
             modalidades.Show();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            Pagamento pagamento = new Pagamento();
-            pagamento.Show();
-        }
     }
 }

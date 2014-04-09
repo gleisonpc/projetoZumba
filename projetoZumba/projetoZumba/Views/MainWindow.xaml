@@ -1,12 +1,11 @@
-﻿<Window x:Class="projetoZumba.MainWindow"
+﻿<Window x:Class="projetoZumba.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="300" Width="193">
+        Title="Studio Zumba" Height="300" Width="193">
     <Grid>
         <Button Content="Alunos" Margin="0,0,0,239" Click="Button_Click"/>
         <Button x:Name="Verificacao" Content="Verificação" Margin="0,73,0,166" Click="verificacao_Click"/>
         <Button Content="Modalidade" Margin="0,35,0,204" Click="Button_Click_1"/>
         <Button Content="Modalidade" Margin="0,35,0,204" Click="Button_Click_1"/>
-        <Button Content="Pagamentos" Margin="0,110,0,129" Click="Button_Click_2"/>
     </Grid>
 </Window>

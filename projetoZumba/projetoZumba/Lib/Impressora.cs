@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Web;
 
-namespace TesteImpressora
+namespace projetoZumba.Lib
 {
     class Impressora
     {
@@ -15,7 +15,6 @@ namespace TesteImpressora
         private static int fontSize = 15;
         private static FontStyle fontStyle = FontStyle.Bold;
         private static Color fontColor = Color.Black;
-
 
         public static void imprimir(string msg)
         {

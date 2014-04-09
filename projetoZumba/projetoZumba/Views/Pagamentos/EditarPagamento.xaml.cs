@@ -21,7 +21,6 @@ namespace projetoZumba.Views.Pagamentos
     {
         private gerjfd_pagamento pagamentoBanco;
         private PagamentoAluno pagamentoAluno;
-        private Pagamento pagamento;
 
         public EditarPagamento(gerjfd_pagamento pagamentoBanco, PagamentoAluno pagamentoAluno)
         {
@@ -213,6 +212,13 @@ namespace projetoZumba.Views.Pagamentos
             context.SaveChanges();
             pagamentoAluno.updatePagamentos();
             this.Close();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            reciboPagamento recibo = new reciboPagamento(pagamentoBanco);
+
+            recibo.Show();
         }
 
     }

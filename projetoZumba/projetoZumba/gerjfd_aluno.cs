@@ -58,6 +58,8 @@ namespace projetoZumba
         public string aluno_cirurgiaObs { get; set; }
         public string aluno_alergiaMedicamentoObs { get; set; }
         public string aluno_status { get; set; }
+        public string aluno_celularMae { get; set; }
+        public string aluno_celularPai { get; set; }
     
         public virtual ICollection<gerjfd_pagamento> gerjfd_pagamento { get; set; }
     }

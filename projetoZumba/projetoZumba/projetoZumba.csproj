@@ -13,6 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -81,12 +81,15 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -106,15 +109,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="gerjfd_view_dev.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Lib\Impressora.cs" />
+    <Compile Include="Model11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="Views\alertDev.xaml.cs">
+      <DependentUpon>alertDev.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Aluno\AlertaNome.xaml.cs">
+      <DependentUpon>AlertaNome.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pagamentos\EditarPagamento.xaml.cs">
       <DependentUpon>EditarPagamento.xaml</DependentUpon>
@@ -122,17 +136,25 @@
     <Compile Include="Views\Pagamentos\NovoPagamento.xaml.cs">
       <DependentUpon>NovoPagamento.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pagamentos\Pagamento.xaml.cs">
-      <DependentUpon>Pagamento.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Pagamentos\PagamentoAluno.xaml.cs">
       <DependentUpon>PagamentoAluno.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\Alunos\Alunos.xaml">
+    <Compile Include="Views\Pagamentos\reciboPagamento.xaml.cs">
+      <DependentUpon>reciboPagamento.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\alertDev.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Alunos\EditarAluno.xaml">
+    <Page Include="Views\Aluno\AlertaNome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Aluno\Alunos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Aluno\EditarAluno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,7 +178,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Alunos\NovoAluno.xaml">
+    <Page Include="Views\Aluno\NovoAluno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -174,10 +196,10 @@
     <Compile Include="Lib\leitorVer.cs" />
     <Compile Include="Moldel\ModalidadesModel.cs" />
     <Compile Include="Moldel\PagamentosModel.cs" />
-    <Compile Include="Views\Alunos\Alunos.xaml.cs">
+    <Compile Include="Views\Aluno\Alunos.xaml.cs">
       <DependentUpon>Alunos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Alunos\EditarAluno.xaml.cs">
+    <Compile Include="Views\Aluno\EditarAluno.xaml.cs">
       <DependentUpon>EditarAluno.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Leitor\findAluno.xaml.cs">
@@ -195,7 +217,7 @@
     <Compile Include="Views\Modalidade\NovaModalidade.xaml.cs">
       <DependentUpon>NovaModalidade.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Alunos\NovoAluno.xaml.cs">
+    <Compile Include="Views\Aluno\NovoAluno.xaml.cs">
       <DependentUpon>NovoAluno.xaml</DependentUpon>
     </Compile>
     <Compile Include="Moldel\AlunosModel.cs" />
@@ -218,11 +240,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pagamentos\Pagamento.xaml">
+    <Page Include="Views\Pagamentos\PagamentoAluno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pagamentos\PagamentoAluno.xaml">
+    <Page Include="Views\Pagamentos\reciboPagamento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -260,9 +282,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\AlunoDev.rdlc" />
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model11.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -278,6 +301,7 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\gerjfd_view_dev.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -312,6 +336,10 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

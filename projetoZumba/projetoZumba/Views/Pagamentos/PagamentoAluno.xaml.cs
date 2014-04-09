@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using projetoZumba.Moldel;
 using projetoZumba.Views.Pagamentos;
+using projetoZumba.Views.Aluno;
 
 namespace projetoZumba.Views.Pagamentos
 {
@@ -22,10 +23,10 @@ namespace projetoZumba.Views.Pagamentos
     public partial class PagamentoAluno : Window
     {
         private gerjfd_aluno alunoBanco;
-        private Pagamento pagamento;
+        private Alunos pagamento;
         PagamentosModel pagamentoModel = new PagamentosModel();
 
-        public PagamentoAluno(gerjfd_aluno alunoBanco, Pagamento pagamento)
+        public PagamentoAluno(gerjfd_aluno alunoBanco, Alunos pagamento)
         {
             InitializeComponent();
 

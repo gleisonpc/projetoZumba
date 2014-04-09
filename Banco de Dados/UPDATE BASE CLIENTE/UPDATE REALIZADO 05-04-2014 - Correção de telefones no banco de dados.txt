@@ -1,0 +1,39 @@
+update gerjfd_aluno
+set aluno_cpf = REPLACE(aluno_cpf,' ',''),
+	aluno_telResidencial = REPLACE(aluno_telResidencial,' ',''),
+	aluno_telComercial = REPLACE(aluno_telcomercial,' ',''),
+	aluno_celular = REPLACE(aluno_celular,' ',''),
+	aluno_telMae = REPLACE(aluno_telMae,' ',''),
+	aluno_telPai = REPLACE(aluno_telPai,' ','')
+
+update gerjfd_aluno
+set aluno_cpf = REPLACE(aluno_cpf,'(',''),
+	aluno_telResidencial = REPLACE(aluno_telResidencial,'(',''),
+	aluno_telComercial = REPLACE(aluno_telcomercial,'(',''),
+	aluno_celular = REPLACE(aluno_celular,'(',''),
+	aluno_telMae = REPLACE(aluno_telMae,'(',''),
+	aluno_telPai = REPLACE(aluno_telPai,'(','')
+
+update gerjfd_aluno
+set aluno_cpf = REPLACE(aluno_cpf,')',''),
+	aluno_telResidencial = REPLACE(aluno_telResidencial,')',''),
+	aluno_telComercial = REPLACE(aluno_telcomercial,')',''),
+	aluno_celular = REPLACE(aluno_celular,')',''),
+	aluno_telMae = REPLACE(aluno_telMae,')',''),
+	aluno_telPai = REPLACE(aluno_telPai,')','')
+
+update gerjfd_aluno
+set aluno_cpf = REPLACE(aluno_cpf,'.',''),
+	aluno_telResidencial = REPLACE(aluno_telResidencial,'.',''),
+	aluno_telComercial = REPLACE(aluno_telcomercial,'.',''),
+	aluno_celular = REPLACE(aluno_celular,'.',''),
+	aluno_telMae = REPLACE(aluno_telMae,'.',''),
+	aluno_telPai = REPLACE(aluno_telPai,'.','')
+
+update gerjfd_aluno
+set aluno_cpf = REPLACE(aluno_cpf,'-',''),
+	aluno_telResidencial = REPLACE(aluno_telResidencial,'-',''),
+	aluno_telComercial = REPLACE(aluno_telcomercial,'-',''),
+	aluno_celular = REPLACE(aluno_celular,'-',''),
+	aluno_telMae = REPLACE(aluno_telMae,'-',''),
+	aluno_telPai = REPLACE(aluno_telPai,'-','')

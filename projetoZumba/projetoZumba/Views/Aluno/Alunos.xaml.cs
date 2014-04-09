@@ -12,8 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using projetoZumba.Views;
+using projetoZumba.Views.Pagamentos;
+using projetoZumba.Moldel;
 
-namespace projetoZumba
+namespace projetoZumba.Views.Aluno
 {
     /// <summary>
     /// Interaction logic for Alunos.xaml
@@ -21,6 +23,7 @@ namespace projetoZumba
     public partial class Alunos : Window
     {
         AlunosModel alunosModel = new AlunosModel();
+        PagamentosModel pagamentosModel = new PagamentosModel(); 
 
         public Alunos()
         {
@@ -40,7 +43,7 @@ namespace projetoZumba
 
         public void updateAlunos()
         {
-            alunosModel.mostrarAlunos(DataGridAlunos);
+            pagamentosModel.mostrarAlunos(DataGridAlunos);
         }
 
         private void DataGridAlunos_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -70,6 +73,34 @@ namespace projetoZumba
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             alunosModel.mostrarBuscaAlunos(DataGridAlunos, campoBusca.Text, tipoBusca.Text);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            dynamic aluno = DataGridAlunos.SelectedItem;
+            if (aluno != null)
+            {
+                int id = aluno.aluno_id;
+                gerjfdEntities context = new gerjfdEntities();
+
+                foreach (gerjfd_aluno alunoBanco in context.gerjfd_aluno)
+                {
+                    if (alunoBanco.aluno_id == id)
+                    {
+                        PagamentoAluno pagamentoAluno = new PagamentoAluno(alunoBanco, this);
+                        pagamentoAluno.Show();
+                    }
+                }
+            }            
+        }
+
+        private void campoBusca_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                alunosModel.mostrarBuscaAlunos(DataGridAlunos, campoBusca.Text, tipoBusca.Text);
+            }
+            
         }
     }
 }

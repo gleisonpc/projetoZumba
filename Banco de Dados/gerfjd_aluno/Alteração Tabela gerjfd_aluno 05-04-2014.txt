@@ -1,0 +1,3 @@
+ALTER TABLE gerjfd_aluno
+ADD [aluno_celularMae] [nvarchar](50) NULL DEFAULT '',
+    [aluno_celularPai] [nvarchar](50) NULL DEFAULT ''

@@ -1,4 +1,4 @@
-﻿<Window x:Class="projetoZumba.Views.NovaModalidade"
+﻿<Window x:Class="projetoZumba.Views.Modalidade.NovaModalidade"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
@@ -10,15 +10,11 @@
         <TextBox x:Name="nomeModalidade" HorizontalAlignment="Left" Height="23" Margin="105,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
 
         <WindowsFormsHost Margin="124,45,10,110">
-
             <wf:MaskedTextBox x:Name="vlrPrincipal" Mask="00.00"/>
-
         </WindowsFormsHost>
 
         <WindowsFormsHost Margin="122,94,12,63">
-
             <wf:MaskedTextBox x:Name="vlrAdicional" Mask="00.00"/>
-
         </WindowsFormsHost>
 
 

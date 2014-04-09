@@ -1,4 +1,4 @@
-﻿<Window x:Class="projetoZumba.Views.Modalidades"
+﻿<Window x:Class="projetoZumba.Views.Modalidade.Modalidades"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Modalidades" Height="484" Width="699" ResizeMode="NoResize">

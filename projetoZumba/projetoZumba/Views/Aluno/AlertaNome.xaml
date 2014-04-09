@@ -1,0 +1,11 @@
+﻿<Window x:Class="projetoZumba.Views.Aluno.AlertaNome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AlertaNome" Height="135.338" Width="403.76">
+    <Grid>
+        <Button Content="Continuar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="85,72,0,0" Click="Button_Click_1"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="231,72,0,0" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="19,10,0,0" TextWrapping="Wrap" Text="Já Existe este nome nos cadastros. Deseja Continuar?" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

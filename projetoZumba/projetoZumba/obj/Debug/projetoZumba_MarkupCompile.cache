@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\obj\Debug\
 projetoZumba
 none
 false
 DEBUG;TRACE
-C:\Users\Gabriel\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\App.xaml
-13223587959
+C:\Users\gleis_000\Documents\GitHub\projetoZumba\projetoZumba\projetoZumba\App.xaml
+15-486007163
 
-32-166910143
-251466536669
-Views\Alunos\Alunos.xaml;Views\Alunos\EditarAluno.xaml;Views\Leitor\findAluno.xaml;Views\Leitor\leitorDig.xaml;Views\Modalidade\EditarModalidade.xaml;Views\Modalidade\Modalidades.xaml;Views\Modalidade\NovaModalidade.xaml;Views\Alunos\NovoAluno.xaml;Views\MainWindow.xaml;Views\Pagamentos\EditarPagamento.xaml;Views\Pagamentos\NovoPagamento.xaml;Views\Pagamentos\Pagamento.xaml;Views\Pagamentos\PagamentoAluno.xaml;
+35-138181270
+28-2021476296
+Views\alertDev.xaml;Views\Aluno\AlertaNome.xaml;Views\Aluno\Alunos.xaml;Views\Aluno\EditarAluno.xaml;Views\Leitor\findAluno.xaml;Views\Leitor\leitorDig.xaml;Views\Modalidade\EditarModalidade.xaml;Views\Modalidade\Modalidades.xaml;Views\Modalidade\NovaModalidade.xaml;Views\Aluno\NovoAluno.xaml;Views\MainWindow.xaml;Views\Pagamentos\EditarPagamento.xaml;Views\Pagamentos\NovoPagamento.xaml;Views\Pagamentos\PagamentoAluno.xaml;Views\Pagamentos\reciboPagamento.xaml;
 
 False
 
