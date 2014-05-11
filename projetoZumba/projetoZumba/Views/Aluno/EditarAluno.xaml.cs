@@ -211,6 +211,8 @@ namespace projetoZumba.Views.Aluno
             CelularMae.Text = alunoBanco.aluno_celularMae;
             CelularPai.Text = alunoBanco.aluno_celularPai;
 
+           
+
         }
 
         private void Confirmar_Click(object sender, RoutedEventArgs e)
@@ -313,15 +315,15 @@ namespace projetoZumba.Views.Aluno
             leitura2.Show();
         }
 
-        private void Excluir_Click(object sender, RoutedEventArgs e)
-        {
-            gerjfdEntities context = new gerjfdEntities();
-            var row = context.gerjfd_aluno.Find(alunoBanco.aluno_id);
-            context.gerjfd_aluno.Remove(row);
-            context.SaveChanges();
-            alunos.updateAlunos();
-            this.Close();
-        }
+        //private void Excluir_Click(object sender, RoutedEventArgs e)
+        //{
+            //gerjfdEntities context = new gerjfdEntities();
+            //var row = context.gerjfd_aluno.Find(alunoBanco.aluno_id);
+            //context.gerjfd_aluno.Remove(row);
+            //context.SaveChanges();
+            //alunos.updateAlunos();
+            //this.Close();
+        //}
 
         private void Modalidade_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

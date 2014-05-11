@@ -14,9 +14,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using projetoZumba.Lib;
 using projetoZumba.Views;
-using projetoZumba.Views.Pagamentos;
 using projetoZumba.Views.Aluno;
 using projetoZumba.Views.Modalidade;
+using projetoZumba.Views.Pagamentos;
+using projetoZumba.Views.Agenda;
 
 namespace projetoZumba.Views
 {
@@ -39,16 +40,16 @@ namespace projetoZumba.Views
             alunos.Show();
         }
 
-        private void verificacao_Click(object sender, RoutedEventArgs e)
-        {
-            findAluno ver = new findAluno();
-            ver.Show();           
-        }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Modalidades modalidades = new Modalidades();
             modalidades.Show();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Agendas agendas = new Agendas();
+            agendas.Show();
         }
 
     }

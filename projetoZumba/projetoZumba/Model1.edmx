@@ -5,6 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="gerjfdModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="gerjfd_agenda">
+          <Key>
+            <PropertyRef Name="agenda_id" />
+          </Key>
+          <Property Name="agenda_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="agenda_id_modalidade" Type="int" />
+          <Property Name="agenda_dia_semana" Type="nvarchar" MaxLength="50" />
+          <Property Name="agenda_horario" Type="nvarchar" MaxLength="50" />
+          <Property Name="agenda_ativa" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="gerjfd_aluno">
           <Key>
             <PropertyRef Name="aluno_id" />
@@ -50,6 +60,15 @@
           <Property Name="aluno_status" Type="nvarchar" MaxLength="50" />
           <Property Name="aluno_celularMae" Type="nvarchar" MaxLength="50" />
           <Property Name="aluno_celularPai" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="gerjfd_frequencia">
+          <Key>
+            <PropertyRef Name="frequencia_id" />
+          </Key>
+          <Property Name="frequencia_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="frequencia_aluno_id" Type="int" />
+          <Property Name="frequencia_id_agenda" Type="int" />
+          <Property Name="frequencia_data" Type="datetime" />
         </EntityType>
         <EntityType Name="gerjfd_modalidade">
           <Key>
@@ -98,6 +117,30 @@ warning 6002: The table/view 'gerjfd.dbo.gerjfd_view_dev' does not have a primar
           <Property Name="pagamento_modalidade" Type="nvarchar" MaxLength="50" />
           <Property Name="pagamento_modalidadesAdicionais" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <Association Name="FK_gerjfd_agenda_gerjfd_modalidade">
+          <End Role="gerjfd_modalidade" Type="Self.gerjfd_modalidade" Multiplicity="0..1" />
+          <End Role="gerjfd_agenda" Type="Self.gerjfd_agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gerjfd_modalidade">
+              <PropertyRef Name="modalidade_id" />
+            </Principal>
+            <Dependent Role="gerjfd_agenda">
+              <PropertyRef Name="agenda_id_modalidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gerjfd_frequencia_gerjfd_aluno">
+          <End Role="gerjfd_aluno" Type="Self.gerjfd_aluno" Multiplicity="0..1" />
+          <End Role="gerjfd_frequencia" Type="Self.gerjfd_frequencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gerjfd_aluno">
+              <PropertyRef Name="aluno_id" />
+            </Principal>
+            <Dependent Role="gerjfd_frequencia">
+              <PropertyRef Name="frequencia_aluno_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_gerjfd_pagamento_gerjfd_aluno">
           <End Role="gerjfd_aluno" Type="Self.gerjfd_aluno" Multiplicity="1" />
           <End Role="gerjfd_pagamento" Type="Self.gerjfd_pagamento" Multiplicity="*" />
@@ -111,7 +154,9 @@ warning 6002: The table/view 'gerjfd.dbo.gerjfd_view_dev' does not have a primar
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="gerjfdModelStoreContainer">
+          <EntitySet Name="gerjfd_agenda" EntityType="Self.gerjfd_agenda" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="gerjfd_aluno" EntityType="Self.gerjfd_aluno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gerjfd_frequencia" EntityType="Self.gerjfd_frequencia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="gerjfd_modalidade" EntityType="Self.gerjfd_modalidade" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="gerjfd_pagamento" EntityType="Self.gerjfd_pagamento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="gerjfd_view_dev" EntityType="Self.gerjfd_view_dev" store:Type="Views" store:Schema="dbo">
@@ -127,6 +172,14 @@ warning 6002: The table/view 'gerjfd.dbo.gerjfd_view_dev' does not have a primar
     [gerjfd_view_dev].[pagamento_modalidadesAdicionais] AS [pagamento_modalidadesAdicionais]
     FROM [dbo].[gerjfd_view_dev] AS [gerjfd_view_dev]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK_gerjfd_agenda_gerjfd_modalidade" Association="Self.FK_gerjfd_agenda_gerjfd_modalidade">
+            <End Role="gerjfd_modalidade" EntitySet="gerjfd_modalidade" />
+            <End Role="gerjfd_agenda" EntitySet="gerjfd_agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gerjfd_frequencia_gerjfd_aluno" Association="Self.FK_gerjfd_frequencia_gerjfd_aluno">
+            <End Role="gerjfd_aluno" EntitySet="gerjfd_aluno" />
+            <End Role="gerjfd_frequencia" EntitySet="gerjfd_frequencia" />
+          </AssociationSet>
           <AssociationSet Name="FK_gerjfd_pagamento_gerjfd_aluno" Association="Self.FK_gerjfd_pagamento_gerjfd_aluno">
             <End Role="gerjfd_aluno" EntitySet="gerjfd_aluno" />
             <End Role="gerjfd_pagamento" EntitySet="gerjfd_pagamento" />
@@ -174,7 +227,47 @@ warning 6002: The table/view 'gerjfd.dbo.gerjfd_view_dev' does not have a primar
             <End Role="gerjfd_aluno" EntitySet="gerjfd_aluno" />
             <End Role="gerjfd_pagamento" EntitySet="gerjfd_pagamento" />
           </AssociationSet>
+          <EntitySet Name="gerjfd_agenda" EntityType="gerjfdModel.gerjfd_agenda" />
+          <AssociationSet Name="FK_gerjfd_agenda_gerjfd_modalidade" Association="gerjfdModel.FK_gerjfd_agenda_gerjfd_modalidade">
+            <End Role="gerjfd_modalidade" EntitySet="gerjfd_modalidade" />
+            <End Role="gerjfd_agenda" EntitySet="gerjfd_agenda" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram1">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram1">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram1">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition1" ReturnType="Collection(gerjfdModel.sp_helpdiagramdefinition1_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams1" ReturnType="Collection(gerjfdModel.sp_helpdiagrams1_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram1">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams1" />
           <EntitySet Name="gerjfd_view_dev" EntityType="gerjfdModel.gerjfd_view_dev" />
+          <EntitySet Name="gerjfd_frequencia" EntityType="gerjfdModel.gerjfd_frequencia" />
+          <AssociationSet Name="FK_gerjfd_frequencia_gerjfd_aluno" Association="gerjfdModel.FK_gerjfd_frequencia_gerjfd_aluno">
+            <End Role="gerjfd_aluno" EntitySet="gerjfd_aluno" />
+            <End Role="gerjfd_frequencia" EntitySet="gerjfd_frequencia" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="gerjfd_modalidade">
           <Key>
@@ -184,6 +277,7 @@ warning 6002: The table/view 'gerjfd.dbo.gerjfd_view_dev' does not have a primar
           <Property Name="modalidade_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="modalidade_vlrp" Type="Single" />
           <Property Name="modalidade_vlra" Type="Single" />
+          <NavigationProperty Name="gerjfd_agenda" Relationship="gerjfdModel.FK_gerjfd_agenda_gerjfd_modalidade" FromRole="gerjfd_modalidade" ToRole="gerjfd_agenda" />
         </EntityType>
         <EntityType Name="gerjfd_pagamento">
           <Key>
@@ -263,6 +357,7 @@ warning 6002: The table/view 'gerjfd.dbo.gerjfd_view_dev' does not have a primar
           <NavigationProperty Name="gerjfd_pagamento" Relationship="gerjfdModel.FK_gerjfd_pagamento_gerjfd_aluno" FromRole="gerjfd_aluno" ToRole="gerjfd_pagamento" />
           <Property Name="aluno_celularMae" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="aluno_celularPai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="gerjfd_frequencia" Relationship="gerjfdModel.FK_gerjfd_frequencia_gerjfd_aluno" FromRole="gerjfd_aluno" ToRole="gerjfd_frequencia" />
         </EntityType>
         <Association Name="FK_gerjfd_pagamento_gerjfd_aluno">
           <End Type="gerjfdModel.gerjfd_aluno" Role="gerjfd_aluno" Multiplicity="1" />
@@ -276,6 +371,40 @@ warning 6002: The table/view 'gerjfd.dbo.gerjfd_view_dev' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="gerjfd_agenda">
+          <Key>
+            <PropertyRef Name="agenda_id" />
+          </Key>
+          <Property Name="agenda_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="agenda_id_modalidade" Type="Int32" />
+          <Property Name="agenda_dia_semana" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agenda_horario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agenda_ativa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="gerjfd_modalidade" Relationship="gerjfdModel.FK_gerjfd_agenda_gerjfd_modalidade" FromRole="gerjfd_agenda" ToRole="gerjfd_modalidade" />
+        </EntityType>
+        <Association Name="FK_gerjfd_agenda_gerjfd_modalidade">
+          <End Type="gerjfdModel.gerjfd_modalidade" Role="gerjfd_modalidade" Multiplicity="0..1" />
+          <End Type="gerjfdModel.gerjfd_agenda" Role="gerjfd_agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gerjfd_modalidade">
+              <PropertyRef Name="modalidade_id" />
+            </Principal>
+            <Dependent Role="gerjfd_agenda">
+              <PropertyRef Name="agenda_id_modalidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_helpdiagramdefinition1_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams1_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
         <EntityType Name="gerjfd_view_dev">
           <Key>
             <PropertyRef Name="aluno_id" />
@@ -292,6 +421,28 @@ warning 6002: The table/view 'gerjfd.dbo.gerjfd_view_dev' does not have a primar
           <Property Name="pagamento_modalidade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="pagamento_modalidadesAdicionais" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="gerjfd_frequencia">
+          <Key>
+            <PropertyRef Name="frequencia_id" />
+          </Key>
+          <Property Name="frequencia_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="frequencia_aluno_id" Type="Int32" />
+          <Property Name="frequencia_id_agenda" Type="Int32" />
+          <Property Name="frequencia_data" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="gerjfd_aluno" Relationship="gerjfdModel.FK_gerjfd_frequencia_gerjfd_aluno" FromRole="gerjfd_frequencia" ToRole="gerjfd_aluno" />
+        </EntityType>
+        <Association Name="FK_gerjfd_frequencia_gerjfd_aluno">
+          <End Type="gerjfdModel.gerjfd_aluno" Role="gerjfd_aluno" Multiplicity="0..1" />
+          <End Type="gerjfdModel.gerjfd_frequencia" Role="gerjfd_frequencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gerjfd_aluno">
+              <PropertyRef Name="aluno_id" />
+            </Principal>
+            <Dependent Role="gerjfd_frequencia">
+              <PropertyRef Name="frequencia_aluno_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -376,6 +527,17 @@ warning 6002: The table/view 'gerjfd.dbo.gerjfd_view_dev' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="gerjfd_agenda">
+            <EntityTypeMapping TypeName="gerjfdModel.gerjfd_agenda">
+              <MappingFragment StoreEntitySet="gerjfd_agenda">
+                <ScalarProperty Name="agenda_ativa" ColumnName="agenda_ativa" />
+                <ScalarProperty Name="agenda_horario" ColumnName="agenda_horario" />
+                <ScalarProperty Name="agenda_dia_semana" ColumnName="agenda_dia_semana" />
+                <ScalarProperty Name="agenda_id_modalidade" ColumnName="agenda_id_modalidade" />
+                <ScalarProperty Name="agenda_id" ColumnName="agenda_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="gerjfd_view_dev">
             <EntityTypeMapping TypeName="gerjfdModel.gerjfd_view_dev">
               <MappingFragment StoreEntitySet="gerjfd_view_dev">
@@ -391,7 +553,17 @@ warning 6002: The table/view 'gerjfd.dbo.gerjfd_view_dev' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <EntitySetMapping Name="gerjfd_frequencia">
+            <EntityTypeMapping TypeName="gerjfdModel.gerjfd_frequencia">
+              <MappingFragment StoreEntitySet="gerjfd_frequencia">
+                <ScalarProperty Name="frequencia_data" ColumnName="frequencia_data" />
+                <ScalarProperty Name="frequencia_id_agenda" ColumnName="frequencia_id_agenda" />
+                <ScalarProperty Name="frequencia_aluno_id" ColumnName="frequencia_aluno_id" />
+                <ScalarProperty Name="frequencia_id" ColumnName="frequencia_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

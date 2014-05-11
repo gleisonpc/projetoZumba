@@ -17,11 +17,12 @@ namespace projetoZumba.Lib
             private DPFP.Verification.Verification Verificator;
             DPFP.Template v = new DPFP.Template();
 
-            public List<byte[]> digData = new List<byte[]>();
+            //public List<byte[]> digData = new List<byte[]>();
 
             public bool status = true;
             public bool verif = false;
             private Views.findAluno find;
+           
             
              public leitorVer(Views.findAluno find)
              {
@@ -82,6 +83,7 @@ namespace projetoZumba.Lib
 
             public void Verify(DPFP.Sample Sample)
             {
+                bool existe = true;
                 Verificator = new DPFP.Verification.Verification();
 
                 // Process the sample and create a feature set for the enrollment purpose.
@@ -118,12 +120,14 @@ namespace projetoZumba.Lib
 
                                 find.Dispatcher.Invoke(new Action(delegate()
                                 {
+                                    find.idVerif.Text = aluno.aluno_id.ToString();
                                     find.nomeVerif.Content = aluno.aluno_nome;
                                     find.varVerif.Content = result.FARAchieved;
                                     find.verStatus.Content = result.Verified;
                                 }));
 
                                 Stop();
+                                existe = true;
                                 break;
                             }
                             else
@@ -143,26 +147,21 @@ namespace projetoZumba.Lib
 
                                         find.Dispatcher.Invoke(new Action(delegate()
                                         {
+                                            find.idVerif.Text = aluno.aluno_id.ToString();
                                             find.nomeVerif.Content = aluno.aluno_nome;
                                             find.varVerif.Content = result.FARAchieved;
                                             find.verStatus.Content = result.Verified;
                                         }));
 
                                         Stop();
+                                        existe = true;
                                         break;
                                     }
                                     else
                                     {
-                                        SetStatus("VERIFICAÇÃO FALHOU");
-
-                                        find.Dispatcher.Invoke(new Action(delegate()
-                                        {
-                                            find.nomeVerif.Content = "ALUNO NÃO ENCONTRADO";
-                                            find.varVerif.Content = "9999999999";
-                                            find.verStatus.Content = result.Verified;
-                                        }));
-
+                                        existe = false;
                                         Stop();
+                                        //SetStatus("VERIFICAÇÃO FALHOU");
 
                                     }
                                 
@@ -173,6 +172,16 @@ namespace projetoZumba.Lib
                         
                     }
 
+                    if (existe == false)
+                    {
+                        find.Dispatcher.Invoke(new Action(delegate()
+                        {
+                            find.idVerif.Text = "ALUNO NÃO ENCONTRADO";
+                            find.nomeVerif.Content = "ALUNO NÃO ENCONTRADO";
+                            find.varVerif.Content = "9999999999";
+                            find.verStatus.Content = result.Verified;
+                        }));
+                    }
                 }
             }
 

@@ -12,18 +12,14 @@ namespace projetoZumba
     using System;
     using System.Collections.Generic;
     
-    public partial class gerjfd_modalidade
+    public partial class gerjfd_agenda
     {
-        public gerjfd_modalidade()
-        {
-            this.gerjfd_agenda = new HashSet<gerjfd_agenda>();
-        }
+        public int agenda_id { get; set; }
+        public Nullable<int> agenda_id_modalidade { get; set; }
+        public string agenda_dia_semana { get; set; }
+        public string agenda_horario { get; set; }
+        public string agenda_ativa { get; set; }
     
-        public int modalidade_id { get; set; }
-        public string modalidade_nome { get; set; }
-        public Nullable<float> modalidade_vlrp { get; set; }
-        public Nullable<float> modalidade_vlra { get; set; }
-    
-        public virtual ICollection<gerjfd_agenda> gerjfd_agenda { get; set; }
+        public virtual gerjfd_modalidade gerjfd_modalidade { get; set; }
     }
 }

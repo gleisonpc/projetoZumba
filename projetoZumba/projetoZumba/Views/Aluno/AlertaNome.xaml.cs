@@ -105,9 +105,61 @@ namespace projetoZumba.Views.Aluno
                 aluno_status = "OK",
             };
             context.gerjfd_aluno.Add(data);
+
+            //LIMPAR FORMULÁRIO APÓS GRAVAR NO BANCO
+            novoAluno.DataDeInicio.Text = DateTime.Today.ToString();
+            novoAluno.Modalidade.SelectedIndex = 0;
+            novoAluno.DiaDeVencimento.Text = "";
+            novoAluno.Nome.Text = "";
+            novoAluno.Endereco.Text = "";
+            novoAluno.Numero.Text = "";
+            novoAluno.Bairro.Text = "";
+            novoAluno.Cidade.Text = "";
+            novoAluno.Rg.Text = "";
+            novoAluno.Cpf.Text = "";
+            novoAluno.TelResidencial.Text = "";
+            novoAluno.TelComercial.Text = "";
+            novoAluno.Celular.Text = "";
+            novoAluno.DataDeNascimento.Text = DateTime.Today.ToString();
+            novoAluno.Email.Text = "";
+            novoAluno.NomeDaMae.Text = "";
+            novoAluno.TelefoneMae.Text = "";
+            novoAluno.CelularMae.Text = "";
+            novoAluno.NomeDoPai.Text = "";
+            novoAluno.TelefonePai.Text = "";
+            novoAluno.CelularPai.Text = "";
+            novoAluno.Peso.Text = "";
+            novoAluno.Altura.Text = "";
+            novoAluno.PressaoArterial.Text = "";
+            novoAluno.PraticouModalidade.SelectedIndex = 0;
+            novoAluno.ModalidadePraticada.Text = "";
+
+            foreach (CheckBox b in novoAluno.ProblemaDeSaude.Items)
+            {
+                b.IsChecked = false;
+            }
+
+            foreach (CheckBox a in novoAluno.ModalidadeAdicional.Items)
+            {
+                a.IsChecked = false;
+            }
+
+            novoAluno.ProblemaDeSaudeObs.Text = "";
+            novoAluno.CirurgiaRecente.SelectedIndex = 1;
+            novoAluno.cirurgiaObs.Text = "";
+            novoAluno.Fumante.SelectedIndex = 1;
+            novoAluno.AlergiaMedicamento.SelectedIndex = 1;
+            novoAluno.alergiaMedicamentoObs.Text = "";
+            novoAluno.DoencasCardiovasculares.SelectedIndex = 1;
+            novoAluno.Parentesco.Text = "";
+            novoAluno.Digital1.Text = "";
+            novoAluno.Digital2.Text = "";
+
+            //SALVA INFORMAÇÕES NO BANCO DE DADOS E ATUALIZA TELA ALUNOS
             context.SaveChanges();
             alunos.updateAlunos();
-            novoAluno.Close();
+
+            this.Close();
         }
     }
 }

@@ -85,7 +85,7 @@ namespace projetoZumba.Views.Pagamentos
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (dataVencimento.Text != "")
+            if (dataVencimento.Text != "" && formaPagamento.Text != "")
             {
                 //Modalidades adicionais
                 string modalidadesAdicionais = "";
@@ -147,7 +147,7 @@ namespace projetoZumba.Views.Pagamentos
                 this.Close();
             }
             else
-                MessageBox.Show("Favor Preencher a Data de Vencimento!");
+                MessageBox.Show("Favor Verificar a Data de Vencimento e a Forma de Pagamento!");
         }
 
         private void ComboBoxItem2_Selected(object sender, RoutedEventArgs e)

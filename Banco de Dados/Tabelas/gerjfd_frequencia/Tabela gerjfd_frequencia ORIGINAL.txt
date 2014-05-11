@@ -1,0 +1,24 @@
+USE [gerjfd]
+GO
+
+/****** Object:  Table [dbo].[gerjfd_frequencia]    Script Date: 10/04/2014 16:30:33 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[gerjfd_frequencia](
+	[frequencia_id] [int] IDENTITY(1,1) NOT NULL,
+	[frequencia_aluno_id] [int] NULL,
+	[frequencia_id_agenda] [int] NULL,
+	[frequencia_data] [datetime] NULL,
+ CONSTRAINT [PK_gerjfd_frequencia] PRIMARY KEY CLUSTERED 
+(
+	[frequencia_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+

@@ -155,7 +155,6 @@
         <Label Content="Observações:" HorizontalAlignment="Left" Margin="296,379,0,0" VerticalAlignment="Top"/>
         <Label Content="Observações:" HorizontalAlignment="Left" Margin="348,497,0,0" VerticalAlignment="Top"/>
         <Label Content="Observações:" HorizontalAlignment="Left" Margin="187,466,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Excluir" Content="Excluir" HorizontalAlignment="Left" Margin="610,618,0,0" VerticalAlignment="Top" Width="75" Background="Red" Click="Excluir_Click"/>
         <Label Content="Kg" HorizontalAlignment="Left" Margin="187,314,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

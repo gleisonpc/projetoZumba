@@ -1,0 +1,31 @@
+/* Para impedir possíveis problemas de perda de dados, analise este script detalhadamente antes de executá-lo fora do contexto do designer de banco de dados.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+ALTER TABLE dbo.gerjfd_modalidade SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+BEGIN TRANSACTION
+GO
+ALTER TABLE dbo.gerjfd_agenda ADD CONSTRAINT
+	FK_gerjfd_agenda_gerjfd_modalidade FOREIGN KEY
+	(
+	agenda_id_modalidade
+	) REFERENCES dbo.gerjfd_modalidade
+	(
+	modalidade_id
+	) ON UPDATE  NO ACTION 
+	 ON DELETE  NO ACTION 
+	
+GO
+ALTER TABLE dbo.gerjfd_agenda SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT

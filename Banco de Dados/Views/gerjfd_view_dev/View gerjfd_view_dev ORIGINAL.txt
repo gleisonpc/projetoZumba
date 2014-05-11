@@ -1,19 +1,30 @@
-USE gerjfd
-GO
-
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 CREATE VIEW [dbo].[gerjfd_view_dev]
 AS
 
 
-select aluno_id, aluno_nome, pagamento_id, pagamento_vencimento, pagamento_valor, pagamento_data, pagamento_valorpgt, pagamento_modalidade, pagamento_modalidadesAdicionais
-from gerjfd_aluno T0
-join gerjfd_pagamento T1 on T0.aluno_id = T1.pagamento_aluno_id
+select T1.aluno_id,
+       T1.aluno_nome,
+       T2.pagamento_id,
+	   T2.pagamento_vencimento,
+	   T2.pagamento_valor,
+	   T2.pagamento_data,
+	   T2.pagamento_valorpgt,
+	   T2.pagamento_modalidade,
+	   T2.pagamento_modalidadesAdicionais from (
+	select T0.aluno_id,
+		   --MAX(t1.pagamento_id),
+		   MAX(T1.pagamento_vencimento) as MaxValue
+
+	from gerjfd_aluno T0
+	join gerjfd_pagamento T1 on T0.aluno_id = T1.pagamento_aluno_id
+
+	where T0.aluno_status in ('DEV')
+
+	GROUP BY T0.aluno_id) T0
+	JOIN gerjfd_aluno T1 on t1.aluno_id = T0.aluno_id
+	JOIN gerjfd_pagamento T2 on T2.pagamento_vencimento = T0.MaxValue AND T2.pagamento_aluno_id = T0.aluno_id
+
+	
 
 
 GO

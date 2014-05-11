@@ -79,6 +79,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="gerjfd_agenda">
+      <EntityTypeMapping TypeName="gerjfdModel.gerjfd_agenda">
+        <MappingFragment StoreEntitySet="gerjfd_agenda">
+          <ScalarProperty Name="agenda_ativa" ColumnName="agenda_ativa" />
+          <ScalarProperty Name="agenda_horario" ColumnName="agenda_horario" />
+          <ScalarProperty Name="agenda_dia_semana" ColumnName="agenda_dia_semana" />
+          <ScalarProperty Name="agenda_id_modalidade" ColumnName="agenda_id_modalidade" />
+          <ScalarProperty Name="agenda_id" ColumnName="agenda_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="gerjfd_view_dev">
       <EntityTypeMapping TypeName="gerjfdModel.gerjfd_view_dev">
         <MappingFragment StoreEntitySet="gerjfd_view_dev">
@@ -91,6 +102,16 @@
           <ScalarProperty Name="pagamento_id" ColumnName="pagamento_id" />
           <ScalarProperty Name="aluno_nome" ColumnName="aluno_nome" />
           <ScalarProperty Name="aluno_id" ColumnName="aluno_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gerjfd_frequencia">
+      <EntityTypeMapping TypeName="gerjfdModel.gerjfd_frequencia">
+        <MappingFragment StoreEntitySet="gerjfd_frequencia">
+          <ScalarProperty Name="frequencia_data" ColumnName="frequencia_data" />
+          <ScalarProperty Name="frequencia_id_agenda" ColumnName="frequencia_id_agenda" />
+          <ScalarProperty Name="frequencia_aluno_id" ColumnName="frequencia_aluno_id" />
+          <ScalarProperty Name="frequencia_id" ColumnName="frequencia_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

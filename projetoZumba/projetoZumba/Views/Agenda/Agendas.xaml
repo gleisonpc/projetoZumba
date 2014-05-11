@@ -1,0 +1,24 @@
+﻿<Window x:Class="projetoZumba.Views.Agenda.Agendas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Agenda" Height="484" Width="800.493" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid>
+        <Button x:Name="AgendaNova" Content="Nova Agenda" Margin="10,22,692,401" Click="AgendaNova_Click"/>
+        <DataGrid x:Name="DataGridAgendas" CanUserAddRows="False" CanUserDeleteRows="False" Margin="0,80,0,0" AutoGenerateColumns="False" MouseDoubleClick="DataGridAgendas_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Código" Binding="{Binding Path=agenda_id, Mode=OneWay }" />
+                <DataGridTextColumn Header="Dia Semana" Binding="{Binding Path=agenda_dia_semana, Mode=OneWay}" />
+                <DataGridTextColumn Header="Horario" Binding="{Binding Path=agenda_horario, Mode=OneWay}" />
+                <DataGridTextColumn Header="Modalidade" Binding="{Binding Path=modalidade_nome, Mode=OneWay}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="Button_Click">Chamada</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

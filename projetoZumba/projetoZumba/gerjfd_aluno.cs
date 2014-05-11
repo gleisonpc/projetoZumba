@@ -17,6 +17,7 @@ namespace projetoZumba
         public gerjfd_aluno()
         {
             this.gerjfd_pagamento = new HashSet<gerjfd_pagamento>();
+            this.gerjfd_frequencia = new HashSet<gerjfd_frequencia>();
         }
     
         public int aluno_id { get; set; }
@@ -62,5 +63,6 @@ namespace projetoZumba
         public string aluno_celularPai { get; set; }
     
         public virtual ICollection<gerjfd_pagamento> gerjfd_pagamento { get; set; }
+        public virtual ICollection<gerjfd_frequencia> gerjfd_frequencia { get; set; }
     }
 }

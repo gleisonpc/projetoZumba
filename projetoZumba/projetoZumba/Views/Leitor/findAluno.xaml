@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="findAluno" Height="345.745" Width="353.191">
     <Grid Margin="0,2,0,-2">
-        <Label x:Name="statusLeitura" Content="" HorizontalAlignment="Left" Height="94" Margin="10,36,0,0" VerticalAlignment="Top" Width="325"/>
+        <Label x:Name="statusLeitura" Content="" HorizontalAlignment="Left" Height="35" Margin="10,36,0,0" VerticalAlignment="Top" Width="325"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pt-br" Text="Nome:"/></TextBlock>
         <Label x:Name="nomeVerif" Content="" HorizontalAlignment="Left" Margin="77,155,0,0" VerticalAlignment="Top" Width="258" Height="26"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pt-br" Text="Status"/></TextBlock>
@@ -11,9 +11,13 @@
         <TextBlock HorizontalAlignment="Left" Margin="10,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pt-br" Text="VAR:"/></TextBlock>
         <Label x:Name="verStatus" Content="" HorizontalAlignment="Left" Margin="77,181,0,0" VerticalAlignment="Top" Width="258" Height="26"/>
         <Label x:Name="varVerif" Content="" HorizontalAlignment="Left" Margin="77,215,0,0" VerticalAlignment="Top" Width="258" Height="26"/>
-        <Button x:Name="bottonok" Content="OK" HorizontalAlignment="Left" Margin="42,280,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" IsEnabled="False" LayoutUpdated="Button_LayoutUpdated"/>
-        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="143,280,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Button Content="Nov. Verf." HorizontalAlignment="Left" Margin="243,280,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Button x:Name="buttonok" Content="OK" HorizontalAlignment="Left" Margin="42,280,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button x:Name="buttoncancel" Content="Cancelar" HorizontalAlignment="Left" Margin="143,280,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button x:Name="buttonver" Content="Nov. Verf." HorizontalAlignment="Left" Margin="243,280,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pt-br" Text="ID:"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pt-br" Text="Agenda:"/></TextBlock>
+        <TextBox x:Name="idVerif" HorizontalAlignment="Left" Height="23" Margin="77,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" TextChanged="idVerif_TextChanged" IsEnabled="False"/>
+        <TextBox x:Name="idAgenda" HorizontalAlignment="Left" Height="23" Margin="77,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" TextChanged="idVerif_TextChanged" IsEnabled="False"/>
 
     </Grid>
 </Window>
