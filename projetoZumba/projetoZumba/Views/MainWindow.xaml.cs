@@ -18,6 +18,8 @@ using projetoZumba.Views.Aluno;
 using projetoZumba.Views.Modalidade;
 using projetoZumba.Views.Pagamentos;
 using projetoZumba.Views.Agenda;
+using Microsoft.Win32;
+using System.Diagnostics;
 
 namespace projetoZumba.Views
 {
@@ -50,6 +52,23 @@ namespace projetoZumba.Views
         {
             Agendas agendas = new Agendas();
             agendas.Show();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog backupWay = new SaveFileDialog();
+
+            backupWay.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            backupWay.Filter = "Todos (*.*)|*.*|Backup SQL (*.bak)|*.bak";
+
+            backupWay.ShowDialog();
+
+            String str;
+            str = "/C Sqlcmd -S .\\sqlexpress -U sa -P gleison23 -Q \"EXEC gerjfd.dbo.gerjfd_BACKUP @caminho ='" + backupWay.FileName + ".bak'\"";
+
+            Process.Start("cmd", str);
+
         }
 
     }

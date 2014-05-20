@@ -148,6 +148,9 @@ warning 6002: The table/view 'gerjfd.dbo.gerjfd_view_dev' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="gerjfd_BACKUP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="caminho" Type="varchar(max)" Mode="In" />
+  </Function>
   <EntityContainer Name="gerjfdModelStoreContainer">
     <EntitySet Name="gerjfd_agenda" EntityType="Self.gerjfd_agenda" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="gerjfd_aluno" EntityType="Self.gerjfd_aluno" Schema="dbo" store:Type="Tables" />
