@@ -153,6 +153,9 @@ warning 6002: The table/view 'gerjfd.dbo.gerjfd_view_dev' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="gerjfd_BACKUP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="caminho" Type="varchar(max)" Mode="In" />
+        </Function>
         <EntityContainer Name="gerjfdModelStoreContainer">
           <EntitySet Name="gerjfd_agenda" EntityType="Self.gerjfd_agenda" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="gerjfd_aluno" EntityType="Self.gerjfd_aluno" Schema="dbo" store:Type="Tables" />
@@ -268,6 +271,9 @@ warning 6002: The table/view 'gerjfd.dbo.gerjfd_view_dev' does not have a primar
             <End Role="gerjfd_aluno" EntitySet="gerjfd_aluno" />
             <End Role="gerjfd_frequencia" EntitySet="gerjfd_frequencia" />
           </AssociationSet>
+          <FunctionImport Name="gerjfd_BACKUP">
+            <Parameter Name="caminho" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="gerjfd_modalidade">
           <Key>
@@ -563,6 +569,7 @@ warning 6002: The table/view 'gerjfd.dbo.gerjfd_view_dev' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="gerjfd_BACKUP" FunctionName="gerjfdModel.Store.gerjfd_BACKUP" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

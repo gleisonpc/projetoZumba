@@ -79,6 +79,9 @@
       <End Role="gerjfd_aluno" EntitySet="gerjfd_aluno" />
       <End Role="gerjfd_frequencia" EntitySet="gerjfd_frequencia" />
     </AssociationSet>
+    <FunctionImport Name="gerjfd_BACKUP">
+      <Parameter Name="caminho" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="gerjfd_modalidade">
     <Key>

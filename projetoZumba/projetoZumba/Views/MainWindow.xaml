@@ -6,5 +6,6 @@
         <Button Content="Alunos" Margin="0,0,0,239" Click="Button_Click"/>
         <Button Content="Modalidade" Margin="0,35,0,204" Click="Button_Click_1"/>
         <Button Content="Agenda" Margin="0,70,0,169" Click="Button_Click_2"/>
+        <Button Content="Backup" Margin="0,105,0,134" Click="Button_Click_3"/>
     </Grid>
 </Window>

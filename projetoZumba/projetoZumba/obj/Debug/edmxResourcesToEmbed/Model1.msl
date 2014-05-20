@@ -115,5 +115,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="gerjfd_BACKUP" FunctionName="gerjfdModel.Store.gerjfd_BACKUP" />
   </EntityContainerMapping>
 </Mapping>

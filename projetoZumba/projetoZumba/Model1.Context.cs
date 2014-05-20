@@ -239,5 +239,14 @@ namespace projetoZumba
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams1");
         }
+    
+        public virtual int gerjfd_BACKUP(string caminho)
+        {
+            var caminhoParameter = caminho != null ?
+                new ObjectParameter("caminho", caminho) :
+                new ObjectParameter("caminho", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("gerjfd_BACKUP", caminhoParameter);
+        }
     }
 }
